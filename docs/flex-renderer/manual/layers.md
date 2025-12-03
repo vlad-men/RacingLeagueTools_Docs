@@ -8,12 +8,23 @@ Layer files can be stored either in dedicated subfolders or directly inside the 
 
 **Subfolder option.** Place the layer folder inside the layout folder and start its name with `layer`. Inside that folder add one JSON file with any name. Optional subfolders `vars`, `components`, `styles`, `triggers` can hold assets owned by the layer.
 
-![Layer folder structure](../images/page-12-image-03.png)
+```text
+├── example_layout/
+│   ├── layer1_main/
+│   │    ├── components/
+│   │    ├── styles/
+│   │    └── layer.json
+│   └── layout_description.json
+```
 
 **File option.** Place the JSON file directly in the layout folder and start its name with `layer`.
 
-![Layer file in layout folder](../images/page-12-image-04.png)
-
+```text
+├── example_layout/
+│   ├── layer0_bg.json
+│   ├── layer1_main.json
+│   └── layout_description.json
+```
 
 ## Layer Naming and Order
 
@@ -31,7 +42,50 @@ Layer files can be stored either in dedicated subfolders or directly inside the 
 
 Example layer content in a JSON editor:
 
-![Layer JSON structure](../images/page-13-image-01.png)
+```json
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "64, 40, 64, 40",
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {
+                "Name": "headerBlock",
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "Items": [
+                    //headerLeft
+                    {
+                        "Name": "headerLeftPart",
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Spacing": 12,
+                        "HorizontalAlignment": "Left",
+                        "Items": [
+                            //league name
+                            {
+                                "Name": "LeagueName",
+                                "BlockType": "text",
+                                "Source": "{Season.LeagueInfo.LeagueName} · {Season.Name}",
+                                "FontName": "{FontNameWide}",
+                                "FontSize": 20
+                            },
+                            ...
+                            ...
+                        ]
+                    },
+                    ...
+                    ...
+                ]
+            },
+            ...
+            ...
+        ]
+    }
+}
+```
 
 ## Asset Inheritance
 
