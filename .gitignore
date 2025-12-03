@@ -1,0 +1,70 @@
+# Recommended .gitignore for an MkDocs documentation project (Windows/Python)
+
+STYLE_GUIDE.md
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+venv.bak/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+*.whl
+
+# MkDocs build output
+# Ignore generated site/ by default. If you deploy from a branch that contains
+# the built site (e.g., `gh-pages`), keep it in that branch only and not in
+# the repo's source branch. Remove this entry if you intentionally commit
+# `site/` to the repository.
+site/
+
+# Node/npm
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Editor/IDE
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln
+*.sdf
+.vs/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Caches and tooling
+.mypy_cache/
+.cache/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Logs
+*.log
+
+# Secrets and environment files
+.env
+.env.*
+
+# Keep any project-specific exclusions below
+.vs/mkdocs_ai.slnx/v18/DocumentLayout.json

@@ -1,0 +1,2208 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Living user guide for end users of the Racing League Tools application.">
+      
+      
+        <meta name="author" content="Sirotkin">
+      
+      
+      
+        <link rel="prev" href="../block/">
+      
+      
+        <link rel="next" href="../components/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Block Types - Racing League Tools</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#block-types-and-block-options" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Racing League Tools" class="md-header__button md-logo" aria-label="Racing League Tools" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Racing League Tools
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Block Types
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Image Renderer Manual
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Racing League Tools" class="md-nav__button md-logo" aria-label="Racing League Tools" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    Racing League Tools
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image Renderer Manual
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Image Renderer Manual
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../folders-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Folders structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theme-resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theme resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layouts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layouts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logotypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logotypes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../liveries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Liveries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block Types
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Specification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Text">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#colorizeratingoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ColorizeRatingOptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradientstop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GradientStop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack-and-dock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack and Dock
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stack and Dock">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dock
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paneloptions-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PanelOptions Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#itemstack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ItemStack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gridrowdefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GridRowDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gridcoldefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GridColDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canvas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tablecolumndefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TableColumnDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multicolumn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multicolumn
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shape
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colorizeoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ColorizeOptions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Styles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Triggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../public-properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Public properties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-converters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Converters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../localization-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Localization support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Specification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Text">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#colorizeratingoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ColorizeRatingOptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradientstop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GradientStop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack-and-dock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack and Dock
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stack and Dock">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dock
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paneloptions-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PanelOptions Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#itemstack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ItemStack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gridrowdefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GridRowDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gridcoldefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GridColDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canvas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tablecolumndefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TableColumnDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multicolumn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multicolumn
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shape
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colorizeoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ColorizeOptions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="block-types-and-block-options">Block Types and Block Options<a class="headerlink" href="#block-types-and-block-options" title="Permanent link">&para;</a></h1>
+<p>Individual properties required for a specific type of block are placed in separate objects called <strong>Block Options</strong> (e.g., <code>ImageOptions</code>). It is not always necessary to specify this object if default values are sufficient.</p>
+<p>The following sections describe properties for specific block options.</p>
+<h2 id="image">Image<a class="headerlink" href="#image" title="Permanent link">&para;</a></h2>
+<p><strong>BlockType:</strong> <code>image</code>
+<strong>BlockOptions:</strong> <code>ImageOptions</code></p>
+<p>Used to display an image.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Path</code></td>
+<td><code>string</code></td>
+<td>Specifies the data object or path to the image file (<code>.png</code>, <code>.jpg</code>, <code>.jpeg</code>).</td>
+</tr>
+<tr>
+<td><code>DefaultPath</code></td>
+<td><code>string</code></td>
+<td>Used if retrieving an image from <code>Path</code> fails.</td>
+</tr>
+<tr>
+<td><code>HorizontalAlignment</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>Left</code>, <code>Center</code>, <code>Right</code>.</td>
+</tr>
+<tr>
+<td><code>VerticalAlignment</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>Top</code>, <code>Center</code>, <code>Bottom</code>.</td>
+</tr>
+<tr>
+<td><code>Opacity</code></td>
+<td><code>int</code></td>
+<td>Opacity level.</td>
+</tr>
+<tr>
+<td><code>Rotation</code></td>
+<td><code>int</code></td>
+<td>Rotates the image clockwise around its center. Supports values beyond -360/360.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="path-specification">Path Specification<a class="headerlink" href="#path-specification" title="Permanent link">&para;</a></h3>
+<p>The <code>Path</code> property (or <code>Source</code> property of the block) can be specified as:</p>
+<p><strong>Relative path</strong>: e.g., <code>separators/separator_red.png</code>. Specifies the full path relative to the <code>images</code> folder in the theme root (or layout/layer).</p>
+<h2 id="text">Text<a class="headerlink" href="#text" title="Permanent link">&para;</a></h2>
+<p><strong>BlockType:</strong> <code>text</code>
+<strong>BlockOptions:</strong> <code>TextOptions</code></p>
+<p>Used to display text.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Text</code></td>
+<td><code>string</code></td>
+<td>The text content to display.</td>
+</tr>
+<tr>
+<td><code>FontName</code></td>
+<td><code>string</code></td>
+<td>Font family. Defaults to global variable <code>FontNameDefault</code> if empty.</td>
+</tr>
+<tr>
+<td><code>FontSize</code></td>
+<td><code>int</code></td>
+<td>Font size. Defaults to global variable <code>FontSizeDefault</code> if empty.</td>
+</tr>
+<tr>
+<td><code>FontStyle</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>Regular</code>, <code>Bold</code>, <code>Italic</code>, <code>BoldItalic</code>. (Experimental).</td>
+</tr>
+<tr>
+<td><code>Foreground</code></td>
+<td><code>color</code></td>
+<td>Text color. Defaults to global variable <code>ForegroundDefault</code> if empty.</td>
+</tr>
+<tr>
+<td><code>TextAlignment</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>Start</code>, <code>End</code>, <code>Center</code>. (Experimental).</td>
+</tr>
+<tr>
+<td><code>HorizontalAlignment</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>Left</code>, <code>Center</code>, <code>Right</code>.</td>
+</tr>
+<tr>
+<td><code>VerticalAlignment</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>Top</code>, <code>Center</code>, <code>Bottom</code>.</td>
+</tr>
+<tr>
+<td><code>LineSpacing</code></td>
+<td><code>int</code></td>
+<td>Spacing between lines.</td>
+</tr>
+<tr>
+<td><code>Wrap</code></td>
+<td><code>bool</code></td>
+<td>Enables text wrapping. (Experimental). To make the text wrap, it may need to force the width of the text block. Dev in progress.</td>
+</tr>
+<tr>
+<td><code>Rotation</code></td>
+<td><code>int</code></td>
+<td>Rotates text clockwise around its center.</td>
+</tr>
+<tr>
+<td><code>ColorizeRating</code></td>
+<td><code>ColorizeRatingOptions</code></td>
+<td>Sets foreground color based on rating value.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="colorizeratingoptions">ColorizeRatingOptions<a class="headerlink" href="#colorizeratingoptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IsEnabled</code></td>
+<td><code>bool</code></td>
+<td>Enables or disables the block.</td>
+</tr>
+<tr>
+<td><code>Level</code></td>
+<td><code>int</code></td>
+<td>Value (0-100) determining the color.</td>
+</tr>
+<tr>
+<td><code>GradientStops</code></td>
+<td><code>List&lt;GradientStop&gt;</code></td>
+<td>List of gradient stops for custom color assignment. If not specified, default values are used.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gradientstop">GradientStop<a class="headerlink" href="#gradientstop" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Color</code></td>
+<td><code>color</code></td>
+<td>Specific color override.</td>
+</tr>
+<tr>
+<td><code>Offset</code></td>
+<td><code>int</code></td>
+<td>Offset value (0-100).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stack-and-dock">Stack and Dock<a class="headerlink" href="#stack-and-dock" title="Permanent link">&para;</a></h2>
+<p><strong>BlockTypes:</strong> <code>stack</code>, <code>dock</code>
+<strong>BlockOptions:</strong> <code>PanelOptions</code></p>
+<p>Container blocks that arrange nested blocks.</p>
+<h3 id="stack">Stack<a class="headerlink" href="#stack" title="Permanent link">&para;</a></h3>
+<p>Arranges nested (inner) blocks sequentially.</p>
+<p><img alt="Stack layout example" src="../../images/page-25-image-01.png" /></p>
+<h3 id="dock">Dock<a class="headerlink" href="#dock" title="Permanent link">&para;</a></h3>
+<p>Similar to Stack, with the following differences:</p>
+<ul>
+<li>By default, it fills all available space (<code>StretchWidth</code> or <code>StretchHeight</code> is true, depending on <code>Orientation</code>).</li>
+<li>If inner blocks specify alignment, Dock uses this to dock them to the sides.</li>
+<li>Only one inner block can specify center alignment.</li>
+</ul>
+<p><img alt="Dock layout example" src="../../images/page-25-image-02.png" /></p>
+<h3 id="paneloptions-properties">PanelOptions Properties<a class="headerlink" href="#paneloptions-properties" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Orientation</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>Horizontal</code>, <code>Vertical</code>.</td>
+</tr>
+<tr>
+<td><code>HorizontalDirection</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>LeftToRight</code>, <code>RightToLeft</code>.</td>
+</tr>
+<tr>
+<td><code>VerticalDirection</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>TopToBottom</code>, <code>BottomToTop</code>.</td>
+</tr>
+<tr>
+<td><code>Spacing</code></td>
+<td><code>int</code></td>
+<td>Spacing in pixels between inner blocks.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="itemstack">ItemStack<a class="headerlink" href="#itemstack" title="Permanent link">&para;</a></h2>
+<p><strong>BlockType:</strong> <code>itemstack</code>
+<strong>BlockOptions:</strong> <code>ItemStackOptions</code>, <code>PanelOptions</code></p>
+<p>Similar to Stack, but inner blocks are generated automatically based on a data collection. The <code>Items</code> property is ignored.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ItemSource</code></td>
+<td><code>string</code></td>
+<td>Data access expression for the collection/list.</td>
+</tr>
+<tr>
+<td><code>ItemTemplate</code></td>
+<td><code>block</code></td>
+<td>Template for inner blocks.</td>
+</tr>
+<tr>
+<td><code>SortMember</code></td>
+<td><code>string</code></td>
+<td>Property name for sorting the collection. Can be data access expression.</td>
+</tr>
+<tr>
+<td><code>OrderBy</code></td>
+<td><code>string</code></td>
+<td>Property name for sorting (supports <code>OrderBy2</code>, <code>OrderBy3</code>).</td>
+</tr>
+<tr>
+<td><code>OrderByDescending</code></td>
+<td><code>string</code></td>
+<td>Property name for descending sort (supports <code>OrderByDescending2</code>, <code>3</code>).</td>
+</tr>
+<tr>
+<td><code>FilterMember</code></td>
+<td><code>string</code></td>
+<td>Property name for filtering the collection. Can be data access expression.</td>
+</tr>
+<tr>
+<td><code>FilterMemberValue</code></td>
+<td><code>string</code></td>
+<td>Value to filter by.</td>
+</tr>
+<tr>
+<td><code>Reverse</code></td>
+<td><code>bool</code></td>
+<td>Reverses the collection order.</td>
+</tr>
+<tr>
+<td><code>Limit</code></td>
+<td><code>int</code></td>
+<td>Limits the number of items.</td>
+</tr>
+<tr>
+<td><code>IndexStart</code></td>
+<td><code>int</code></td>
+<td>Starting index of the collection.</td>
+</tr>
+<tr>
+<td><code>IndexEnd</code></td>
+<td><code>int</code></td>
+<td>Ending index of the collection.</td>
+</tr>
+<tr>
+<td><code>TakeItemIndex</code></td>
+<td><code>int</code></td>
+<td>Selects a single item by index (will be consist only of one item by specified index).</td>
+</tr>
+<tr>
+<td><code>TakeItemsFirst</code></td>
+<td><code>int</code></td>
+<td>Selects the first N items.</td>
+</tr>
+<tr>
+<td><code>TakeItemsLast</code></td>
+<td><code>int</code></td>
+<td>Selects the last N items.</td>
+</tr>
+<tr>
+<td><code>CollectionPart</code></td>
+<td><code>string</code></td>
+<td>Specifies a part of the collection (e.g., "1/3" for the first third).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="grid">Grid<a class="headerlink" href="#grid" title="Permanent link">&para;</a></h2>
+<p><strong>BlockType:</strong> <code>grid</code>
+<strong>BlockOptions:</strong> <code>GridOptions</code></p>
+<p>Container for arranging inner blocks in a grid.</p>
+<p><img alt="Grid layout example" src="../../images/page-27-image-01.png" /></p>
+<p>The Grid calculates column widths and row heights based on inner block dimensions. Use <code>GridCol</code> and <code>GridRow</code> properties on inner blocks to place them. Only one block per cell.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Rows</code></td>
+<td><code>List&lt;GridRowDefinition&gt;</code></td>
+<td>Definitions for grid rows.</td>
+</tr>
+<tr>
+<td><code>Cols</code></td>
+<td><code>List&lt;GridColDefinition&gt;</code></td>
+<td>Definitions for grid columns.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gridrowdefinition">GridRowDefinition<a class="headerlink" href="#gridrowdefinition" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Height</code></td>
+<td><code>int</code></td>
+<td>Height of the row.</td>
+</tr>
+<tr>
+<td><code>IsStretchHeight</code></td>
+<td><code>bool</code></td>
+<td>If true, fills available vertical space (only one row can be true).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gridcoldefinition">GridColDefinition<a class="headerlink" href="#gridcoldefinition" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Width</code></td>
+<td><code>int</code></td>
+<td>Width of the column.</td>
+</tr>
+<tr>
+<td><code>IsStretchWidth</code></td>
+<td><code>bool</code></td>
+<td>If true, fills available horizontal space (only one column can be true).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="canvas">Canvas<a class="headerlink" href="#canvas" title="Permanent link">&para;</a></h2>
+<p><strong>BlockType:</strong> <code>canvas</code>
+<strong>BlockOptions:</strong> <code>CanvasOptions</code></p>
+<p>A container that arranges inner blocks manually. Each inner block must define <code>PositionX</code> and <code>PositionY</code> to indicate its top-left coordinate. <code>CanvasOptions</code> currently contains no properties.</p>
+<h2 id="table">Table<a class="headerlink" href="#table" title="Permanent link">&para;</a></h2>
+<p><strong>BlockType:</strong> <code>table</code>
+<strong>BlockOptions:</strong> <code>TableOptions</code></p>
+<p>Generates blocks as a table based on a collection/list. The <code>Items</code> property is not used.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ItemsSource</code></td>
+<td><code>string</code></td>
+<td>Data access expression for the collection/list.</td>
+</tr>
+<tr>
+<td><code>HeaderTemplate</code></td>
+<td><code>block</code></td>
+<td>Template for table headers.</td>
+</tr>
+<tr>
+<td><code>HeaderHeight</code></td>
+<td><code>int</code></td>
+<td>Height of the header row.</td>
+</tr>
+<tr>
+<td><code>RowHeight</code></td>
+<td><code>int</code></td>
+<td>Height of data rows.</td>
+</tr>
+<tr>
+<td><code>RowCount</code></td>
+<td><code>int</code></td>
+<td>Number of rows.</td>
+</tr>
+<tr>
+<td><code>ColSpacing</code></td>
+<td><code>int</code></td>
+<td>Spacing between columns.</td>
+</tr>
+<tr>
+<td><code>RowSpacing</code></td>
+<td><code>int</code></td>
+<td>Spacing between rows.</td>
+</tr>
+<tr>
+<td><code>SeparatorSpace</code></td>
+<td><code>int</code></td>
+<td>Additional space if a column is a separator.</td>
+</tr>
+<tr>
+<td><code>GroupSpaceReduction</code></td>
+<td><code>int</code></td>
+<td>Space reduction between columns with the same <code>GroupId</code>.</td>
+</tr>
+<tr>
+<td><code>Columns</code></td>
+<td><code>List&lt;TableColumnDefinition&gt;</code></td>
+<td>Definitions for table columns.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: Sorting and filtering properties (<code>SortMember</code>, <code>FilterMember</code>, etc.) are identical to <code>ItemStack</code>.</em></p>
+<h3 id="tablecolumndefinition">TableColumnDefinition<a class="headerlink" href="#tablecolumndefinition" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Width</code></td>
+<td><code>int</code></td>
+<td>Width of the column.</td>
+</tr>
+<tr>
+<td><code>MarginLeft</code></td>
+<td><code>int</code></td>
+<td>Left margin.</td>
+</tr>
+<tr>
+<td><code>MarginRight</code></td>
+<td><code>int</code></td>
+<td>Right margin.</td>
+</tr>
+<tr>
+<td><code>IsStretchWidth</code></td>
+<td><code>bool</code></td>
+<td>If true, fills available horizontal space.</td>
+</tr>
+<tr>
+<td><code>Header</code></td>
+<td><code>string</code></td>
+<td>Text for the header template (will be replace text property of any text block of header template).</td>
+</tr>
+<tr>
+<td><code>RenderIf</code></td>
+<td><code>bool</code></td>
+<td>Conditional rendering flag.</td>
+</tr>
+<tr>
+<td><code>Template</code></td>
+<td><code>block</code></td>
+<td>Template for each item in the column.</td>
+</tr>
+<tr>
+<td><code>IsSeparator</code></td>
+<td><code>bool</code></td>
+<td>Indicates if the column is a separator.</td>
+</tr>
+<tr>
+<td><code>GroupId</code></td>
+<td><code>int</code></td>
+<td>Groups columns to adjust spacing (same group Id (&gt;0) can be set for several column to bring them closer to each other in the column space).</td>
+</tr>
+<tr>
+<td><code>MultiColumnHeadersSource</code></td>
+<td><code>string</code></td>
+<td>Data expression (only for collection/list) for multicolumn headers.</td>
+</tr>
+<tr>
+<td><code>MultiColumnItemsSource</code></td>
+<td><code>string</code></td>
+<td>Data expression (only for collection/list) for multicolumn items.</td>
+</tr>
+<tr>
+<td><code>MultiColumnHeaderTemplate</code></td>
+<td><code>block</code></td>
+<td>Template for multicolumn items.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="multicolumn">Multicolumn<a class="headerlink" href="#multicolumn" title="Permanent link">&para;</a></h3>
+<p>A feature for expanding one column into multiple columns.</p>
+<p><img alt="Multicolumn layout example" src="../../images/page-29-image-01.jpeg" /></p>
+<h2 id="shape">Shape<a class="headerlink" href="#shape" title="Permanent link">&para;</a></h2>
+<p><strong>BlockType:</strong> <code>shape</code>
+<strong>BlockOptions:</strong> <code>ShapeOptions</code></p>
+<p>Displays a simple geometric figure.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ShapeType</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>rectangle</code>, <code>ellipse</code>.</td>
+</tr>
+<tr>
+<td><code>Fill</code></td>
+<td><code>color</code></td>
+<td>Fill color.</td>
+</tr>
+<tr>
+<td><code>Rotation</code></td>
+<td><code>int</code></td>
+<td>Rotates the shape clockwise around its center.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="component">Component<a class="headerlink" href="#component" title="Permanent link">&para;</a></h2>
+<p><strong>BlockType:</strong> <code>component</code>
+<strong>BlockOptions:</strong> <code>ComponentOptions</code></p>
+<p>Used to reuse complex blocks across different places in a layer or layout.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vars</code></td>
+<td><code>Dictionary&lt;string, object&gt;</code></td>
+<td>Variables passed to the component.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="colorizeoptions">ColorizeOptions<a class="headerlink" href="#colorizeoptions" title="Permanent link">&para;</a></h2>
+<p><strong>BlockOptions:</strong> <code>ColorizeOptions</code></p>
+<p>Describes how the background or final image of a block should be colored.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Enabled</code></td>
+<td><code>bool</code></td>
+<td>Enables colorization.</td>
+</tr>
+<tr>
+<td><code>Color</code></td>
+<td><code>color</code></td>
+<td>Target color.</td>
+</tr>
+<tr>
+<td><code>BlendPercentage</code></td>
+<td><code>int</code></td>
+<td>Blend percentage (0-100).</td>
+</tr>
+<tr>
+<td><code>AlphaCompositionMode</code></td>
+<td><code>enum</code></td>
+<td>Composition mode. Possible values: <code>SrcOver</code>, <code>Src</code>, <code>SrcAtop</code>, <code>SrcIn</code>, <code>SrcOut</code>, <code>Dest</code>, <code>DestAtop</code>, <code>DestOver</code>, <code>DestIn</code>, <code>DestOut</code>, <code>Clear</code>, <code>Xor</code>. Can be empty/null. Default: <code>SrcATop</code>.</td>
+</tr>
+<tr>
+<td><code>ColorBlendingMode</code></td>
+<td><code>enum</code></td>
+<td>Blending mode. Possible values: <code>Normal</code>, <code>Multiply</code>, <code>Add</code>, <code>Subtract</code>, <code>Screen</code>, <code>Darken</code>, <code>Lighten</code>, <code>Overlay</code>, <code>HardLight</code>. Can be empty/null. Default: <code>Screen</code>.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

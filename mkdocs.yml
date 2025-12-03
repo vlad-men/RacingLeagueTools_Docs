@@ -1,0 +1,77 @@
+site_name: Racing League Tools
+site_description: Living user guide for end users of the Racing League Tools application.
+site_author: Sirotkin
+site_url: ""
+nav:
+  - FAQ: faq.md
+  - Image Renderer Manual:
+      - Overview: flex-renderer/manual/index.md
+      - Introduction: flex-renderer/manual/introduction.md
+      - Folders structure: flex-renderer/manual/folders-structure.md
+      - Theme resources: flex-renderer/manual/theme-resources.md
+      - Layouts: flex-renderer/manual/layouts.md
+      - Layers: flex-renderer/manual/layers.md
+      - Logotypes: flex-renderer/manual/logotypes.md
+      - Liveries: flex-renderer/manual/liveries.md
+      - Block: flex-renderer/manual/block.md
+      - Block Types: flex-renderer/manual/block-types-and-block-options.md
+      - Components: flex-renderer/manual/components.md
+      - Styles: flex-renderer/manual/styles.md
+      - Triggers: flex-renderer/manual/triggers.md
+      - Color: flex-renderer/manual/color.md
+      - Variables: flex-renderer/manual/variables.md
+      - Public properties: flex-renderer/manual/public-properties.md
+      - Expressions: flex-renderer/manual/expressions.md
+      - Data Converters: flex-renderer/manual/data-converters.md
+      - Localization support: flex-renderer/manual/localization-support.md
+      - Appendix: flex-renderer/manual/appendix.md  
+theme:
+  name: material
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  features:
+    - navigation.tabs        # Tabs at top
+    - navigation.sections    # Group menu sections
+    - navigation.top         # "Back to top" button
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: slate # built-in dark scheme
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to light theme
+    - scheme: default 
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark theme
+
+extra_css:
+  - assets/css/extra.css
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+      title: On this page
+  - attr_list             # For buttons and CSS classes
+  - md_in_html
+  - pymdownx.details      # Collapsible blocks (for FAQ)
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+
+watch:
+  - docs
+
+use_directory_urls: true
