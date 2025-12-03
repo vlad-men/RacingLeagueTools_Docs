@@ -1,4 +1,4 @@
-# Program Help Center
+# Racing League Tools Documentation Space
 
 This repository contains an MkDocs project that delivers the end-user help site for the Program application. The site is meant to be easy to maintain and publish, while providing clear guidance for non-technical users.
 
