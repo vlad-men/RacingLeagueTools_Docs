@@ -30,10 +30,3 @@ serve-docs.bat    # Helper script to serve the site locally (Windows)
 requirements.txt  # Python dependencies
 /docs              # Markdown content
 ```
-
-## Next steps
-
-- Update the placeholder pages in `docs/` with real help content.
-- Add new pages by creating Markdown files and referencing them in `mkdocs.yml` under the `nav` section.
-- Customize the theme or add MkDocs plugins as needed.
-
