@@ -23,6 +23,7 @@ This manual is the canonical reference for creating, customizing, and deploying 
 - [Variables](./variables.md)
 - [Public properties](./public-properties.md)
 - [Expressions](./expressions.md)
+- [Data Objects](./data-objects.md)
 - [Data Converters](./data-converters.md)
 - [Localization support](./localization-support.md)
 - [Appendix](./appendix.md)

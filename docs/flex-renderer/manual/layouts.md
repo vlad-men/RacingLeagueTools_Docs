@@ -67,8 +67,15 @@ Render types define which root data objects are passed to layout layers and how 
 | `PenaltySeasonStatistics` | Penalties | 1 | 3 | "Render season's penalty statistics" |
 | `PenaltyItem` | Penalty | 1 | 3 | "Render penalty" |
 | `PenaltyItems` | Penalties | 1 | 3 | "Render penalties" |
+| `DeepRatingsSeason` | DeepRatings | 1 | 3 | "Render deep ratings" |
+| `Teammates` | Teammates | 1 | 3 | "Render teammates" |
+| `TeamStandingsMultiseason` | TeamStandingsMultiseason | 1 | 3 | "Render team standings (multiseason)" |
+| `DriverStatistics` | DriverStatistics | 1 | 3 | "Render driver statistics" |
+| `DriversStatistics` | DriversStatistics | 1 | 3 | "Render drivers statistics" |
+| `TrackStatistics` | TrackStatistics | 1 | 3 | "Render track statistics" |
+| `TracksStatistics` | TracksStatistics | 1 | 3 | "Render tracks statistics" |
 
-- Root data objects are described in [Expressions](./expressions.md).
+- Root data objects are described in [Data Objects](./data-objects.md).
 - Maximum render versions is the number of layouts with the same render type that can appear in the UI.
 - Necessary render versions is the minimum expected count before falling back to layouts from other themes. For example, `DriverStandings` expects three variations (regular, season progress by points, season progress by position). Missing versions are taken from the default theme.
 - When `RenderVersion` is greater than `1`, the version number is appended to the caption (for example, `Render results (2)`).

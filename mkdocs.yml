@@ -22,6 +22,7 @@ nav:
       - Variables: flex-renderer/manual/variables.md
       - Public properties: flex-renderer/manual/public-properties.md
       - Expressions: flex-renderer/manual/expressions.md
+      - Data Objects: flex-renderer/manual/data-objects.md
       - Data Converters: flex-renderer/manual/data-converters.md
       - Localization support: flex-renderer/manual/localization-support.md
       - Appendix: flex-renderer/manual/appendix.md  
