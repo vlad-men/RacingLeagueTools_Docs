@@ -42,6 +42,7 @@ The `public_properties.json` file consists of lists for properties, categories, 
 | --- | --- | --- | --- |
 | `Name` | `string` | Yes | Category name displayed in the UI, spaces are allowed |
 | `Order` | `int` | No | Display order of the category. |
+| `Parent` | `string` | No | Optional name of the parent category. When set, this creates a nested (hierarchical) category structure by referencing another category's `Name`. |
 
 ### PublicPropertiesPreset
 
@@ -59,6 +60,8 @@ If users need to select a value from a predefined list, use the `Enum` type. The
 ## Categories
 
 Categories group specific sets of properties. Use the `Category` property in the `PublicProperty` object to map a property to a category. Unmapped properties appear at the beginning of the list.
+
+Categories can be nested by adding an optional `Parent` field to a `PublicPropertiesCategory` entry. The `Parent` value should be the `Name` of another category; this creates a hierarchical structure of categories in the UI (subcategories under their parent category).
 
 ## Presets
 
