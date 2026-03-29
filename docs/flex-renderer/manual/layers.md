@@ -32,11 +32,6 @@ Layer files can be stored either in dedicated subfolders or directly inside the 
 - For the file option, the file name becomes the layer name.
 - Rendering order follows the alphabetical order of layer names. A typical setup uses two layers: background and main.
 
-## Background Layer Behavior
-
-- If `BlockRoot.Width` or `BlockRoot.Height` is missing, the renderer sets it to the final image size.
-- If a background dimension exceeds the final image size (maximum width or height across layers), the layer is cropped.
-- If a background dimension is smaller than the final image size, the layer is scaled up.
 
 ## Layer Example
 
@@ -98,3 +93,30 @@ The layer folder can include the following optional folders:
 - `triggers`
 
 The same folder names can appear in the layout root or theme root. When a resource exists at multiple levels, the renderer checks the layer folder first, then the layout folder, and finally the theme folder. This lookup order applies to assets referenced from JSON as well as components and styles defined inside the layer file.
+
+## Background Image and Fitting
+
+It possible to control the background image of a layer by setting properties in the `BlockRoot`. This includes adjusting the fitting mode and opacity to correctly display the image within the layout.
+
+
+```json
+{
+  "BlockRoot": {
+    "Name": "layer_bg",
+    "BlockType": "stack",
+    "BackgroundImage": "bg_main.jpg",
+    "BackgroundImageFitMode": "Cover",
+    "BackgroundImageOpacity": 85,
+    "HorizontalAlignment": "Center",
+    "VerticalAlignment": "Center",
+    "Items": []
+  }
+}
+```
+
+
+### Default Background Sizing Behavior
+
+- If `BlockRoot.Width` or `BlockRoot.Height` is missing, the renderer sets it to the final image size.
+- If a background dimension exceeds the final image size (maximum width or height across layers), the layer is cropped.
+- If a background dimension is smaller than the final image size, the layer is scaled up.

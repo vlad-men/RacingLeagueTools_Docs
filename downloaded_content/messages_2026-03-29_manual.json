@@ -1,0 +1,667 @@
+[
+  {
+    "id": 1258767459729674291,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "It possible to uncheck it.",
+    "timestamp": "2024-07-05T12:52:29.168000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1258767377924100127,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "## FAQ\n> Why are penalties (penalty actions) not automatically applied for the following sessions?\nProbably the session results were obtained from live timing / imported from files and automatic driver matching was used. In this case, the app does not apply a penalty action by default. The option in penalty system:",
+    "timestamp": "2024-07-05T12:52:09.664000+00:00",
+    "attachments": [
+      {
+        "filename": "image.png",
+        "size": 22262,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1258767377940742237/image.png?ex=69c9c939&is=69c877b9&hm=9fc382cb9ce47affe6c748aa79158d683468b382578966068ca196062d790604&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1258767377924100127_20260329_211622_image.png"
+      }
+    ],
+    "embeds": []
+  },
+  {
+    "id": 1256967275731484712,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "",
+    "timestamp": "2024-06-30T13:39:11.857000+00:00",
+    "attachments": [
+      {
+        "filename": "image.png",
+        "size": 121479,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256967275521507391/image.png?ex=69c9d43f&is=69c882bf&hm=9e179807fd17c2ed4940e6c6292b106e67ec8e6eedbe74e4fc2bd6aac998805f&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256967275731484712_20260329_211623_image.png"
+      }
+    ],
+    "embeds": []
+  },
+  {
+    "id": 1256967209931116555,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "Also on \"Penalties\" page you can open \"Penalties text generation\" window. This will allow you to generate the text of the penalty list of events according to a certain template:",
+    "timestamp": "2024-06-30T13:38:56.169000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256967168105644174,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "",
+    "timestamp": "2024-06-30T13:38:46.197000+00:00",
+    "attachments": [
+      {
+        "filename": "image.png",
+        "size": 48263,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256967167895933068/image.png?ex=69c9d426&is=69c882a6&hm=d9ce08e0237dfe3c9fbc9bac9f33ad9244a3af9ed40db3069e864f84f4d75226&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256967168105644174_20260329_211624_image.png"
+      }
+    ],
+    "embeds": []
+  },
+  {
+    "id": 1256967089562845205,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "...or on \"Penalties\" page:",
+    "timestamp": "2024-06-30T13:38:27.471000+00:00",
+    "attachments": [
+      {
+        "filename": "image.png",
+        "size": 43741,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256967089391145151/image.png?ex=69c9d413&is=69c88293&hm=13bb835197a1a283df6c2a7b1b78d06916c9367687de9acb69fe3bf7445a5a26&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256967089562845205_20260329_211625_image.png"
+      }
+    ],
+    "embeds": []
+  },
+  {
+    "id": 1256966974722805884,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "You can run rendering on session results page:",
+    "timestamp": "2024-06-30T13:38:00.091000+00:00",
+    "attachments": [
+      {
+        "filename": "image.png",
+        "size": 50143,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256966974504697916/image.png?ex=69c9d3f8&is=69c88278&hm=61a1d67b51c8f99a8727a353867d3d2e212e0d181af2b6e121eefae3541ef231&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256966974722805884_20260329_211626_image.png"
+      }
+    ],
+    "embeds": []
+  },
+  {
+    "id": 1256966895614169088,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "## Penalty rendering\n\nPenalty can be exported / visualized in two ways, via rendering (supports custom themes) or via text generation.\nRendering is supported:\n- penalties event list (all penalty items of all sessions of specific event)\n- single penalty item\n- season's penalty driver statistics (sum of PP, W, PTS, etc per each driver)",
+    "timestamp": "2024-06-30T13:37:41.230000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256966803570167808,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "__*Apply the whole chain of threshold penalties*__ - allows to apply several actions at once. For example, if the driver receives 5 PP at a moment and the penalty system defines thresholds at 2 PP and 5 PP, the actions defined for 2 and 3 PP thresholds will be applied to the driver.\n\nWhen driver's PP reached certain threshold, the new penalty item will be automatically issued, contains certain penalty action.",
+    "timestamp": "2024-06-30T13:37:19.285000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256966770552471694,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "## Penalty points thresholds\n\nTo automatically trigger an additional penalty for the driver when reaching a certain limit of penalty points, a system of penalty points thresholds is used. You can create an unlimited number of limits/thresholds and assign two different penalty actions to them:",
+    "timestamp": "2024-06-30T13:37:11.413000+00:00",
+    "attachments": [
+      {
+        "filename": "image.png",
+        "size": 59753,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256966770284298240/image.png?ex=69c9d3c7&is=69c88247&hm=2b80e600c3af2ce929e0d93a9a53bfc85c5f1d46fc63beaf13deabbf6f1f9963&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256966770552471694_20260329_211628_image.png"
+      }
+    ],
+    "embeds": []
+  },
+  {
+    "id": 1256966560182964224,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "Progressive multiplier (PM) is used to multiply the base multiplier each time the penalty repeats within the backward zone. Default value is 0 or 1 (is not applied). For example, if PM is set to 2 and base multiplier is set to 2 too, penalty for a repeated violation will be as follows:\n1st: 3 sec. (base), 2nd: 3\\*2=6 sec., 3rd: 3\\*2\\*2=12 sec., 4th: 3\\*2\\*2\\*2=24 sec, etc.",
+    "timestamp": "2024-06-30T13:36:21.257000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256966526226010122,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "",
+    "timestamp": "2024-06-30T13:36:13.161000+00:00",
+    "attachments": [
+      {
+        "filename": "image.png",
+        "size": 57249,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256966525982605372/image.png?ex=69c9d38d&is=69c8820d&hm=fd201f6aa18a7fa6e35708294e0527fe3a5e49dbf1713cf94ebaab5b79ef38eb&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256966526226010122_20260329_211629_image.png"
+      }
+    ],
+    "embeds": []
+  },
+  {
+    "id": 1256966466385875024,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "## Repeated penalties\n\nIn order to increase the value of the penalty for the same rule violations, the app can automatically multiply penalty values (seconds, positions, PP). The offense field is used as an indication of the same violation, which must be the same for different penalty items.\nPenalty backward zone defines the zone within which the repeated violation is monitored.",
+    "timestamp": "2024-06-30T13:35:58.894000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256966351613071443,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "There is also an option to clear warnings when the drop policy is triggered, which deactivates all penalty points.",
+    "timestamp": "2024-06-30T13:35:31.530000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256966318247378984,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "## Warnings policy\n\nThe app implies the use of the warnings in order to convert it into penalty points in the future when it reaches a certain limit. You can create an appropriate policy specifying this limit and the number of penalty points to be issued:",
+    "timestamp": "2024-06-30T13:35:23.575000+00:00",
+    "attachments": [
+      {
+        "filename": "image.png",
+        "size": 51377,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256966318037667941/image.png?ex=69c9d35b&is=69c881db&hm=352aed1effa48170d7635417607f0704c8096d741c077becdb8cf5c66e7c67b9&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256966318247378984_20260329_211630_image.png"
+      }
+    ],
+    "embeds": []
+  },
+  {
+    "id": 1256966173526855730,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "*A few notes on the \"__Clean races / events in row__\" policy:*\n*__Definition of unclean race__* option - can be \"*__steward's penalty only__*\", \"*__in-game's penalty only__*\", \"*__steward's or in-game's penalty__*\".\nFor \"*__steward's penalty__*\" any positive values of PP, PTS, PPS, W, as well as the set penalty action are taken into account.\nIf the driver has DSQ status, it is considered a unclean session. If the driver is clean, but is not classified, this session misses in the count.\nFor \"*__clean events in row__*\" policy it is important to classify in the major race of the event, so that the event will be taken into account for the driver. However, any unclean session, including qualification, will automatically make the event unclean.\n\nTo determine which PP are active and which were dropped, you can navigate to the table lastest penalties, filtering it by the desired driver. Dropped penalties will be highlighted in gray.",
+    "timestamp": "2024-06-30T13:34:49.071000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256966132792033383,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "Policy types:\n\n**Penalty points reached** - it's useful when your league has the highest penalty points threshold, and when that limit is reached, the penalty points would automatically reset to zero.\n**Number of races / events reached** - set the lifetime of each issued penalty item with above zero penalty points. When the specified number of races or events (within the league, not the driver) is reached, the penalty points are deactivated. Only \"Only earned penalty\" option is available.\n**Time expired (days)** - set the lifetime of each issued penalty item with above zero penalty points. Only \"Only earned penalty\" option is available.\n**End of season**\n**Clean races / events in row**\n**Participating in Safety race** - safety race is a race for which the race type is set as __Safety__.",
+    "timestamp": "2024-06-30T13:34:39.359000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256966096293068882,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "## Penalty points drop policy\n\nYou can create one or more drop policies so that penalty points are automatically subtracted when an event occurs. Order matters in processing.",
+    "timestamp": "2024-06-30T13:34:30.657000+00:00",
+    "attachments": [
+      {
+        "filename": "image.png",
+        "size": 40701,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256966096079028324/image.png?ex=69c9d326&is=69c881a6&hm=70f168b8816e981561860b014d22a8310f67d99bc4d4b1628df2011dfa16d0d0&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256966096293068882_20260329_211631_image.png"
+      }
+    ],
+    "embeds": []
+  },
+  {
+    "id": 1256965945084084337,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "There are 3 values of these options:\n\n**Single season** - all PP/W/PA are valid for a single season.\n**Same category seasons** - PP/W/PA are common to seasons that have the same category.\n**All** - same, but for all seasons of the league.\n\n*Note: this option has quite a serious effect on the processing of penalties. If possible, use \"single season\", for faster and more predictable processing.*\n\nOther penalty system options can additionally reduce the number of seasons involved in processing (for example, \"__*Exclude archive seasons*__\").",
+    "timestamp": "2024-06-30T13:33:54.606000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256965906643419268,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "",
+    "timestamp": "2024-06-30T13:33:45.441000+00:00",
+    "attachments": [
+      {
+        "filename": "image.png",
+        "size": 84984,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256965906576441466/image.png?ex=69c9d2f9&is=69c88179&hm=3e501ce75be7d3d43b7f4e191e8ab8825dbfbb213ba6b93a2c493e90872bfcb9&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256965906643419268_20260329_211632_image.png"
+      }
+    ],
+    "embeds": []
+  },
+  {
+    "id": 1256965856227889264,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "## Seasons area\n\nIn order for penalty points (PP), warnings (W) or penalty action (PA) to apply NOT only to 1 season (*source* season of penalty item/action) but also to other seasons, there are options called \"seasons area\":",
+    "timestamp": "2024-06-30T13:33:33.421000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256965675839127562,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "Penalty system has a wide variety of options that allow for flexibility in customizing the system to meet the needs of different leagues.",
+    "timestamp": "2024-06-30T13:32:50.413000+00:00",
+    "attachments": [
+      {
+        "filename": "image.png",
+        "size": 238074,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256965675453386854/image.png?ex=69c9d2c2&is=69c88142&hm=1057b95fad3caa3ed37c1acd2f636c7b76a179ff4dc01da69ad721e2dc772c4b&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256965675839127562_20260329_211633_image.png"
+      }
+    ],
+    "embeds": []
+  },
+  {
+    "id": 1256965582863990824,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "",
+    "timestamp": "2024-06-30T13:32:28.246000+00:00",
+    "attachments": [
+      {
+        "filename": "image.png",
+        "size": 133699,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256965582633308260/image.png?ex=69c9d2ac&is=69c8812c&hm=593ff3b8d5c111ab70edeacd2dfafa343e16a2dc66a4507338006336a5893258&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256965582863990824_20260329_211635_image.png"
+      }
+    ],
+    "embeds": []
+  },
+  {
+    "id": 1256965482905342002,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "## Penalty system\n\nYou can create a penalty system on the relevant page. A league can contain as many different penalty systems as you want. A specific season may refer to only one penalty system, but different seasons may refer to the same penalty system.\n\n*Note: by default, when you create a new season, if there is a created penalty system in the database, and it is one, the new season will also refer to that system.*\n\n*Any season may NOT have any reference to a penalty system. In this case you can still create penalty items or actions, but there will be NO automatic processing for that season, excluding penalty action processing within source season.*",
+    "timestamp": "2024-06-30T13:32:04.414000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256965341670543360,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "## Penalty cancelling\n\nYou can cancel any penalty item or penalty action. In this case the item will remain in the database, but it will not be inactive.\nTo do this, call the context menu on the penalty item/penalty action list (right mouse click) and select \"Cancel penalty\". If it possible, penalty action effect will also be canceled/reset.",
+    "timestamp": "2024-06-30T13:31:30.741000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256965249874001990,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "*Notes: **penalty item** stores offense in text form. It can also store a __reference __to a penalty offense object that was created beforehand. You can change offense text, even after you have linked a penalty item with a specific penalty offense, it would __still __be a linked with penalty offense.*\n\n*You do NOT necessarily have to choose from an existing list of offenses. This is an additional option to assist you.*\n\n*It is possible to export/import the list of offenses. This allows you to quickly copy league rules between leagues.*\n\nThere is an option to automatically save offense when you save a new penalty item. This option is linked to the current season's penalty system, although it is on penalty offenses tab. Saving will be done if there is no penalty offense with the same offense in the database. In any case, a confirmation dialog will be shown.\n\n*__Offense__*, *__Details__*, *__Decision__* properties are support the substitution of the driver name in the text. This is useful for generating text that can automatically use discord profile links to ping drivers.\nUse curly brackets for substitution, e.g.: \"{DriverNameA} pushed {DriverNameB} and {1}\", where:\n*{DriverNameA}* - name of driver A.\n*{DriverNameB}* - name of driver B.\n*{1}* - the serial number of the driver in the list of drivers involved.",
+    "timestamp": "2024-06-30T13:31:08.855000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256965168538062948,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "Then all you need to do is choose the desired *offense* from the list and the penalty values associated with it will be automatically applied.",
+    "timestamp": "2024-06-30T13:30:49.463000+00:00",
+    "attachments": [
+      {
+        "filename": "image.png",
+        "size": 30904,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256965168202514504/image.png?ex=69c9d249&is=69c880c9&hm=8cd4412b87af8633087f8885c8615fc0cfb397b9820f31369c8a7a726ea3e032&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256965168538062948_20260329_211636_image.png"
+      }
+    ],
+    "embeds": []
+  },
+  {
+    "id": 1256965081795923969,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "## Offenses\n\nYou can save the entire offense list of your league in advance using \"Penalty offenses\" tab:",
+    "timestamp": "2024-06-30T13:30:28.782000+00:00",
+    "attachments": [
+      {
+        "filename": "image.png",
+        "size": 47840,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256965081611239574/image.png?ex=69c9d234&is=69c880b4&hm=0c23991da42395b7f59757f078c97f95518ba4d14d3b692393c4b1a1621b499f&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256965081795923969_20260329_211637_image.png"
+      }
+    ],
+    "embeds": []
+  },
+  {
+    "id": 1256964915122405406,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "",
+    "timestamp": "2024-06-30T13:29:49.044000+00:00",
+    "attachments": [
+      {
+        "filename": "image.png",
+        "size": 51318,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256964914904432771/image.png?ex=69c9d20c&is=69c8808c&hm=82bacf1ea041072b241adae4ce9d8fa09d156aeef8218f8b702b5cb935140b05&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256964915122405406_20260329_211638_image.png"
+      }
+    ],
+    "embeds": []
+  },
+  {
+    "id": 1256964818527850637,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "For example:\n\n- *penalty action \"Race ban\"* : SomeDriver participated in season 1 and season 2 as the primary driver. In race 1 he gets a race ban for 1 race. Penalty system has option \"__Actions area__\" set to \"__All Seasons__\". Penalty action will have the target: *{next race}* in season 1 and *{next race}* in season 2. *{Next race}* is the next race relative to the date of the source session of penalty action. If SomeDriver is is chosen in the results of race 2 (*{next race}*) , which is subject to the race ban, he will automatically receive DSQ status. \n\n- *penalty action \"Driver championship points drop\" (5 pts)* : at the moment of saving a penalty item that will include this penalty action, the app will offer to apply this action. If the user agrees, the app will automatically deduct 5 points for the driver for the season that is associated with the penalty item and consequently with the penalty action. This season will be *\"target\"* of penatly action.\n\n- *penalty action \"Carryover penalty points to the next season\" (1 pts)* : at the moment of saving a penalty item that will include this penalty action, the \"*target*\" will be marked as a *{next season}*. *{Next season}* in this case is the season that will start after the end of the season, which is associated with penalty action (The penalty system options can be more specific next season). 1 penalty point will be automatically added at the time the driver is first chosen in the {next season} results. \n\n- *penalty action \"Time penalty\" (5 sec.)\"* : basically duplicates __PTS __value because it also applies to the session associated with the penalty item/action. However, this is necessary for penalty actions generated automatically in cases of penalty point threhsolds.",
+    "timestamp": "2024-06-30T13:29:26.014000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256964788425064489,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "Penalty action may have a *source* session/season and a *target* session/season.\n\n*Source* - typically refers to the session or season that the parent penalty item is associated with.\n*Target* - can be a specific session, a season or multiple seasons, depending on the type of penalty action and its status.\n\n*__It is important to understand that the penalty action may NOT always be associated with only one specific season.__*\nThere may be different seasons in the database, taking place at different times, divided into different categories, the same driver may simultaneously participate in different seasons and, as a consequence, a penalty may need to be applied to several different seasons. For such purposes, there are penalty system options that can extend the penalty action over several seasons. Therefore, the target of penalty action may include several different seasons.",
+    "timestamp": "2024-06-30T13:29:18.837000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256964705919172680,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "Penalty action is always in one of three statuses:\n- *active* : means that the penalty action is either in effect now (e.g. 'league ban') or will be in effect in the future (e.g. 'race ban').\n- *applied* : means that the penalty action has already been applied and will not be used in the future.\n- *cancelled* : means that the penalty action was canceled by the user.\n- *failed* : means that the attempt to apply the penalty action was unsuccessful, the penalty action is inactive.",
+    "timestamp": "2024-06-30T13:28:59.166000+00:00",
+    "attachments": [
+      {
+        "filename": "image.png",
+        "size": 88863,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256964705872773181/image.png?ex=69c9d1db&is=69c8805b&hm=97edd4171a95f4f72455cba047370e8b2feae54ecc0558bcf7368718976d6861&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256964705919172680_20260329_211639_image.png"
+      }
+    ],
+    "embeds": []
+  },
+  {
+    "id": 1256964504403578880,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "",
+    "timestamp": "2024-06-30T13:28:11.121000+00:00",
+    "attachments": [
+      {
+        "filename": "image.png",
+        "size": 89011,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256964504198320170/image.png?ex=69c9d1ab&is=69c8802b&hm=74279038b67a2f69531d170344aba7b233a668006f8e81475f167955021406a9&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256964504403578880_20260329_211640_image.png"
+      }
+    ],
+    "embeds": []
+  },
+  {
+    "id": 1256964393443397792,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "## Penalty action\n\nDefines an additional penalty for the driver. It's part of the penalty item, any penalty item may have 1 or more penalty actions.\n\n*Action* is some action that is automatically applied by the app to the driver either immediately after the penalty is created or in the future.\n\n**Time penalty (sec.)** - applies PTS to the result of the specified or last (if session wasn't specified) driver race.\n**Position drop** - applies PPS to the result of the specified or last (if session wasn't specified) driver race.\n**Time penalty for the next driver's race (sec.)** - applies PTS to the next driver's race.\n**Position drop for the next driver's race** - applies PPS to the next driver's race.\n**Grid position drop for the next driver's race** - *does not apply automatically!* Serves only to notify about this punishment.\n**Start from pitlane for the next driver's race** - *does not apply automatically!* Serves only to notify about this punishment.\n**Qualification ban / Race ban** - ban for the next qualification or race. If the driver will be selected in the results, the notification will appear and the status will automatically be set to DSQ.\n**Event ban** - similarly qualification / race ban, only for all sessions of the next event.\n**Season ban** - event ban for all next events of the season.\n**League ban** - event ban for all next events of all current and next seasons.\n**Driver / Team championship points drop** - reduces championship points.\n**Carryover penalty points to the next season** - transfers the specified number of PP to the next season.\n**DSQ for the current / last session or event** - sets DSQ status for specific or last session or all sessions of event.\n\n*Note: for some actions you can specify a value.*",
+    "timestamp": "2024-06-30T13:27:44.666000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256964261763350719,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "**Penalty time (seconds) (PTS)** - number, can be negative.\n**Penalty positions (PPS)** - number, can be negative.\n**Penalty points (PP)** - number, can be negative.\n**Warning (W)** - number.  Zero or positive number. May have values greater than 1.\n**Session DSQ** - set/unset. If set, overrides the status of the driver in the session on DSQ.\n**No penalty/punishment** - set/unset. Indicate that the driver received no penalty for the incident, in which case all penalty values will be forcibly reset to zero.",
+    "timestamp": "2024-06-30T13:27:13.271000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256963982514847764,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "## Penalty item\n\nA penalty item is a separate item that is associated with a specific driver and season.\nIt is also supposed to be associated with a specific session, but the app allows you to create a penalty item that may not be linked to any session.\nIt is important to understand that a penalty item is a separate item in the database, and PP, PTS, PPS which are set in the table of session results are NOT, they are just part of the result. For example, final PP is the sum of PP from the penalty items that is associated with the session and the driver and PP that was set directly in the session results table. This seeming complexity arose because a new penalty system was introduced in 0.8.1 and it was necessary to maintain backward compatibility.\n\n*__Common penalty item properties__*\n**Driver** - the accused person.\n**Season** - always set, depends on the current season when creating a penalty.\n**Session** - can be empty, is set by default for the current session when using the \"New penalty\" window, or can be specified manually when adding on \"Penalties\" page.\n**Drivers involved** - drivers list affected/involved in the incident.\n**Offense** - text, can be empty. Can be associated with specific offense of pre-prepared list of offenses.\n**Details** - text, can be empty.\n**Decision** - text, can be empty.\n**Lap **- text, can be empty.\n**Turn **- text, can be empty.\n**Issuer **- user/staff member (is chosen from the general list of drivers) who issued the penalty.\n**Submitter** - user/staff member (is chosen from the general list of drivers) who submit the penalty.\n**Penalty ID** - text, penalty identifier.\n**Date** - defaults to the date of the session/event, but this can be overridden. Important in penalties processing.",
+    "timestamp": "2024-06-30T13:26:06.693000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256963765950218442,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "They are a little different. \"**New penalt**y\" window or \"**Penalties**\" page provides much more opportunities and is more preferable. In complex cases, when the multi-season penalty points system is used, penalty points (PP) assigned in the session results table can be ignored. Therefore it is strongly recommended to use \"**Issue penalty**\" button or \"**Add new penalty**\" on \"**Penalties**\" page for adding new penalties where PP and warnings is different from zero.\nAlso, if you use 1 option, don't forget to click \"**Fix results**\" button at the end so that the penalties are correctly processed.",
+    "timestamp": "2024-06-30T13:25:15.060000+00:00",
+    "attachments": [],
+    "embeds": []
+  },
+  {
+    "id": 1256963565881917520,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "## How to issue penalty?\n\nThere are three options to add a new penalty to a specific driver:\n- directly on the session results table.\n- using \"New penalty\" window dialog (available on session results page).\n- on \"Penalties\" page (by clicking on button \"Add new penalty\").",
+    "timestamp": "2024-06-30T13:24:27.360000+00:00",
+    "attachments": [
+      {
+        "filename": "image.png",
+        "size": 13700,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256963564972019712/image.png?ex=69c9d0cb&is=69c87f4b&hm=6190956b11bee343575d887bac230d0797d681f143fa81ae8fa88f9e675baa1d&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256963565881917520_20260329_211641_image.png"
+      },
+      {
+        "filename": "image.png",
+        "size": 98229,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256963565336920104/image.png?ex=69c9d0cb&is=69c87f4b&hm=cdedd29bf3599f1a9a31ffdc787cacdf6f301ba1ab187b714ba945006e68d2b3&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256963565881917520_20260329_211642_image.png"
+      },
+      {
+        "filename": "image.png",
+        "size": 68153,
+        "url": "https://cdn.discordapp.com/attachments/1256963131767521413/1256963565663817838/image.png?ex=69c9d0cb&is=69c87f4b&hm=4214cb633f7d4793f41ce8dd398c008b4fcaa9034c5267c185cd841990beee2c&",
+        "content_type": "image/png",
+        "local_path": "downloaded_content\\1256963565881917520_20260329_211643_image.png"
+      }
+    ],
+    "embeds": []
+  },
+  {
+    "id": 1256963131767521413,
+    "author": "sirotkin",
+    "author_id": 795880420105257019,
+    "channel": "Penalty system (help)",
+    "channel_id": 1256963131767521413,
+    "guild": "Racing League Tools",
+    "guild_id": 904276286359347220,
+    "content": "**Racing League Tools  has a powerful, flexible, automatized penalty system.**\n\n*Basic terms*\n\n**PP **- penalty points.\n**PTS **- penalty time (seconds) by stewards.\n**PPS **- penalty positions by stewards.\n**PTG **- penalty time (seconds) in-game.\n**PPG **- penalty positions in-game.\n**W **- warning.\n\n**Penalty item** - a specific penalty element that applies to a specific driver. Usually also associated with a specific session, although this is optional. Penalty item may include PP, PTS, PPS, W, etc.\n**Penalty action** - a specific type of punishment, part of the penalty item. Can be applied immediately (such as drop driver championship points) or in the future (such as race ban).\n**Penalty system** - a set of rules, allocated as a separate entity, can be named and applied to a specific season.",
+    "timestamp": "2024-06-30T13:22:43.859000+00:00",
+    "attachments": [],
+    "embeds": []
+  }
+]

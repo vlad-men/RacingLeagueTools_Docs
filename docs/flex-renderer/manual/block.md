@@ -71,8 +71,10 @@ The following properties apply to most block types.
 | `PaddingBottom` | `int` | Bottom padding in pixels. |
 | `Background` | `color` | Background color. |
 | `BackgroundImage` | `string` | Path to the background image. |
+| `DefaultBackgroundImage` | `string` | Default image path used if retrieving the `BackgroundImage` fails. |
 | `UseBackgroundCrop` | `bool` | Whether the background image should be cropped. |
 | `BackgroundImageOpacity` | `int` | Opacity of the background image (0-100). |
+| `BackgroundImageFitMode` | `enum` | Background image fit mode. Values: `Stretch` (default), `Cover` (scale and crop overflow), `Contain` (scale to fit, may leave bars), `None` (original size). Respects `HorizontalAlignment` (`Left`/`Center`/`Right`) and `VerticalAlignment` (`Top`/`Center`/`Bottom`). Backwards compatibility: `UseBackgroundCrop: true` with no `BackgroundImageFitMode` is treated as `Cover`. |
 | `GridRow` | `int` | Row number (if the block is a child of a grid). |
 | `GridCol` | `int` | Column number (if the block is a child of a grid). |
 | `PositionX` | `int` | X position (if the block is a child of a canvas). |
