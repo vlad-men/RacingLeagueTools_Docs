@@ -5,8 +5,12 @@ site_url: ""
 nav:
   - FAQ: faq.md
   - Help and Hints:
-      - Penalty System: penalty-system/help-channel.md
+      - Drivers: drivers/hints.md
+      - Championships: championships/help.md
+      - Sessions: sessions/hints.md
       - Live Timing: live-timing/hints.md
+      - Penalty System: penalty-system/help-channel.md
+      - Cloud Storage: cloud-storage/help.md
   - Image Renderer Manual:
       - Overview: flex-renderer/manual/index.md
       - Introduction: flex-renderer/manual/introduction.md
