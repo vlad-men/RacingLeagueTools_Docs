@@ -68,3 +68,6 @@ pip-delete-this-directory.txt
 
 # Keep any project-specific exclusions below
 .vs/mkdocs_ai.slnx/v18/DocumentLayout.json
+
+# Input data
+_INPUT/

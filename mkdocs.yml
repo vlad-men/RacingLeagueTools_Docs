@@ -4,8 +4,9 @@ site_author: Sirotkin
 site_url: ""
 nav:
   - FAQ: faq.md
-  - Penalty System:
-      - Discord Help: penalty-system/help-channel.md
+  - Help and Hints:
+      - Penalty System: penalty-system/help-channel.md
+      - Live Timing: live-timing/hints.md
   - Image Renderer Manual:
       - Overview: flex-renderer/manual/index.md
       - Introduction: flex-renderer/manual/introduction.md
