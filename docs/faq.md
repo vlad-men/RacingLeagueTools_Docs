@@ -1,6 +1,7 @@
 # Frequently Asked Questions
 
 !!! tip "Links & Resources"
+    *   **Discord:** [discord.gg/faE4bmnJmz](https://discord.gg/faE4bmnJmz)
     *   **Official site:** [racingleaguetools.com](https://racingleaguetools.com/)
     *   **Boosty:** [boosty.to/racingleaguetools](https://boosty.to/racingleaguetools)
     *   **Patreon:** [patreon.com/racingleaguetools](https://www.patreon.com/racingleaguetools)
