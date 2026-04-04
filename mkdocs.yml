@@ -11,6 +11,8 @@ nav:
       - Live Timing: live-timing/hints.md
       - Penalty System: penalty-system/help-channel.md
       - Cloud Storage: cloud-storage/help.md
+  - Advanced Configuration:
+      - Tyre Types: advanced/tyre-types.md
   - Image Renderer Manual:
       - Overview: flex-renderer/manual/index.md
       - Introduction: flex-renderer/manual/introduction.md
