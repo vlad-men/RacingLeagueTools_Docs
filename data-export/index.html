@@ -1,0 +1,5502 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Living user guide for end users of the Racing League Tools application.">
+      
+      
+        <meta name="author" content="Sirotkin">
+      
+      
+      
+        <link rel="prev" href="../advanced/driver-features/">
+      
+      
+        <link rel="next" href="../flex-renderer/manual/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>JSON Data Export - Racing League Tools</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#json-data-export" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Racing League Tools" class="md-header__button md-logo" aria-label="Racing League Tools" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Racing League Tools
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              JSON Data Export
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../drivers/hints/" class="md-tabs__link">
+          
+  
+  
+  Help and Hints
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../advanced/tyre-types/" class="md-tabs__link">
+          
+  
+  
+  Advanced Configuration
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  JSON Data Export
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../flex-renderer/manual/" class="md-tabs__link">
+          
+  
+  
+  Image Renderer Manual
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Racing League Tools" class="md-nav__button md-logo" aria-label="Racing League Tools" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    Racing League Tools
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help and Hints
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Help and Hints
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drivers/hints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drivers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../championships/help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Championships
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sessions/hints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../live-timing/hints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Timing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../penalty-system/help-channel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Penalty System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud-storage/help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/tyre-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tyre Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/driver-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Driver Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Data Export
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Data Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#common-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Conventions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Conventions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#date-and-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Date and Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ratings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ratings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colours
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null-and-optional-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Null and Optional Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-access-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature Access Tiers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shared-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shared Building Blocks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shared Building Blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#season-context-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        season (context block)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-context-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        event (context block)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-info-block-driverinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Driver Info Block (driverInfo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#team-info-block-teaminfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Team Info Block (teamInfo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-type-1-session-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Type 1 — Session Export
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export Type 1 — Session Export">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionsessioninfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        session.sessionInfo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionfastestlap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        session.fastestLap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionracedetails-race-sessions-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        session.raceDetails (race sessions only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionqualificationdetails-qualification-sessions-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        session.qualificationDetails (qualification sessions only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessiondrivers-driver-result-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        session.drivers[] — Driver Result Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimal-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-type-2-event-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Type 2 — Event Export
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export Type 2 — Event Export">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-structure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-type-3-season-statistics-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Type 3 — Season Statistics Export
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export Type 3 — Season Statistics Export">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-structure_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#season-block-season-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        season Block (Season Statistics)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seasonstatisticsstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        seasonStatistics.status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seasonstatisticsdriverstandings-driver-standings-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        seasonStatistics.driverStandings[] — Driver Standings Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seasonstatisticsteamstandings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        seasonStatistics.teamStandings[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seasonstatisticshistory-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        seasonStatisticsHistory (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seasonstatisticsclasses-multiclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        seasonStatistics.classes[] (multiclass)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-type-4-multi-season-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Type 4 — Multi-Season Export
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export Type 4 — Multi-Season Export">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-structure_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiseasonstatisticsmultiseasoninfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        multiSeasonStatistics.multiSeasonInfo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiseasonstatisticsseasons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        multiSeasonStatistics.seasons[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiseasonstatisticsdrivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        multiSeasonStatistics.drivers[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiseasonstatisticsteams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        multiSeasonStatistics.teams[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiseasonstatisticstracks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        multiSeasonStatistics.tracks[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-level-keys-by-export-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top-Level Keys by Export Type
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image Renderer Manual
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Image Renderer Manual
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/folders-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Folders structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/theme-resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theme resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/layouts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layouts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/logotypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logotypes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/liveries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Liveries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/block/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/block-types-and-block-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Styles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Triggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/public-properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Public properties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/data-objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/data-converters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Converters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/localization-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Localization support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flex-renderer/manual/appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#common-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Conventions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Conventions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#date-and-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Date and Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ratings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ratings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colours
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null-and-optional-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Null and Optional Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-access-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature Access Tiers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shared-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shared Building Blocks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shared Building Blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#season-context-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        season (context block)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-context-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        event (context block)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-info-block-driverinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Driver Info Block (driverInfo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#team-info-block-teaminfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Team Info Block (teamInfo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-type-1-session-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Type 1 — Session Export
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export Type 1 — Session Export">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionsessioninfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        session.sessionInfo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionfastestlap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        session.fastestLap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionracedetails-race-sessions-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        session.raceDetails (race sessions only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionqualificationdetails-qualification-sessions-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        session.qualificationDetails (qualification sessions only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessiondrivers-driver-result-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        session.drivers[] — Driver Result Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimal-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-type-2-event-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Type 2 — Event Export
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export Type 2 — Event Export">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-structure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-type-3-season-statistics-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Type 3 — Season Statistics Export
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export Type 3 — Season Statistics Export">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-structure_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#season-block-season-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        season Block (Season Statistics)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seasonstatisticsstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        seasonStatistics.status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seasonstatisticsdriverstandings-driver-standings-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        seasonStatistics.driverStandings[] — Driver Standings Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seasonstatisticsteamstandings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        seasonStatistics.teamStandings[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seasonstatisticshistory-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        seasonStatisticsHistory (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seasonstatisticsclasses-multiclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        seasonStatistics.classes[] (multiclass)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-type-4-multi-season-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Type 4 — Multi-Season Export
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export Type 4 — Multi-Season Export">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-structure_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiseasonstatisticsmultiseasoninfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        multiSeasonStatistics.multiSeasonInfo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiseasonstatisticsseasons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        multiSeasonStatistics.seasons[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiseasonstatisticsdrivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        multiSeasonStatistics.drivers[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiseasonstatisticsteams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        multiSeasonStatistics.teams[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiseasonstatisticstracks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        multiSeasonStatistics.tracks[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-level-keys-by-export-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top-Level Keys by Export Type
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="json-data-export">JSON Data Export<a class="headerlink" href="#json-data-export" title="Permanent link">&para;</a></h1>
+<p>Racing League Tools can export league data to structured <strong>JSON files</strong> for use in third-party tools, websites, overlays, and custom integrations. The export system produces four distinct export types, each targeting a different level of data granularity:</p>
+<table>
+<thead>
+<tr>
+<th>Export Type</th>
+<th>Description</th>
+<th>Root JSON Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Session</strong></td>
+<td>Results of a single race, qualification, or practice session</td>
+<td><code>session</code></td>
+</tr>
+<tr>
+<td><strong>Event</strong></td>
+<td>All sessions of an event</td>
+<td><code>sessions[]</code></td>
+</tr>
+<tr>
+<td><strong>Season Statistics</strong></td>
+<td>Full season standings, statistics, and per-event breakdowns</td>
+<td><code>seasonStatistics</code></td>
+</tr>
+<tr>
+<td><strong>Multi-Season</strong></td>
+<td>Aggregated driver/team/track statistics across multiple seasons</td>
+<td><code>multiSeasonStatistics</code></td>
+</tr>
+</tbody>
+</table>
+<p>All exports share the same top-level <code>metadata</code> block and follow the same conventions for data types, time formatting, and feature gating.</p>
+<hr />
+<h2 id="common-conventions">Common Conventions<a class="headerlink" href="#common-conventions" title="Permanent link">&para;</a></h2>
+<h3 id="date-and-time">Date and Time<a class="headerlink" href="#date-and-time" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Date only</td>
+<td><code>yyyy-MM-dd</code></td>
+<td><code>"2024-06-23"</code></td>
+</tr>
+<tr>
+<td>Date + time (UTC)</td>
+<td><code>yyyy-MM-ddTHH:mm:ssZ</code></td>
+<td><code>"2024-06-23T14:30:00Z"</code></td>
+</tr>
+<tr>
+<td>Lap / sector time</td>
+<td><code>m:ss.fff</code></td>
+<td><code>"1:23.456"</code></td>
+</tr>
+<tr>
+<td>Duration in milliseconds</td>
+<td><code>integer</code></td>
+<td><code>83456</code></td>
+</tr>
+</tbody>
+</table>
+<p>Time values are provided as <strong>both</strong> a human-readable string and a raw millisecond integer. This allows easy display without parsing and accurate arithmetic without locale issues.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;fastestLapTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1:23.456&quot;</span><span class="p">,</span>
+<span class="nt">&quot;fastestLapTimeMs&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">83456</span>
+</code></pre></div>
+<h3 id="points">Points<a class="headerlink" href="#points" title="Permanent link">&para;</a></h3>
+<p>Points values are serialised as <strong>strings</strong> using invariant culture formatting. This prevents locale-specific decimal separator issues (<code>"25.5"</code> never becomes <code>"25,5"</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;points&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;25.5&quot;</span><span class="p">,</span>
+<span class="nt">&quot;gapToLeader&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;-3.0&quot;</span>
+</code></pre></div>
+<h3 id="ratings">Ratings<a class="headerlink" href="#ratings" title="Permanent link">&para;</a></h3>
+<p>Driver and team ratings use a <strong>0–10 scale</strong> with two decimal places.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;rating&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7.85&quot;</span>
+</code></pre></div>
+<h3 id="colours">Colours<a class="headerlink" href="#colours" title="Permanent link">&para;</a></h3>
+<p>Team and class colours are expressed as <strong>hex strings</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;primaryColor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#FF0000&quot;</span>
+</code></pre></div>
+<h3 id="null-and-optional-fields">Null and Optional Fields<a class="headerlink" href="#null-and-optional-fields" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fields that are not applicable (e.g. <code>gridPosition</code> for a qualification) are <code>null</code> or omitted entirely.</li>
+<li>Fields gated behind feature tiers are <code>null</code> when the league does not have access to that tier.</li>
+<li>Array fields with no data are <code>null</code> rather than an empty array <code>[]</code>.</li>
+</ul>
+<hr />
+<h2 id="feature-access-tiers">Feature Access Tiers<a class="headerlink" href="#feature-access-tiers" title="Permanent link">&para;</a></h2>
+<p>Some export fields are only populated when the league subscription includes the corresponding feature tier.</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Examples of gated data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Base</strong> (always available)</td>
+<td>All positions, points, session results, basic participation stats, penalty totals</td>
+</tr>
+<tr>
+<td><strong>Advanced</strong></td>
+<td>Pure pace rating, consistency rating, sector ratings</td>
+</tr>
+<tr>
+<td><strong>Pro</strong></td>
+<td>Attack rating, defense rating, overtakes count, positions-lost count, top-battle details</td>
+</tr>
+</tbody>
+</table>
+<p>When a field requires a tier the league does not have, it is <code>null</code> in the output. The field is always present in the JSON structure so integrations can check for <code>null</code> rather than handling missing keys.</p>
+<h2 id="shared-building-blocks">Shared Building Blocks<a class="headerlink" href="#shared-building-blocks" title="Permanent link">&para;</a></h2>
+<p>Several objects appear in multiple export types under the same name and with the same structure.</p>
+<h3 id="metadata"><code>metadata</code><a class="headerlink" href="#metadata" title="Permanent link">&para;</a></h3>
+<p>Present at the root level in all four export types.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>formatVersion</code></td>
+<td><code>integer</code></td>
+<td>Schema version for forward compatibility. Currently <code>1</code>.</td>
+</tr>
+<tr>
+<td><code>exportType</code></td>
+<td><code>string</code></td>
+<td><code>"Session"</code>, <code>"SeasonStatistics"</code>, or <code>"MultiSeason"</code>.</td>
+</tr>
+<tr>
+<td><code>exportedAt</code></td>
+<td><code>string</code></td>
+<td>UTC timestamp when the file was created (<code>yyyy-MM-ddTHH:mm:ssZ</code>).</td>
+</tr>
+<tr>
+<td><code>sourceApplication</code></td>
+<td><code>string</code></td>
+<td>Always <code>"Racing League Tools"</code>.</td>
+</tr>
+<tr>
+<td><code>leagueName</code></td>
+<td><code>string\|null</code></td>
+<td>Name of the league that produced the export.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;formatVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;exportType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Session&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;exportedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-06-23T14:30:00Z&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;sourceApplication&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Racing League Tools&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;leagueName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Racing League&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="season-context-block"><code>season</code> (context block)<a class="headerlink" href="#season-context-block" title="Permanent link">&para;</a></h3>
+<p>Used in Session and Event exports. Provides enough context to identify where the session sits within the season.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>seasonName</code></td>
+<td><code>string</code></td>
+<td>Season display name (e.g. <code>"2024 Season"</code>).</td>
+</tr>
+<tr>
+<td><code>championshipName</code></td>
+<td><code>string\|null</code></td>
+<td>Championship name.</td>
+</tr>
+<tr>
+<td><code>totalRounds</code></td>
+<td><code>integer</code></td>
+<td>Total number of rounds in the season.</td>
+</tr>
+<tr>
+<td><code>completedRounds</code></td>
+<td><code>integer</code></td>
+<td>Number of rounds completed so far.</td>
+</tr>
+<tr>
+<td><code>isMulticlass</code></td>
+<td><code>boolean</code></td>
+<td>Whether the season uses racing classes.</td>
+</tr>
+<tr>
+<td><code>multiclassDefinitions</code></td>
+<td><code>array\|null</code></td>
+<td>List of <code>{ uniqueName, name, abbreviation?, color? }</code> objects. Present only when <code>isMulticlass</code> is <code>true</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="event-context-block"><code>event</code> (context block)<a class="headerlink" href="#event-context-block" title="Permanent link">&para;</a></h3>
+<p>Used in Session and Event exports.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>round</code></td>
+<td><code>integer</code></td>
+<td>Round number within the championship (1-based).</td>
+</tr>
+<tr>
+<td><code>eventDate</code></td>
+<td><code>string\|null</code></td>
+<td>Event date (<code>yyyy-MM-dd</code>).</td>
+</tr>
+<tr>
+<td><code>racesCount</code></td>
+<td><code>integer</code></td>
+<td>Number of race sessions in this event.</td>
+</tr>
+<tr>
+<td><code>qualificationsCount</code></td>
+<td><code>integer</code></td>
+<td>Number of qualification sessions in this event.</td>
+</tr>
+<tr>
+<td><code>track</code></td>
+<td><code>object</code></td>
+<td>Track information (see below).</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>event.track</code></strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>trackName</code></td>
+<td><code>string</code></td>
+<td>Track display name (e.g. <code>"Circuit de Monaco"</code>).</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td><code>string\|null</code></td>
+<td>Country of the track.</td>
+</tr>
+<tr>
+<td><code>turnsCount</code></td>
+<td><code>integer\|null</code></td>
+<td>Number of turns on the circuit.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="driver-info-block-driverinfo">Driver Info Block (<code>driverInfo</code>)<a class="headerlink" href="#driver-info-block-driverinfo" title="Permanent link">&para;</a></h3>
+<p>An optional extended block attached to driver entries across all export types. Included only when additional driver data is present in the league database.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nationality</code></td>
+<td><code>string\|null</code></td>
+<td>Country name.</td>
+</tr>
+<tr>
+<td><code>raceNumber</code></td>
+<td><code>integer\|null</code></td>
+<td>Race number, if assigned.</td>
+</tr>
+<tr>
+<td><code>realName</code></td>
+<td><code>string\|null</code></td>
+<td>Real name if different from display name.</td>
+</tr>
+<tr>
+<td><code>shortName</code></td>
+<td><code>string\|null</code></td>
+<td>Short name or abbreviation (e.g. <code>"HAM"</code>).</td>
+</tr>
+<tr>
+<td><code>platform</code></td>
+<td><code>string\|null</code></td>
+<td>Gaming platform: <code>"PC"</code>, <code>"PlayStation"</code>, <code>"Xbox"</code>, etc.</td>
+</tr>
+<tr>
+<td><code>categories</code></td>
+<td><code>string[]\|null</code></td>
+<td>League category names the driver belongs to.</td>
+</tr>
+<tr>
+<td><code>badge</code></td>
+<td><code>string\|null</code></td>
+<td>Badge text.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string\|null</code></td>
+<td>Driver biography or notes.</td>
+</tr>
+<tr>
+<td><code>discord</code></td>
+<td><code>string\|null</code></td>
+<td>Discord username or link.</td>
+</tr>
+<tr>
+<td><code>steam</code></td>
+<td><code>string\|null</code></td>
+<td>Steam username or link.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="team-info-block-teaminfo">Team Info Block (<code>teamInfo</code>)<a class="headerlink" href="#team-info-block-teaminfo" title="Permanent link">&para;</a></h3>
+<p>An optional extended block attached to team entries. Included only when additional team data is present.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uniqueId</code></td>
+<td><code>string\|null</code></td>
+<td>Stable team identifier (consistent across seasons).</td>
+</tr>
+<tr>
+<td><code>fullName</code></td>
+<td><code>string\|null</code></td>
+<td>Official full team name.</td>
+</tr>
+<tr>
+<td><code>abbreviation</code></td>
+<td><code>string\|null</code></td>
+<td>Short team code (e.g. <code>"RBR"</code>).</td>
+</tr>
+<tr>
+<td><code>primaryColor</code></td>
+<td><code>string\|null</code></td>
+<td>Primary team colour (hex).</td>
+</tr>
+<tr>
+<td><code>secondaryColor</code></td>
+<td><code>string\|null</code></td>
+<td>Secondary team colour (hex).</td>
+</tr>
+<tr>
+<td><code>tertiaryColor</code></td>
+<td><code>string\|null</code></td>
+<td>Tertiary team colour (hex).</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td><code>string\|null</code></td>
+<td>Team nationality/country.</td>
+</tr>
+<tr>
+<td><code>car</code></td>
+<td><code>string\|null</code></td>
+<td>Default car used by the team.</td>
+</tr>
+<tr>
+<td><code>badge</code></td>
+<td><code>string\|null</code></td>
+<td>Team badge text.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="export-type-1-session-export">Export Type 1 — Session Export<a class="headerlink" href="#export-type-1-session-export" title="Permanent link">&para;</a></h2>
+<p>A single session (race, qualification, or practice) with full driver results.</p>
+<h3 id="root-structure">Root Structure<a class="headerlink" href="#root-structure" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>{
+  metadata,
+  season,
+  event,
+  session: {
+    sessionInfo,
+    fastestLap?,
+    raceDetails?,           // race sessions only
+    qualificationDetails?,  // qualification sessions only
+    drivers: [ ... ],
+    classes?: [ ... ]       // multiclass only
+  }
+}
+</code></pre></div>
+<h3 id="sessionsessioninfo"><code>session.sessionInfo</code><a class="headerlink" href="#sessionsessioninfo" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sessionId</code></td>
+<td><code>string</code></td>
+<td>Unique session identifier (UUID).</td>
+</tr>
+<tr>
+<td><code>sessionType</code></td>
+<td><code>string</code></td>
+<td><code>"Race"</code>, <code>"Qualification"</code>, or <code>"Practice"</code>.</td>
+</tr>
+<tr>
+<td><code>raceType</code></td>
+<td><code>string\|null</code></td>
+<td>Race sub-type: <code>"Feature"</code>, <code>"Sprint"</code>, <code>"Endurance"</code>, etc. Race sessions only.</td>
+</tr>
+<tr>
+<td><code>qualificationType</code></td>
+<td><code>string\|null</code></td>
+<td>Qualification sub-type: <code>"Regular"</code>, <code>"TimeAttack"</code>, etc. Qualification sessions only.</td>
+</tr>
+<tr>
+<td><code>sessionPosition</code></td>
+<td><code>integer</code></td>
+<td>Position within the event (1 = first session).</td>
+</tr>
+<tr>
+<td><code>sessionCaption</code></td>
+<td><code>string\|null</code></td>
+<td>Display caption (e.g. <code>"Feature Race"</code>, <code>"Sprint Qualifying"</code>).</td>
+</tr>
+<tr>
+<td><code>completedStatus</code></td>
+<td><code>string</code></td>
+<td><code>"Completed"</code>, <code>"InProgress"</code>, <code>"Scheduled"</code>, or <code>"Cancelled"</code>.</td>
+</tr>
+<tr>
+<td><code>sessionDate</code></td>
+<td><code>string\|null</code></td>
+<td>Session date/time (ISO 8601, with timezone offset).</td>
+</tr>
+<tr>
+<td><code>totalLaps</code></td>
+<td><code>integer\|null</code></td>
+<td>Total race laps. <code>null</code> for timed or unconfigured sessions.</td>
+</tr>
+<tr>
+<td><code>driversCount</code></td>
+<td><code>integer</code></td>
+<td>Total number of drivers classified in the session.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sessionfastestlap"><code>session.fastestLap</code><a class="headerlink" href="#sessionfastestlap" title="Permanent link">&para;</a></h3>
+<p>Present when a fastest lap has been recorded for the session.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lapTime</code></td>
+<td><code>string</code></td>
+<td>Fastest lap as string (e.g. <code>"1:23.456"</code>).</td>
+</tr>
+<tr>
+<td><code>lapTimeMs</code></td>
+<td><code>integer\|null</code></td>
+<td>Fastest lap in milliseconds.</td>
+</tr>
+<tr>
+<td><code>driverName</code></td>
+<td><code>string\|null</code></td>
+<td>Name of the driver who set it.</td>
+</tr>
+<tr>
+<td><code>lapNumber</code></td>
+<td><code>integer\|null</code></td>
+<td>Lap number when it was set.</td>
+</tr>
+<tr>
+<td><code>tyreCompound</code></td>
+<td><code>string\|null</code></td>
+<td>Tyre compound used.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sessionracedetails-race-sessions-only"><code>session.raceDetails</code> (race sessions only)<a class="headerlink" href="#sessionracedetails-race-sessions-only" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>raceType</code></td>
+<td><code>string</code></td>
+<td>Race type (e.g. <code>"Feature"</code>).</td>
+</tr>
+<tr>
+<td><code>isMajorRace</code></td>
+<td><code>boolean</code></td>
+<td>Whether this is the main/feature race of the event.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sessionqualificationdetails-qualification-sessions-only"><code>session.qualificationDetails</code> (qualification sessions only)<a class="headerlink" href="#sessionqualificationdetails-qualification-sessions-only" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>qualificationType</code></td>
+<td><code>string\|null</code></td>
+<td>Qualification type.</td>
+</tr>
+<tr>
+<td><code>segments</code></td>
+<td><code>integer</code></td>
+<td>Number of knockout segments (0 for single-segment).</td>
+</tr>
+<tr>
+<td><code>poleTime</code></td>
+<td><code>string\|null</code></td>
+<td>Pole position lap time.</td>
+</tr>
+<tr>
+<td><code>poleTimeMs</code></td>
+<td><code>integer\|null</code></td>
+<td>Pole time in milliseconds.</td>
+</tr>
+<tr>
+<td><code>duration</code></td>
+<td><code>string\|null</code></td>
+<td>Total session duration.</td>
+</tr>
+<tr>
+<td><code>durationMs</code></td>
+<td><code>integer\|null</code></td>
+<td>Total session duration in milliseconds.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sessiondrivers-driver-result-entry"><code>session.drivers[]</code> — Driver Result Entry<a class="headerlink" href="#sessiondrivers-driver-result-entry" title="Permanent link">&para;</a></h3>
+<p>Entries are sorted by classification position (ascending), with unclassified drivers at the end.</p>
+<p><strong>Core fields</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>driverName</code></td>
+<td><code>string</code></td>
+<td>Driver display name.</td>
+</tr>
+<tr>
+<td><code>driverInfo</code></td>
+<td><code>object\|null</code></td>
+<td>Extended driver info block.</td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>integer</code></td>
+<td>Overall session position.</td>
+</tr>
+<tr>
+<td><code>classificationPosition</code></td>
+<td><code>integer</code></td>
+<td>Final classification position (may differ in class-based results).</td>
+</tr>
+<tr>
+<td><code>gridPosition</code></td>
+<td><code>integer\|null</code></td>
+<td>Starting grid position. <code>null</code> if not applicable.</td>
+</tr>
+<tr>
+<td><code>positionChange</code></td>
+<td><code>integer\|null</code></td>
+<td>Positions gained (positive) or lost (negative). <code>null</code> if no grid was set.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string\|null</code></td>
+<td>Race result status: <code>"Finished"</code>, <code>"DNF"</code>, <code>"DNS"</code>, <code>"DSQ"</code>. <code>null</code> for non-race sessions.</td>
+</tr>
+<tr>
+<td><code>lapsCompleted</code></td>
+<td><code>integer</code></td>
+<td>Number of laps completed.</td>
+</tr>
+<tr>
+<td><code>driverPoints</code></td>
+<td><code>string\|null</code></td>
+<td>Points scored by this driver.</td>
+</tr>
+<tr>
+<td><code>teamPoints</code></td>
+<td><code>string\|null</code></td>
+<td>Points scored by the team for this session.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Timing fields</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>totalTime</code></td>
+<td><code>string\|null</code></td>
+<td>Total race time (race sessions only).</td>
+</tr>
+<tr>
+<td><code>totalTimeMs</code></td>
+<td><code>integer\|null</code></td>
+<td>Total race time in milliseconds.</td>
+</tr>
+<tr>
+<td><code>gap</code></td>
+<td><code>string\|null</code></td>
+<td>Gap to race leader (e.g. <code>"+5.234"</code>, <code>"+1 lap"</code>).</td>
+</tr>
+<tr>
+<td><code>gapMs</code></td>
+<td><code>integer\|null</code></td>
+<td>Gap in milliseconds. <code>0</code> for the leader.</td>
+</tr>
+<tr>
+<td><code>interval</code></td>
+<td><code>string\|null</code></td>
+<td>Gap to the driver immediately ahead.</td>
+</tr>
+<tr>
+<td><code>intervalMs</code></td>
+<td><code>integer\|null</code></td>
+<td>Interval in milliseconds.</td>
+</tr>
+<tr>
+<td><code>fastestLapTime</code></td>
+<td><code>string\|null</code></td>
+<td>Driver's personal fastest lap.</td>
+</tr>
+<tr>
+<td><code>fastestLapTimeMs</code></td>
+<td><code>integer\|null</code></td>
+<td>Fastest lap in milliseconds.</td>
+</tr>
+<tr>
+<td><code>fastestLapNumber</code></td>
+<td><code>integer\|null</code></td>
+<td>Lap number of fastest lap.</td>
+</tr>
+<tr>
+<td><code>fastestLapTyreCompound</code></td>
+<td><code>string\|null</code></td>
+<td>Tyre compound on fastest lap.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nested objects (conditional)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Present when</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>team</code></td>
+<td>Driver has a team assigned</td>
+<td>Team name and colours.</td>
+</tr>
+<tr>
+<td><code>car</code></td>
+<td>Car data is available</td>
+<td>Car name, class, and manufacturer.</td>
+</tr>
+<tr>
+<td><code>classInfo</code></td>
+<td>Multiclass session</td>
+<td>Driver's racing class and class position.</td>
+</tr>
+<tr>
+<td><code>stints</code></td>
+<td>Race session + stint data available</td>
+<td>Array of stint details.</td>
+</tr>
+<tr>
+<td><code>raceDetails</code></td>
+<td>Race session</td>
+<td>Max speed and average speed.</td>
+</tr>
+<tr>
+<td><code>qualDetails</code></td>
+<td>Qualification session</td>
+<td>Max speed.</td>
+</tr>
+<tr>
+<td><code>penalties</code></td>
+<td>Driver received penalties</td>
+<td>Penalty totals and individual items.</td>
+</tr>
+<tr>
+<td><code>topBattles</code></td>
+<td>Race session + Pro tier</td>
+<td>Battle statistics and detail list.</td>
+</tr>
+<tr>
+<td><code>ratings</code></td>
+<td>Advanced or Pro tier</td>
+<td>Pace, consistency, attack, defense ratings.</td>
+</tr>
+<tr>
+<td><code>laps</code></td>
+<td>Lap data was recorded</td>
+<td>Per-lap data array.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>driver.team</code></strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Team name.</td>
+</tr>
+<tr>
+<td><code>uniqueId</code></td>
+<td><code>string\|null</code></td>
+<td>Stable team identifier.</td>
+</tr>
+<tr>
+<td><code>fullName</code></td>
+<td><code>string\|null</code></td>
+<td>Official full name.</td>
+</tr>
+<tr>
+<td><code>abbreviation</code></td>
+<td><code>string\|null</code></td>
+<td>Short team code.</td>
+</tr>
+<tr>
+<td><code>primaryColor</code></td>
+<td><code>string\|null</code></td>
+<td>Primary colour (hex).</td>
+</tr>
+<tr>
+<td><code>secondaryColor</code></td>
+<td><code>string\|null</code></td>
+<td>Secondary colour (hex).</td>
+</tr>
+<tr>
+<td><code>tertiaryColor</code></td>
+<td><code>string\|null</code></td>
+<td>Tertiary colour (hex).</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td><code>string\|null</code></td>
+<td>Team nationality.</td>
+</tr>
+<tr>
+<td><code>badge</code></td>
+<td><code>string\|null</code></td>
+<td>Badge text.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>driver.car</code></strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>carName</code></td>
+<td><code>string</code></td>
+<td>Car model name.</td>
+</tr>
+<tr>
+<td><code>className</code></td>
+<td><code>string\|null</code></td>
+<td>Car class name.</td>
+</tr>
+<tr>
+<td><code>classColor</code></td>
+<td><code>string\|null</code></td>
+<td>Class colour (hex).</td>
+</tr>
+<tr>
+<td><code>manufacturer</code></td>
+<td><code>string\|null</code></td>
+<td>Car manufacturer/vendor.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>driver.classInfo</code></strong> (multiclass sessions)</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uniqueName</code></td>
+<td><code>string</code></td>
+<td>Class identifier.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Class display name.</td>
+</tr>
+<tr>
+<td><code>abbreviation</code></td>
+<td><code>string\|null</code></td>
+<td>Short class name.</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td><code>string\|null</code></td>
+<td>Class colour (hex).</td>
+</tr>
+<tr>
+<td><code>classPosition</code></td>
+<td><code>integer</code></td>
+<td>Driver's position within the class.</td>
+</tr>
+<tr>
+<td><code>classDriversCount</code></td>
+<td><code>integer</code></td>
+<td>Total drivers in the class.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>driver.stints[]</code></strong> (race sessions)</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>stintNumber</code></td>
+<td><code>integer</code></td>
+<td>Stint number (1-based).</td>
+</tr>
+<tr>
+<td><code>tyreCompound</code></td>
+<td><code>string</code></td>
+<td>Tyre compound used during this stint.</td>
+</tr>
+<tr>
+<td><code>startLap</code></td>
+<td><code>integer</code></td>
+<td>First lap of the stint.</td>
+</tr>
+<tr>
+<td><code>endLap</code></td>
+<td><code>integer</code></td>
+<td>Last lap of the stint.</td>
+</tr>
+<tr>
+<td><code>lapsCount</code></td>
+<td><code>integer</code></td>
+<td>Total laps completed on this stint.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>driver.penalties</code></strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>inGamePenaltySeconds</code></td>
+<td><code>integer</code></td>
+<td>Total in-game time penalty seconds.</td>
+</tr>
+<tr>
+<td><code>stewardPenaltySeconds</code></td>
+<td><code>integer</code></td>
+<td>Total steward-issued time penalty seconds.</td>
+</tr>
+<tr>
+<td><code>inGamePenaltyPositions</code></td>
+<td><code>integer</code></td>
+<td>In-game position penalties.</td>
+</tr>
+<tr>
+<td><code>stewardPenaltyPositions</code></td>
+<td><code>integer</code></td>
+<td>Steward-issued position penalties.</td>
+</tr>
+<tr>
+<td><code>totalPenaltyPoints</code></td>
+<td><code>integer</code></td>
+<td>Total penalty points accumulated.</td>
+</tr>
+<tr>
+<td><code>inGamePenalties</code></td>
+<td><code>array\|null</code></td>
+<td>List of individual in-game penalty items.</td>
+</tr>
+<tr>
+<td><code>stewardPenalties</code></td>
+<td><code>array\|null</code></td>
+<td>List of individual steward penalty items.</td>
+</tr>
+</tbody>
+</table>
+<p>Each item in <code>inGamePenalties[]</code> / <code>stewardPenalties[]</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>offense</code></td>
+<td><code>string</code></td>
+<td>Description of the infraction.</td>
+</tr>
+<tr>
+<td><code>action</code></td>
+<td><code>string</code></td>
+<td>Penalty action name (e.g. <code>"Time Penalty"</code>).</td>
+</tr>
+<tr>
+<td><code>penaltySeconds</code></td>
+<td><code>integer\|null</code></td>
+<td>Time penalty in seconds.</td>
+</tr>
+<tr>
+<td><code>penaltyPoints</code></td>
+<td><code>integer\|null</code></td>
+<td>Penalty points issued.</td>
+</tr>
+<tr>
+<td><code>penaltyPositions</code></td>
+<td><code>integer\|null</code></td>
+<td>Position penalty.</td>
+</tr>
+<tr>
+<td><code>lapNumber</code></td>
+<td><code>integer\|null</code></td>
+<td>Lap when the penalty was given.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string\|null</code></td>
+<td>Additional notes.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>driver.topBattles</code></strong> <em>(Pro tier, race sessions only)</em></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>totalBattlesCount</code></td>
+<td><code>integer</code></td>
+<td>Total number of on-track battles.</td>
+</tr>
+<tr>
+<td><code>battlesWon</code></td>
+<td><code>integer</code></td>
+<td>Battles won.</td>
+</tr>
+<tr>
+<td><code>battlesLost</code></td>
+<td><code>integer</code></td>
+<td>Battles lost.</td>
+</tr>
+<tr>
+<td><code>winPercentage</code></td>
+<td><code>integer</code></td>
+<td>Win percentage (0–100).</td>
+</tr>
+<tr>
+<td><code>overtakes</code></td>
+<td><code>integer</code></td>
+<td>Number of successful overtakes made.</td>
+</tr>
+<tr>
+<td><code>positionsLost</code></td>
+<td><code>integer</code></td>
+<td>Positions lost to opponents.</td>
+</tr>
+<tr>
+<td><code>battles</code></td>
+<td><code>array\|null</code></td>
+<td>Detailed battle entries (see below).</td>
+</tr>
+</tbody>
+</table>
+<p>Each battle entry:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>opponentName</code></td>
+<td><code>string</code></td>
+<td>Name of the opponent driver.</td>
+</tr>
+<tr>
+<td><code>battleType</code></td>
+<td><code>string</code></td>
+<td><code>"Attack"</code> or <code>"Defense"</code>.</td>
+</tr>
+<tr>
+<td><code>isWon</code></td>
+<td><code>boolean</code></td>
+<td>Whether this battle was won.</td>
+</tr>
+<tr>
+<td><code>startLap</code></td>
+<td><code>integer\|null</code></td>
+<td>Lap the battle began.</td>
+</tr>
+<tr>
+<td><code>endLap</code></td>
+<td><code>integer\|null</code></td>
+<td>Lap the battle ended.</td>
+</tr>
+<tr>
+<td><code>durationLaps</code></td>
+<td><code>integer</code></td>
+<td>How many laps the battle lasted.</td>
+</tr>
+<tr>
+<td><code>driverTyreCompound</code></td>
+<td><code>string\|null</code></td>
+<td>Driver's tyre at battle start.</td>
+</tr>
+<tr>
+<td><code>opponentTyreCompound</code></td>
+<td><code>string\|null</code></td>
+<td>Opponent's tyre at battle start.</td>
+</tr>
+<tr>
+<td><code>driverTyreWear</code></td>
+<td><code>integer\|null</code></td>
+<td>Driver's tyre wear % at battle start.</td>
+</tr>
+<tr>
+<td><code>opponentTyreWear</code></td>
+<td><code>integer\|null</code></td>
+<td>Opponent's tyre wear % at battle start.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>driver.ratings</code></strong></p>
+<p>All ratings use the 0–10 scale. Sub-objects are <code>null</code> when the corresponding feature tier is not available.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Tier required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pace</code></td>
+<td>Advanced</td>
+<td>Pure race pace rating.</td>
+</tr>
+<tr>
+<td><code>consistency</code></td>
+<td>Advanced</td>
+<td>Lap consistency rating.</td>
+</tr>
+<tr>
+<td><code>attack</code></td>
+<td>Pro</td>
+<td>Overtaking / attack rating.</td>
+</tr>
+<tr>
+<td><code>defense</code></td>
+<td>Pro</td>
+<td>Defensive driving rating.</td>
+</tr>
+</tbody>
+</table>
+<p><code>pace</code> and <code>consistency</code> share this structure:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rating</code></td>
+<td><code>string</code></td>
+<td>Rating on the 0–10 scale.</td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>integer</code></td>
+<td>Rank among all session drivers.</td>
+</tr>
+<tr>
+<td><code>gapToLeader</code></td>
+<td><code>string\|null</code></td>
+<td>Gap to the top-rated driver.</td>
+</tr>
+<tr>
+<td><code>gapToLeaderMs</code></td>
+<td><code>integer\|null</code></td>
+<td>Gap in milliseconds.</td>
+</tr>
+<tr>
+<td><code>sectors</code></td>
+<td><code>object\|null</code></td>
+<td><code>{ sector1Rating, sector2Rating, sector3Rating }</code> — per-sector ratings.</td>
+</tr>
+</tbody>
+</table>
+<p><code>pace</code> additionally includes:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pureLapTime</code></td>
+<td><code>string\|null</code></td>
+<td>Theoretical best lap (composed from best sectors).</td>
+</tr>
+<tr>
+<td><code>pureLapTimeMs</code></td>
+<td><code>integer\|null</code></td>
+<td>Theoretical best lap in milliseconds.</td>
+</tr>
+</tbody>
+</table>
+<p><code>consistency</code> additionally includes:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>averageDeviation</code></td>
+<td><code>string\|null</code></td>
+<td>Average lap time deviation from optimal.</td>
+</tr>
+<tr>
+<td><code>averageDeviationMs</code></td>
+<td><code>integer\|null</code></td>
+<td>Average deviation in milliseconds.</td>
+</tr>
+</tbody>
+</table>
+<p><code>attack</code> and <code>defense</code> share this structure:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rating</code></td>
+<td><code>string</code></td>
+<td>Rating on the 0–10 scale.</td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>integer</code></td>
+<td>Rank among all session drivers.</td>
+</tr>
+<tr>
+<td><code>overtakes</code></td>
+<td><code>integer</code></td>
+<td>Successful overtakes made (attack) / positions defended (defense).</td>
+</tr>
+<tr>
+<td><code>battlesCount</code></td>
+<td><code>integer</code></td>
+<td>Total battles engaged.</td>
+</tr>
+<tr>
+<td><code>winPercentage</code></td>
+<td><code>integer</code></td>
+<td>Percentage of battles won.</td>
+</tr>
+<tr>
+<td><code>topBattles</code></td>
+<td><code>array\|null</code></td>
+<td>Highlight battle entries.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>driver.laps[]</code></strong> — Per-Lap Data</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lapNumber</code></td>
+<td><code>integer</code></td>
+<td>Lap number (1-based).</td>
+</tr>
+<tr>
+<td><code>lapTime</code></td>
+<td><code>string</code></td>
+<td>Lap time string.</td>
+</tr>
+<tr>
+<td><code>lapTimeMs</code></td>
+<td><code>integer\|null</code></td>
+<td>Lap time in milliseconds.</td>
+</tr>
+<tr>
+<td><code>sector1Time</code></td>
+<td><code>string\|null</code></td>
+<td>Sector 1 time.</td>
+</tr>
+<tr>
+<td><code>sector1TimeMs</code></td>
+<td><code>integer\|null</code></td>
+<td>Sector 1 in milliseconds.</td>
+</tr>
+<tr>
+<td><code>sector2Time</code></td>
+<td><code>string\|null</code></td>
+<td>Sector 2 time.</td>
+</tr>
+<tr>
+<td><code>sector2TimeMs</code></td>
+<td><code>integer\|null</code></td>
+<td>Sector 2 in milliseconds.</td>
+</tr>
+<tr>
+<td><code>sector3Time</code></td>
+<td><code>string\|null</code></td>
+<td>Sector 3 time.</td>
+</tr>
+<tr>
+<td><code>sector3TimeMs</code></td>
+<td><code>integer\|null</code></td>
+<td>Sector 3 in milliseconds.</td>
+</tr>
+<tr>
+<td><code>tyreCompound</code></td>
+<td><code>string\|null</code></td>
+<td>Tyre compound on this lap.</td>
+</tr>
+<tr>
+<td><code>isValid</code></td>
+<td><code>boolean</code></td>
+<td>Whether the lap was valid (no track limit violations).</td>
+</tr>
+<tr>
+<td><code>isPersonalBest</code></td>
+<td><code>boolean</code></td>
+<td>Whether this was the driver's personal best lap.</td>
+</tr>
+<tr>
+<td><code>isSessionFastest</code></td>
+<td><code>boolean</code></td>
+<td>Whether this was the overall fastest lap of the session.</td>
+</tr>
+<tr>
+<td><code>positionAfterLap</code></td>
+<td><code>integer\|null</code></td>
+<td>Race position after completing this lap.</td>
+</tr>
+<tr>
+<td><code>gapToLeader</code></td>
+<td><code>string\|null</code></td>
+<td>Gap to race leader after this lap.</td>
+</tr>
+<tr>
+<td><code>gapToLeaderMs</code></td>
+<td><code>integer\|null</code></td>
+<td>Gap in milliseconds.</td>
+</tr>
+<tr>
+<td><code>gapToAhead</code></td>
+<td><code>string\|null</code></td>
+<td>Gap to driver immediately ahead.</td>
+</tr>
+<tr>
+<td><code>gapToAheadMs</code></td>
+<td><code>integer\|null</code></td>
+<td>Gap ahead in milliseconds.</td>
+</tr>
+<tr>
+<td><code>deltaToPreviousLap</code></td>
+<td><code>string\|null</code></td>
+<td>Delta vs. the driver's previous lap.</td>
+</tr>
+<tr>
+<td><code>deltaToPreviousLapMs</code></td>
+<td><code>integer\|null</code></td>
+<td>Delta in milliseconds.</td>
+</tr>
+<tr>
+<td><code>deltaToPersonalBest</code></td>
+<td><code>string\|null</code></td>
+<td>Delta vs. the driver's best lap.</td>
+</tr>
+<tr>
+<td><code>deltaToPersonalBestMs</code></td>
+<td><code>integer\|null</code></td>
+<td>Delta in milliseconds.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="minimal-example">Minimal Example<a class="headerlink" href="#minimal-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;formatVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;exportType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Session&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;exportedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-06-23T14:30:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sourceApplication&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Racing League Tools&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;leagueName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My League&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;season&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;seasonName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024 Season&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;championshipName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;League Championship&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;totalRounds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;completedRounds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;isMulticlass&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;round&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;eventDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-06-23&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;racesCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;qualificationsCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;track&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;trackName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Circuit de Monaco&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;country&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Monaco&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;turnsCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;session&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;sessionInfo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;sessionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1b2c3d4-e5f6-7890-abcd-ef1234567890&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;sessionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Race&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;raceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;sessionPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;sessionCaption&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature Race&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;completedStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Completed&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;totalLaps&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;driversCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;fastestLap&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;lapTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1:14.260&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lapTimeMs&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">74260</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;driverName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Lewis Hamilton&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lapNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tyreCompound&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Soft&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;drivers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;driverName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Lewis Hamilton&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;position&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;classificationPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;gridPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;positionChange&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Finished&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lapsCompleted&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;driverPoints&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;25&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;totalTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1:32:15.123&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;totalTimeMs&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5535123</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;gap&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;gapMs&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;fastestLapTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1:14.260&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;fastestLapTimeMs&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">74260</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;fastestLapNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;fastestLapTyreCompound&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Soft&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;team&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mercedes&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;primaryColor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#00D2BE&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;stints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;stintNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;tyreCompound&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Medium&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;startLap&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;endLap&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;lapsCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;stintNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;tyreCompound&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Soft&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;startLap&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;endLap&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;lapsCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="export-type-2-event-export">Export Type 2 — Event Export<a class="headerlink" href="#export-type-2-event-export" title="Permanent link">&para;</a></h2>
+<p>An event export bundles all sessions of an event into one file. The structure mirrors the Session export but replaces the single <code>session</code> block with a <code>sessions</code> array.</p>
+<h3 id="root-structure_1">Root Structure<a class="headerlink" href="#root-structure_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>{
+  metadata,
+  season,
+  event,
+  sessions: [
+    {
+      sessionInfo,
+      fastestLap?,
+      raceDetails?,
+      qualificationDetails?,
+      drivers: [ ... ],
+      classes?: [ ... ]
+    },
+    ...
+  ]
+}
+</code></pre></div>
+<p>The <code>season</code>, <code>event</code>, <code>sessionInfo</code>, and <code>drivers</code> blocks are identical in structure to the Session export. Sessions are ordered chronologically within the event (qualifications first, then races).</p>
+<hr />
+<h2 id="export-type-3-season-statistics-export">Export Type 3 — Season Statistics Export<a class="headerlink" href="#export-type-3-season-statistics-export" title="Permanent link">&para;</a></h2>
+<p>The most detailed export type. Contains full season standings, per-driver and per-team statistics, event-by-event breakdowns, and optionally the complete standings progression after each round.</p>
+<h3 id="root-structure_2">Root Structure<a class="headerlink" href="#root-structure_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>{
+  metadata,
+  season,
+  seasonStatistics: {
+    status,
+    driverStandings: [ ... ],
+    teamStandings?: [ ... ],
+    classes?: [ ... ]   // multiclass seasons only
+  },
+  seasonStatisticsHistory?  // optional
+}
+</code></pre></div>
+<h3 id="season-block-season-statistics"><code>season</code> Block (Season Statistics)<a class="headerlink" href="#season-block-season-statistics" title="Permanent link">&para;</a></h3>
+<p>This is an extended version of the season context used in Session exports.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>seasonName</code></td>
+<td><code>string</code></td>
+<td>Season display name.</td>
+</tr>
+<tr>
+<td><code>championshipName</code></td>
+<td><code>string</code></td>
+<td>Championship name.</td>
+</tr>
+<tr>
+<td><code>totalRounds</code></td>
+<td><code>integer</code></td>
+<td>Total rounds in the season.</td>
+</tr>
+<tr>
+<td><code>completedRounds</code></td>
+<td><code>integer</code></td>
+<td>Number of completed rounds.</td>
+</tr>
+<tr>
+<td><code>lineupsBasedOn</code></td>
+<td><code>string</code></td>
+<td>What lineups are organised around: <code>"Team"</code>, <code>"Car"</code>, etc.</td>
+</tr>
+<tr>
+<td><code>isMulticlass</code></td>
+<td><code>boolean</code></td>
+<td>Whether the season is multiclass.</td>
+</tr>
+<tr>
+<td><code>seasonStartDate</code></td>
+<td><code>string\|null</code></td>
+<td>First event date (<code>yyyy-MM-dd</code>).</td>
+</tr>
+<tr>
+<td><code>seasonEndDate</code></td>
+<td><code>string\|null</code></td>
+<td>Last event date (<code>yyyy-MM-dd</code>).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="seasonstatisticsstatus"><code>seasonStatistics.status</code><a class="headerlink" href="#seasonstatisticsstatus" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>completionPercentage</code></td>
+<td><code>number</code></td>
+<td>Season completion as a percentage (0–100).</td>
+</tr>
+<tr>
+<td><code>statusText</code></td>
+<td><code>string</code></td>
+<td>Human-readable status (e.g. <code>"Round 3 of 12"</code>).</td>
+</tr>
+<tr>
+<td><code>isCompleted</code></td>
+<td><code>boolean</code></td>
+<td>Whether all rounds are finished.</td>
+</tr>
+<tr>
+<td><code>isInProgress</code></td>
+<td><code>boolean</code></td>
+<td>Whether the season has started but not finished.</td>
+</tr>
+<tr>
+<td><code>dateRangeText</code></td>
+<td><code>string</code></td>
+<td>Human-readable date range.</td>
+</tr>
+<tr>
+<td><code>upcomingRounds</code></td>
+<td><code>integer</code></td>
+<td>Number of remaining rounds.</td>
+</tr>
+<tr>
+<td><code>nextRoundName</code></td>
+<td><code>string\|null</code></td>
+<td>Name or track of the next upcoming round.</td>
+</tr>
+<tr>
+<td><code>nextRoundDate</code></td>
+<td><code>string\|null</code></td>
+<td>Date of the next round (<code>yyyy-MM-dd</code>).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="seasonstatisticsdriverstandings-driver-standings-entry"><code>seasonStatistics.driverStandings[]</code> — Driver Standings Entry<a class="headerlink" href="#seasonstatisticsdriverstandings-driver-standings-entry" title="Permanent link">&para;</a></h3>
+<p><strong>Identification and position</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>driverName</code></td>
+<td><code>string</code></td>
+<td>Driver display name.</td>
+</tr>
+<tr>
+<td><code>driverInfo</code></td>
+<td><code>object\|null</code></td>
+<td>Extended driver info block.</td>
+</tr>
+<tr>
+<td><code>seatType</code></td>
+<td><code>string\|null</code></td>
+<td><code>"Primary"</code> or <code>"Reserve"</code>.</td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>integer</code></td>
+<td>Current standings position.</td>
+</tr>
+<tr>
+<td><code>points</code></td>
+<td><code>string</code></td>
+<td>Total points earned.</td>
+</tr>
+<tr>
+<td><code>gapToLeader</code></td>
+<td><code>string\|null</code></td>
+<td>Points gap to the standings leader (e.g. <code>"-24.5"</code>).</td>
+</tr>
+<tr>
+<td><code>gapToAhead</code></td>
+<td><code>string\|null</code></td>
+<td>Points gap to the driver immediately ahead.</td>
+</tr>
+<tr>
+<td><code>positionChange</code></td>
+<td><code>integer</code></td>
+<td>Standings position change since last round.</td>
+</tr>
+<tr>
+<td><code>isNewInStandings</code></td>
+<td><code>boolean</code></td>
+<td>Whether the driver is appearing in standings for the first time.</td>
+</tr>
+<tr>
+<td><code>teamName</code></td>
+<td><code>string\|null</code></td>
+<td>Current team name.</td>
+</tr>
+<tr>
+<td><code>teamInfo</code></td>
+<td><code>object\|null</code></td>
+<td>Extended team info block.</td>
+</tr>
+<tr>
+<td><code>carName</code></td>
+<td><code>string\|null</code></td>
+<td>Current car name.</td>
+</tr>
+<tr>
+<td><code>hasMultipleTeams</code></td>
+<td><code>boolean</code></td>
+<td>Whether the driver raced for more than one team.</td>
+</tr>
+<tr>
+<td><code>teamsCount</code></td>
+<td><code>integer</code></td>
+<td>Number of distinct teams raced for.</td>
+</tr>
+<tr>
+<td><code>classInfo</code></td>
+<td><code>object\|null</code></td>
+<td>Class identity (multiclass seasons only).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Championship tracking</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bestPossiblePosition</code></td>
+<td><code>integer</code></td>
+<td>Best final position still mathematically achievable.</td>
+</tr>
+<tr>
+<td><code>canWinChampionship</code></td>
+<td><code>boolean</code></td>
+<td>Whether the title is still possible.</td>
+</tr>
+<tr>
+<td><code>isChampionshipSecured</code></td>
+<td><code>boolean</code></td>
+<td>Whether the title is already confirmed.</td>
+</tr>
+<tr>
+<td><code>bestChampionshipPosition</code></td>
+<td><code>integer</code></td>
+<td>Best standing position reached during the season.</td>
+</tr>
+<tr>
+<td><code>roundsLeading</code></td>
+<td><code>integer</code></td>
+<td>Number of rounds the driver led the championship.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Statistics sub-blocks</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Present</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>participation</code></td>
+<td>Always</td>
+<td>Event, race, and qualification participation counts and completion rates.</td>
+</tr>
+<tr>
+<td><code>positions</code></td>
+<td>Always</td>
+<td>Best/worst/average positions, wins, podiums, top-5/10, poles, fastest laps, position distributions.</td>
+</tr>
+<tr>
+<td><code>raceDetails</code></td>
+<td>Always</td>
+<td>Season-total race stats: laps led, pit stops, max speed, and Pro-tier overtake/positions-lost stats.</td>
+</tr>
+<tr>
+<td><code>events</code></td>
+<td>Always</td>
+<td>Per-event breakdown (see below).</td>
+</tr>
+<tr>
+<td><code>penalties</code></td>
+<td>When penalties exist</td>
+<td>Penalty totals split by source.</td>
+</tr>
+<tr>
+<td><code>discardInfo</code></td>
+<td>When discard rules are active</td>
+<td>Discard configuration and list of dropped results.</td>
+</tr>
+<tr>
+<td><code>ratings</code></td>
+<td>Advanced / Pro tier</td>
+<td>Season-aggregated pace, consistency, attack, defense ratings.</td>
+</tr>
+<tr>
+<td><code>liveDataCoverage</code></td>
+<td>When live data was tracked</td>
+<td>Coverage percentage and session counts.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>participation</code> block</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>eventsParticipated</code></td>
+<td><code>integer</code></td>
+<td>Events (weekends) where the driver appeared.</td>
+</tr>
+<tr>
+<td><code>totalEvents</code></td>
+<td><code>integer</code></td>
+<td>Total events in the season.</td>
+</tr>
+<tr>
+<td><code>eventCompletionRate</code></td>
+<td><code>number</code></td>
+<td>Event participation rate (0.0–1.0).</td>
+</tr>
+<tr>
+<td><code>racesParticipated</code></td>
+<td><code>integer</code></td>
+<td>Races started.</td>
+</tr>
+<tr>
+<td><code>racesFinished</code></td>
+<td><code>integer</code></td>
+<td>Races finished (not DNF/DSQ).</td>
+</tr>
+<tr>
+<td><code>raceCompletionRate</code></td>
+<td><code>number</code></td>
+<td>Race finish rate (0.0–1.0).</td>
+</tr>
+<tr>
+<td><code>qualificationsParticipated</code></td>
+<td><code>integer</code></td>
+<td>Qualification sessions entered.</td>
+</tr>
+<tr>
+<td><code>qualificationsCompleted</code></td>
+<td><code>integer</code></td>
+<td>Qualifications completed.</td>
+</tr>
+<tr>
+<td><code>sprintRacesParticipated</code></td>
+<td><code>integer\|null</code></td>
+<td>Sprint race count (if applicable).</td>
+</tr>
+<tr>
+<td><code>featureRacesParticipated</code></td>
+<td><code>integer\|null</code></td>
+<td>Feature race count (if applicable).</td>
+</tr>
+<tr>
+<td><code>sessionBreakdown</code></td>
+<td><code>object\|null</code></td>
+<td>Counts by session type (practice, qualification, sprint, feature).</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>positions</code> block</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bestRacePosition</code></td>
+<td><code>integer</code></td>
+<td>Best race finish position.</td>
+</tr>
+<tr>
+<td><code>worstRacePosition</code></td>
+<td><code>integer</code></td>
+<td>Worst race finish position.</td>
+</tr>
+<tr>
+<td><code>averageRacePosition</code></td>
+<td><code>number</code></td>
+<td>Average race finish position.</td>
+</tr>
+<tr>
+<td><code>bestQualPosition</code></td>
+<td><code>integer</code></td>
+<td>Best qualification position.</td>
+</tr>
+<tr>
+<td><code>worstQualPosition</code></td>
+<td><code>integer</code></td>
+<td>Worst qualification position.</td>
+</tr>
+<tr>
+<td><code>averageQualPosition</code></td>
+<td><code>number</code></td>
+<td>Average qualification position.</td>
+</tr>
+<tr>
+<td><code>averagePositionChange</code></td>
+<td><code>number</code></td>
+<td>Average positions gained/lost per race.</td>
+</tr>
+<tr>
+<td><code>bestPositionGain</code></td>
+<td><code>integer</code></td>
+<td>Best single-race position gain.</td>
+</tr>
+<tr>
+<td><code>worstPositionLoss</code></td>
+<td><code>integer</code></td>
+<td>Worst single-race position loss.</td>
+</tr>
+<tr>
+<td><code>averagePointsPerRace</code></td>
+<td><code>string\|null</code></td>
+<td>Average points per race entry.</td>
+</tr>
+<tr>
+<td><code>scoringRacesCount</code></td>
+<td><code>integer</code></td>
+<td>Races where points were scored.</td>
+</tr>
+<tr>
+<td><code>zeroPointRacesCount</code></td>
+<td><code>integer</code></td>
+<td>Races where no points were scored.</td>
+</tr>
+<tr>
+<td><code>wins</code></td>
+<td><code>integer</code></td>
+<td>Number of race wins.</td>
+</tr>
+<tr>
+<td><code>podiums</code></td>
+<td><code>integer</code></td>
+<td>Number of podium finishes (P1–P3).</td>
+</tr>
+<tr>
+<td><code>topFives</code></td>
+<td><code>integer</code></td>
+<td>Top-5 finishes.</td>
+</tr>
+<tr>
+<td><code>topTens</code></td>
+<td><code>integer</code></td>
+<td>Top-10 finishes.</td>
+</tr>
+<tr>
+<td><code>polePositions</code></td>
+<td><code>integer</code></td>
+<td>Number of pole positions.</td>
+</tr>
+<tr>
+<td><code>frontRowStarts</code></td>
+<td><code>integer</code></td>
+<td>Front-row starts (P1–P2 on grid).</td>
+</tr>
+<tr>
+<td><code>fastestLaps</code></td>
+<td><code>integer</code></td>
+<td>Number of fastest laps in races.</td>
+</tr>
+<tr>
+<td><code>racePositionDistribution</code></td>
+<td><code>object\|null</code></td>
+<td>Map of <code>"position" → count</code> for race results.</td>
+</tr>
+<tr>
+<td><code>qualPositionDistribution</code></td>
+<td><code>object\|null</code></td>
+<td>Map of <code>"position" → count</code> for qualification results.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>raceDetails</code> block</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Tier</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bestMaxSpeed</code></td>
+<td>Base</td>
+<td>Best top speed recorded (km/h).</td>
+</tr>
+<tr>
+<td><code>averageMaxSpeed</code></td>
+<td>Base</td>
+<td>Average top speed.</td>
+</tr>
+<tr>
+<td><code>maxSpeedWinsCount</code></td>
+<td>Base</td>
+<td>Races where the driver had the highest top speed.</td>
+</tr>
+<tr>
+<td><code>totalLeadLaps</code></td>
+<td>Base</td>
+<td>Total laps led.</td>
+</tr>
+<tr>
+<td><code>totalLaps</code></td>
+<td>Base</td>
+<td>Total laps completed across all races.</td>
+</tr>
+<tr>
+<td><code>totalPossibleLaps</code></td>
+<td>Base</td>
+<td>Total race laps available if no DNFs.</td>
+</tr>
+<tr>
+<td><code>lapCompletionRate</code></td>
+<td>Base</td>
+<td>Lap completion ratio (0.0–1.0).</td>
+</tr>
+<tr>
+<td><code>totalPitStops</code></td>
+<td>Base</td>
+<td>Total pit stops.</td>
+</tr>
+<tr>
+<td><code>averagePitStopsPerRace</code></td>
+<td>Base</td>
+<td>Average pit stops per race.</td>
+</tr>
+<tr>
+<td><code>fastestLapWins</code></td>
+<td>Base</td>
+<td>Races where the driver set the overall fastest lap.</td>
+</tr>
+<tr>
+<td><code>totalOvertakes</code></td>
+<td>Pro</td>
+<td>Total overtakes made across all races.</td>
+</tr>
+<tr>
+<td><code>bestOvertakesInRace</code></td>
+<td>Pro</td>
+<td>Most overtakes in a single race.</td>
+</tr>
+<tr>
+<td><code>averageOvertakesPerRace</code></td>
+<td>Pro</td>
+<td>Average overtakes per race.</td>
+</tr>
+<tr>
+<td><code>totalPositionsLost</code></td>
+<td>Pro</td>
+<td>Total positions lost to opponents.</td>
+</tr>
+<tr>
+<td><code>averagePositionsLostPerRace</code></td>
+<td>Pro</td>
+<td>Average positions lost per race.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>events[]</code> — Per-Event Breakdown</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>roundNumber</code></td>
+<td><code>integer</code></td>
+<td>Round number in the season (1-based).</td>
+</tr>
+<tr>
+<td><code>eventName</code></td>
+<td><code>string</code></td>
+<td>Event/track name.</td>
+</tr>
+<tr>
+<td><code>trackName</code></td>
+<td><code>string</code></td>
+<td>Track name.</td>
+</tr>
+<tr>
+<td><code>eventDate</code></td>
+<td><code>string\|null</code></td>
+<td>Event date.</td>
+</tr>
+<tr>
+<td><code>pointsEarned</code></td>
+<td><code>string\|null</code></td>
+<td>Total points earned this event.</td>
+</tr>
+<tr>
+<td><code>isDiscarded</code></td>
+<td><code>boolean</code></td>
+<td>Whether this event's result was discarded (dropped score).</td>
+</tr>
+<tr>
+<td><code>races</code></td>
+<td><code>array\|null</code></td>
+<td>Race session results for this driver at this event.</td>
+</tr>
+<tr>
+<td><code>qualifications</code></td>
+<td><code>array\|null</code></td>
+<td>Qualification session results.</td>
+</tr>
+</tbody>
+</table>
+<p>Each race entry in <code>events[].races[]</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sessionName</code></td>
+<td><code>string</code></td>
+<td>Session name (e.g. <code>"Race 1"</code>).</td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>integer\|null</code></td>
+<td>Finish position.</td>
+</tr>
+<tr>
+<td><code>gridPosition</code></td>
+<td><code>integer\|null</code></td>
+<td>Starting grid position.</td>
+</tr>
+<tr>
+<td><code>positionChange</code></td>
+<td><code>integer\|null</code></td>
+<td>Positions gained/lost.</td>
+</tr>
+<tr>
+<td><code>pointsEarned</code></td>
+<td><code>string\|null</code></td>
+<td>Points scored in this race.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string\|null</code></td>
+<td>Result status (<code>"Finished"</code>, <code>"DNF"</code>, etc.).</td>
+</tr>
+<tr>
+<td><code>isFinished</code></td>
+<td><code>boolean</code></td>
+<td>Whether the driver finished.</td>
+</tr>
+<tr>
+<td><code>isFastestLap</code></td>
+<td><code>boolean</code></td>
+<td>Whether the driver set the session fastest lap.</td>
+</tr>
+</tbody>
+</table>
+<p>Each qualification entry in <code>events[].qualifications[]</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sessionName</code></td>
+<td><code>string</code></td>
+<td>Session name.</td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>integer\|null</code></td>
+<td>Qualification position.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string\|null</code></td>
+<td>Result status.</td>
+</tr>
+<tr>
+<td><code>isCompleted</code></td>
+<td><code>boolean</code></td>
+<td>Whether the driver completed the session.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="seasonstatisticsteamstandings"><code>seasonStatistics.teamStandings[]</code><a class="headerlink" href="#seasonstatisticsteamstandings" title="Permanent link">&para;</a></h3>
+<p>Team standings entries mirror driver standings in structure with the following differences:</p>
+<ul>
+<li><code>teamName</code> replaces <code>driverName</code>; <code>teamInfo</code> replaces <code>driverInfo</code>.</li>
+<li><code>driverNames</code> (string array) lists current team drivers; <code>driversCount</code> gives the total driver count.</li>
+<li><code>ratings</code> contains <code>overallRating</code>, <code>paceRating</code>, <code>consistencyRating</code>, and <code>ratingsDataSessionsCount</code>.</li>
+<li>The <code>events[]</code> sub-array contains team-level results with a <code>driverResults[]</code> list per session.</li>
+</ul>
+<h3 id="seasonstatisticshistory-optional"><code>seasonStatisticsHistory</code> (optional)<a class="headerlink" href="#seasonstatisticshistory-optional" title="Permanent link">&para;</a></h3>
+<p>Optional: contains one snapshot per completed round showing the full standings as they stood after that round.</p>
+<div class="highlight"><pre><span></span><code>seasonStatisticsHistory: {
+  snapshots: [
+    {
+      metadata: { roundNumber, roundName, roundDate? },
+      seasonStatistics: {
+        driverStandings: [ { driverName, position, points, ... } ],
+        teamStandings?: [ ... ]
+      }
+    },
+    ...
+  ]
+}
+</code></pre></div>
+<p>Snapshot standings are a simplified subset — position, points, and gap fields only (no per-event breakdowns or detailed statistics).</p>
+<h3 id="seasonstatisticsclasses-multiclass"><code>seasonStatistics.classes[]</code> (multiclass)<a class="headerlink" href="#seasonstatisticsclasses-multiclass" title="Permanent link">&para;</a></h3>
+<p>For multiclass seasons, each entry contains a <code>classInfo</code> block and a <code>classStatistics</code> block that is identical in structure to the root <code>seasonStatistics</code> block (minus the nested <code>classes</code> array).</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;classInfo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;uniqueName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LMH&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LMH Class&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;abbreviation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LMH&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#FF0000&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;classStatistics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;driversCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;teamsCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;driverStandings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="w"> </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;teamStandings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="w"> </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="export-type-4-multi-season-export">Export Type 4 — Multi-Season Export<a class="headerlink" href="#export-type-4-multi-season-export" title="Permanent link">&para;</a></h2>
+<p>Aggregated statistics spanning multiple seasons. Useful for career statistics, all-time records, and cross-season comparisons.</p>
+<h3 id="root-structure_3">Root Structure<a class="headerlink" href="#root-structure_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>{
+  metadata,
+  multiSeasonStatistics: {
+    multiSeasonInfo,
+    seasons: [ ... ],
+    drivers: [ ... ],
+    teams?: [ ... ],
+    tracks?: [ ... ]
+  }
+}
+</code></pre></div>
+<h3 id="multiseasonstatisticsmultiseasoninfo"><code>multiSeasonStatistics.multiSeasonInfo</code><a class="headerlink" href="#multiseasonstatisticsmultiseasoninfo" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Multi-season display name.</td>
+</tr>
+<tr>
+<td><code>seasonsCount</code></td>
+<td><code>integer</code></td>
+<td>Total seasons included.</td>
+</tr>
+<tr>
+<td><code>completedSeasonsCount</code></td>
+<td><code>integer</code></td>
+<td>Number of fully completed seasons.</td>
+</tr>
+<tr>
+<td><code>racingClassName</code></td>
+<td><code>string\|null</code></td>
+<td>Class name if this is a class-specific export.</td>
+</tr>
+<tr>
+<td><code>isClassSpecific</code></td>
+<td><code>boolean</code></td>
+<td>Whether only one racing class is covered.</td>
+</tr>
+<tr>
+<td><code>totalDrivers</code></td>
+<td><code>integer</code></td>
+<td>Unique drivers across all seasons.</td>
+</tr>
+<tr>
+<td><code>totalTeams</code></td>
+<td><code>integer\|null</code></td>
+<td>Unique teams across all seasons.</td>
+</tr>
+<tr>
+<td><code>totalTracks</code></td>
+<td><code>integer\|null</code></td>
+<td>Unique tracks visited across all seasons.</td>
+</tr>
+<tr>
+<td><code>snapshot</code></td>
+<td><code>object\|null</code></td>
+<td><code>{ date?, roundNumber?, isLatest }</code> — present for historical snapshots.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="multiseasonstatisticsseasons"><code>multiSeasonStatistics.seasons[]</code><a class="headerlink" href="#multiseasonstatisticsseasons" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Season name.</td>
+</tr>
+<tr>
+<td><code>championshipName</code></td>
+<td><code>string\|null</code></td>
+<td>Championship name.</td>
+</tr>
+<tr>
+<td><code>totalRounds</code></td>
+<td><code>integer</code></td>
+<td>Total rounds in the season.</td>
+</tr>
+<tr>
+<td><code>completedRounds</code></td>
+<td><code>integer</code></td>
+<td>Completed rounds.</td>
+</tr>
+<tr>
+<td><code>isCompleted</code></td>
+<td><code>boolean</code></td>
+<td>Whether the season is finished.</td>
+</tr>
+<tr>
+<td><code>isStarted</code></td>
+<td><code>boolean</code></td>
+<td>Whether at least one round was completed.</td>
+</tr>
+<tr>
+<td><code>startDate</code></td>
+<td><code>string\|null</code></td>
+<td>First event date.</td>
+</tr>
+<tr>
+<td><code>endDate</code></td>
+<td><code>string\|null</code></td>
+<td>Last event date.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="multiseasonstatisticsdrivers"><code>multiSeasonStatistics.drivers[]</code><a class="headerlink" href="#multiseasonstatisticsdrivers" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Present</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>driverId</code></td>
+<td>Always</td>
+<td>Internal driver identifier (stable across seasons).</td>
+</tr>
+<tr>
+<td><code>driverName</code></td>
+<td>Always</td>
+<td>Driver display name.</td>
+</tr>
+<tr>
+<td><code>driverInfo</code></td>
+<td>Optional</td>
+<td>Extended driver info block.</td>
+</tr>
+<tr>
+<td><code>participation</code></td>
+<td>Always</td>
+<td>Multi-season participation counts and completion rates.</td>
+</tr>
+<tr>
+<td><code>points</code></td>
+<td>Always</td>
+<td>Total and average points statistics.</td>
+</tr>
+<tr>
+<td><code>racePositions</code></td>
+<td>Always</td>
+<td>Best/average positions, wins, podiums, top-5/10.</td>
+</tr>
+<tr>
+<td><code>qualPositions</code></td>
+<td>Always</td>
+<td>Poles, front rows, best/average qualifying position.</td>
+</tr>
+<tr>
+<td><code>standings</code></td>
+<td>Always</td>
+<td>Championship history: titles, best/average position, per-season results.</td>
+</tr>
+<tr>
+<td><code>discipline</code></td>
+<td>Always</td>
+<td>DNFs, penalties, and race incident statistics.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>participation</code> block</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>seasonsParticipated</code></td>
+<td><code>integer</code></td>
+<td>Number of seasons raced in.</td>
+</tr>
+<tr>
+<td><code>totalEvents</code></td>
+<td><code>integer</code></td>
+<td>Total race weekends.</td>
+</tr>
+<tr>
+<td><code>totalRaces</code></td>
+<td><code>integer</code></td>
+<td>Total races started.</td>
+</tr>
+<tr>
+<td><code>totalMajorRaces</code></td>
+<td><code>integer</code></td>
+<td>Total feature/main races.</td>
+</tr>
+<tr>
+<td><code>totalQualifications</code></td>
+<td><code>integer</code></td>
+<td>Total qualification sessions.</td>
+</tr>
+<tr>
+<td><code>totalRacesFinished</code></td>
+<td><code>integer</code></td>
+<td>Races completed (not DNF/DSQ).</td>
+</tr>
+<tr>
+<td><code>eventCompletionRatePercent</code></td>
+<td><code>number</code></td>
+<td>Event participation rate (0–100).</td>
+</tr>
+<tr>
+<td><code>raceCompletionRatePercent</code></td>
+<td><code>number</code></td>
+<td>Race finish rate (0–100).</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>points</code> block</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>totalPoints</code></td>
+<td><code>string</code></td>
+<td>Career points total.</td>
+</tr>
+<tr>
+<td><code>averagePerSeason</code></td>
+<td><code>string</code></td>
+<td>Average points per season.</td>
+</tr>
+<tr>
+<td><code>averagePerMajorRace</code></td>
+<td><code>string</code></td>
+<td>Average points per major race.</td>
+</tr>
+<tr>
+<td><code>averagePerEvent</code></td>
+<td><code>string</code></td>
+<td>Average points per event (race weekend).</td>
+</tr>
+<tr>
+<td><code>bestSeasonPoints</code></td>
+<td><code>string</code></td>
+<td>Highest points scored in a single season.</td>
+</tr>
+<tr>
+<td><code>bestSeasonName</code></td>
+<td><code>string\|null</code></td>
+<td>Name of the season with the best points total.</td>
+</tr>
+<tr>
+<td><code>scoringRacesCount</code></td>
+<td><code>integer</code></td>
+<td>Races where at least one point was scored.</td>
+</tr>
+<tr>
+<td><code>scoringRatePercent</code></td>
+<td><code>number</code></td>
+<td>Percentage of races with points.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>racePositions</code> block</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bestPosition</code></td>
+<td><code>integer</code></td>
+<td>Career best race finish.</td>
+</tr>
+<tr>
+<td><code>averagePosition</code></td>
+<td><code>number</code></td>
+<td>Career average race finish.</td>
+</tr>
+<tr>
+<td><code>wins</code></td>
+<td><code>integer</code></td>
+<td>Total wins.</td>
+</tr>
+<tr>
+<td><code>podiums</code></td>
+<td><code>integer</code></td>
+<td>Total podiums (P1–P3).</td>
+</tr>
+<tr>
+<td><code>top5</code></td>
+<td><code>integer</code></td>
+<td>Total top-5 finishes.</td>
+</tr>
+<tr>
+<td><code>top10</code></td>
+<td><code>integer</code></td>
+<td>Total top-10 finishes.</td>
+</tr>
+<tr>
+<td><code>totalFinishes</code></td>
+<td><code>integer</code></td>
+<td>Total classified finishes.</td>
+</tr>
+<tr>
+<td><code>averageGridPosition</code></td>
+<td><code>number</code></td>
+<td>Career average starting position.</td>
+</tr>
+<tr>
+<td><code>averagePositionChange</code></td>
+<td><code>number</code></td>
+<td>Career average positions gained/lost.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>qualPositions</code> block</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bestPosition</code></td>
+<td><code>integer</code></td>
+<td>Career best qualifying position.</td>
+</tr>
+<tr>
+<td><code>averagePosition</code></td>
+<td><code>number</code></td>
+<td>Career average qualifying position.</td>
+</tr>
+<tr>
+<td><code>poles</code></td>
+<td><code>integer</code></td>
+<td>Total pole positions.</td>
+</tr>
+<tr>
+<td><code>frontRows</code></td>
+<td><code>integer</code></td>
+<td>Front-row starts (P1–P2).</td>
+</tr>
+<tr>
+<td><code>top3</code></td>
+<td><code>integer</code></td>
+<td>Top-3 qualifying finishes.</td>
+</tr>
+<tr>
+<td><code>top5</code></td>
+<td><code>integer</code></td>
+<td>Top-5 qualifying finishes.</td>
+</tr>
+<tr>
+<td><code>top10</code></td>
+<td><code>integer</code></td>
+<td>Top-10 qualifying finishes.</td>
+</tr>
+<tr>
+<td><code>totalQualifications</code></td>
+<td><code>integer</code></td>
+<td>Total qualification sessions completed.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>standings</code> block</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>championshipsWon</code></td>
+<td><code>integer</code></td>
+<td>Number of championships won.</td>
+</tr>
+<tr>
+<td><code>bestPosition</code></td>
+<td><code>integer</code></td>
+<td>Best final championship standing.</td>
+</tr>
+<tr>
+<td><code>averagePosition</code></td>
+<td><code>number</code></td>
+<td>Average final championship position.</td>
+</tr>
+<tr>
+<td><code>runnerUps</code></td>
+<td><code>integer</code></td>
+<td>Runner-up (P2) championship finishes.</td>
+</tr>
+<tr>
+<td><code>top3Finishes</code></td>
+<td><code>integer</code></td>
+<td>Top-3 championship finishes.</td>
+</tr>
+<tr>
+<td><code>top5Finishes</code></td>
+<td><code>integer</code></td>
+<td>Top-5 championship finishes.</td>
+</tr>
+<tr>
+<td><code>seasonResults</code></td>
+<td><code>array\|null</code></td>
+<td>Per-season <code>{ seasonName, position, points? }</code> list.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="multiseasonstatisticsteams"><code>multiSeasonStatistics.teams[]</code><a class="headerlink" href="#multiseasonstatisticsteams" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>teamId</code></td>
+<td><code>integer</code></td>
+<td>Internal team identifier.</td>
+</tr>
+<tr>
+<td><code>teamName</code></td>
+<td><code>string</code></td>
+<td>Team name.</td>
+</tr>
+<tr>
+<td><code>teamInfo</code></td>
+<td><code>object\|null</code></td>
+<td>Extended team info block.</td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>integer</code></td>
+<td>Multi-season standings position.</td>
+</tr>
+<tr>
+<td><code>totalPoints</code></td>
+<td><code>string</code></td>
+<td>Career total points.</td>
+</tr>
+<tr>
+<td><code>participation</code></td>
+<td><code>object</code></td>
+<td>Seasons, events, races, and finishes counts.</td>
+</tr>
+<tr>
+<td><code>racePositions</code></td>
+<td><code>object</code></td>
+<td>Best position, wins, podiums, top-5/10, total finishes.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="multiseasonstatisticstracks"><code>multiSeasonStatistics.tracks[]</code><a class="headerlink" href="#multiseasonstatisticstracks" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>trackName</code></td>
+<td><code>string</code></td>
+<td>Track display name.</td>
+</tr>
+<tr>
+<td><code>circuitName</code></td>
+<td><code>string\|null</code></td>
+<td>Circuit name.</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td><code>string\|null</code></td>
+<td>Country of the track.</td>
+</tr>
+<tr>
+<td><code>generalStats</code></td>
+<td><code>object</code></td>
+<td>Overall visit counts, dates, and absolute track record.</td>
+</tr>
+<tr>
+<td><code>raceStats</code></td>
+<td><code>object\|null</code></td>
+<td>Race-specific records and history. <code>null</code> if no race data.</td>
+</tr>
+<tr>
+<td><code>qualificationStats</code></td>
+<td><code>object\|null</code></td>
+<td>Qualification-specific records. <code>null</code> if no qualification data.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>generalStats</code></strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>totalEvents</code></td>
+<td><code>integer</code></td>
+<td>Events held at this track.</td>
+</tr>
+<tr>
+<td><code>totalSeasons</code></td>
+<td><code>integer</code></td>
+<td>Seasons that visited this track.</td>
+</tr>
+<tr>
+<td><code>totalRaces</code></td>
+<td><code>integer</code></td>
+<td>Total races held.</td>
+</tr>
+<tr>
+<td><code>totalMajorRaces</code></td>
+<td><code>integer</code></td>
+<td>Feature/main races held.</td>
+</tr>
+<tr>
+<td><code>totalQualifications</code></td>
+<td><code>integer</code></td>
+<td>Qualifications held.</td>
+</tr>
+<tr>
+<td><code>firstVisitDate</code></td>
+<td><code>string\|null</code></td>
+<td>Date of first visit.</td>
+</tr>
+<tr>
+<td><code>lastVisitDate</code></td>
+<td><code>string\|null</code></td>
+<td>Date of most recent visit.</td>
+</tr>
+<tr>
+<td><code>absoluteTrackRecord</code></td>
+<td><code>object\|null</code></td>
+<td>Fastest ever lap across all session types.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>raceStats</code></strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fastestRaceLap</code></td>
+<td><code>object\|null</code></td>
+<td>Fastest race lap record: <code>{ time, timeMs, driverName, teamName?, seasonName?, sessionType? }</code>.</td>
+</tr>
+<tr>
+<td><code>mostWinsDriver</code></td>
+<td><code>object\|null</code></td>
+<td><code>{ driverName, count }</code></td>
+</tr>
+<tr>
+<td><code>mostWinsTeam</code></td>
+<td><code>object\|null</code></td>
+<td><code>{ teamName, count }</code></td>
+</tr>
+<tr>
+<td><code>mostPodiumsDriver</code></td>
+<td><code>object\|null</code></td>
+<td><code>{ driverName, count }</code></td>
+</tr>
+<tr>
+<td><code>mostPodiumsTeam</code></td>
+<td><code>object\|null</code></td>
+<td><code>{ teamName, count }</code></td>
+</tr>
+<tr>
+<td><code>avgPitstops</code></td>
+<td><code>number\|null</code></td>
+<td>Average pit stops per race.</td>
+</tr>
+<tr>
+<td><code>maxSpeed</code></td>
+<td><code>number\|null</code></td>
+<td>Maximum recorded speed (km/h).</td>
+</tr>
+<tr>
+<td><code>totalSafetyCars</code></td>
+<td><code>integer\|null</code></td>
+<td>Total safety car deployments.</td>
+</tr>
+<tr>
+<td><code>totalVirtualSafetyCars</code></td>
+<td><code>integer\|null</code></td>
+<td>Total virtual safety car deployments.</td>
+</tr>
+<tr>
+<td><code>races</code></td>
+<td><code>array\|null</code></td>
+<td>Chronological list of races with winner info.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>qualificationStats</code></strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fastestQualLap</code></td>
+<td><code>object\|null</code></td>
+<td>Fastest qualification lap record.</td>
+</tr>
+<tr>
+<td><code>mostPolesDriver</code></td>
+<td><code>object\|null</code></td>
+<td><code>{ driverName, count }</code></td>
+</tr>
+<tr>
+<td><code>mostPolesTeam</code></td>
+<td><code>object\|null</code></td>
+<td><code>{ teamName, count }</code></td>
+</tr>
+<tr>
+<td><code>qualifications</code></td>
+<td><code>array\|null</code></td>
+<td>Chronological list of qualifications with pole sitter info.</td>
+</tr>
+</tbody>
+</table>
+<p>Each entry in <code>races[]</code> / <code>qualifications[]</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>date</code></td>
+<td><code>string</code></td>
+<td>Event date (ISO 8601).</td>
+</tr>
+<tr>
+<td><code>seasonName</code></td>
+<td><code>string</code></td>
+<td>Season in which this session took place.</td>
+</tr>
+<tr>
+<td><code>driverName</code></td>
+<td><code>string\|null</code></td>
+<td>Winner / pole sitter name.</td>
+</tr>
+<tr>
+<td><code>teamName</code></td>
+<td><code>string\|null</code></td>
+<td>Winner / pole sitter team.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="top-level-keys-by-export-type">Top-Level Keys by Export Type<a class="headerlink" href="#top-level-keys-by-export-type" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Session</th>
+<th>Event</th>
+<th>Season Statistics</th>
+<th>Multi-Season</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>metadata</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>season</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (extended)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>session</code></td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>sessions</code></td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>seasonStatistics</code></td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>seasonStatisticsHistory</code></td>
+<td>No</td>
+<td>No</td>
+<td>Optional</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>multiSeasonStatistics</code></td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

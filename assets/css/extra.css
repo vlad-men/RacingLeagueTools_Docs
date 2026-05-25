@@ -1,0 +1,25 @@
+/* Custom Darker Green - Overriding the primary color variables */
+:root > * {
+    --md-primary-fg-color:        #055a4b; /* Darker Teal/Green shade */
+    --md-primary-fg-color--light: #077f6a;
+    --md-primary-fg-color--dark:  #03382f;
+}
+
+/* Increase Logo Size */
+.md-header__button.md-logo img, 
+.md-header__button.md-logo svg {
+    height: 42px; /* Increased from default ~24px */
+    width: auto;
+}
+
+/* Custom Font for Site Title */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap');
+
+.md-header__title .md-header__topic {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Add some depth */
+}
