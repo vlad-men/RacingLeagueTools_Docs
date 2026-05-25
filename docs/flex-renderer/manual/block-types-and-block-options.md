@@ -234,12 +234,23 @@ Used to reuse complex blocks across different places in a layer or layout.
 
 **BlockOptions:** `ColorizeOptions`
 
-Describes how the background or final image of a block should be colored.
+Describes how the background or final image of a block should be colored or masked.
 
 | Property | Type | Description |
 | --- | --- | --- |
 | `Enabled` | `bool` | Enables colorization. |
-| `Color` | `color` | Target color. |
-| `BlendPercentage` | `int` | Blend percentage (0-100). |
-| `AlphaCompositionMode` | `enum` | Composition mode. Possible values: `SrcOver`, `Src`, `SrcAtop`, `SrcIn`, `SrcOut`, `Dest`, `DestAtop`, `DestOver`, `DestIn`, `DestOut`, `Clear`, `Xor`. Can be empty/null. Default: `SrcATop`. |
-| `ColorBlendingMode` | `enum` | Blending mode. Possible values: `Normal`, `Multiply`, `Add`, `Subtract`, `Screen`, `Darken`, `Lighten`, `Overlay`, `HardLight`. Can be empty/null. Default: `Screen`. |
+| `Color` | `color` | Target color (used if `ColorImage` is not specified). |
+| `ColorImage` | `string` | Relative path to a PNG image to be used as a color overlay or a layer mask. |
+| `ColorImageMode` | `enum` | How the `ColorImage` is applied. Options: `Alpha` (draws image over source), `Luminance` (uses image as a Photoshop-like layer mask). Default: `Luminance`. |
+| `BlendPercentage` | `int` | Intensity of the effect (0-100). For `Luminance` masks, it controls how much the mask affects the original alpha. |
+| `AlphaCompositionMode` | `enum` | Composition mode. Possible values: `SrcOver`, `Src`, `SrcAtop`, `SrcIn`, `SrcOut`, `Dest`, `DestAtop`, `DestOver`, `DestIn`, `DestOut`, `Clear`, `Xor`. Default: `SrcAtop`. |
+| `ColorBlendingMode` | `enum` | Blending mode. Possible values: `Normal`, `Multiply`, `Add`, `Subtract`, `Screen`, `Darken`, `Lighten`, `Overlay`, `HardLight`. Default: `Screen`. |
+
+### Layer Mask Behavior (Luminance Mode)
+
+When `ColorImageMode` is set to `Luminance`, the `ColorImage` acts as a **Layer Mask**:
+- The mask is automatically resized to match the source block dimensions.
+- **Transparent areas** in the mask are treated as black (fully transparent for the source).
+- **Bright/White areas** in the mask keep the source image opaque.
+- **Dark/Black areas** in the mask make the source image transparent.
+- The mask uses both the RGB luminance and the Alpha channel of the `ColorImage` to determine the final transparency, allowing for smooth gradients even with transparent PNGs.
