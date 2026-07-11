@@ -35,6 +35,88 @@ For inner blocks within collections (e.g., `ItemStack`, `Table`), the following 
 - `Item`: Access to the current item in the collection.
 - `ItemIndex`: Index of the current item (integer, starts at 0).
 - `ColumnIndex`: Index of the current column (integer, starts at 0, only for tables).
+- `ParentItem`: Access to the parent item element when using nested iterations.
+- `ParentItemIndex`: Index of the parent item in its parent collection.
+
+#### Parent Scope
+
+When using nested iterations (for example, an `ItemStack` inside another `ItemStack`), the inner iteration gains access to the data of the outer iteration via the `ParentItem` root object.
+
+- `{ParentItem}` — The parent data object itself.
+- `{ParentItem.PropertyName}` — Resolves a property on the parent object.
+- `{ParentItemIndex}` — The index of the parent item.
+
+**Note:** Only one level of parent scope is currently supported (`{ParentItem.ParentItem}` is NOT supported).
+
+### Examples for ParentItem
+
+#### 1. Colorizing inner items by parent team color
+In a `DriverSeasonStatistics` view, if you are iterating through tyre stints (`Stints`), you can use the driver's team color for the stint background:
+
+```json
+{
+  "Type": "ItemStack",
+  "ItemSource": "{Item.Stints}",
+  "ItemTemplate": {
+    "Type": "Rectangle",
+    "Width": 50,
+    "Height": 30,
+    "Background": "{ParentItem.Team.Color}",
+    "Items": [
+      {
+        "Type": "Text",
+        "Content": "{Item.Laps}",
+        "FontSize": 10,
+        "Foreground": "White"
+      }
+    ]
+  }
+}
+```
+
+#### 2. Accessing Driver Name in nested sessions
+Iterating through drivers and then through their sessions:
+
+```json
+{
+  "Type": "Table",
+  "ItemSource": "{Drivers}",
+  "ItemTemplate": {
+    "Type": "ItemStack",
+    "ItemSource": "{Item.Sessions}",
+    "ItemTemplate": {
+      "Type": "Panel",
+      "Items": [
+        {
+          "Type": "Text",
+          "Content": "{ParentItem.Driver.Name} - Session {Item.SessionType}",
+          "Foreground": "{ParentItem.Team.Color}"
+        }
+      ]
+    }
+  }
+}
+```
+
+#### 3. Conditional Rendering based on parent property
+Rendering a block only if the parent's team is known:
+
+```json
+{
+  "Type": "ItemStack",
+  "ItemSource": "{Item.Stints}",
+  "ItemTemplate": {
+    "Type": "Panel",
+    "RenderIf": "{ParentItem.Team.Name != 'Unknown'}",
+    "Items": [
+      {
+        "Type": "Text",
+        "Content": "{Item.Percentage}% on {Item.Tyres}"
+      }
+    ]
+  }
+}
+```
 
 Example expression:
 
