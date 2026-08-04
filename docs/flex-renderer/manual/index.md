@@ -1,4 +1,4 @@
-[![Version](https://img.shields.io/badge/version-0.9.6-blue)](./appendix.md)
+[![Version](https://img.shields.io/badge/version-0.9.8-blue)](./appendix.md)
 
 
 # Image Renderer Manual

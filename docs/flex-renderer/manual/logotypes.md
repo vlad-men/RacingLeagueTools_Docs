@@ -16,7 +16,6 @@ The following table lists the available categories, their corresponding renderer
 | Team | `TeamRenderData` | `images/logotypes/teams` |
 | Track | `TrackRenderData` | `images/logotypes/circuits` |
 | Championship | `ChampionshipRenderData` | `images/logotypes/championships` |
-| Season | `SeasonRenderData` | `images/logotypes/seasons` |
 | Event | `EventRenderData` | `images/logotypes/events` |
 | Driver | `DriverRenderData` | `images/driver_avatars` |
 
@@ -55,7 +54,9 @@ Objects may require different versions of a logo depending on the context (e.g.,
 - `alternative`
 - `dark`
 - `light`
-- `grayed`
+- `outline`
+- `alternativedark`
+- `alternativelight`
 
 **Naming Convention:**
 
@@ -80,7 +81,7 @@ The search behavior is controlled via the `LogotypeBehaviours` property in the `
 | Property | Type | Required | Description |
 | --- | --- | --- | --- |
 | `Category` | `string` | Yes | The logotype category (see table above). |
-| `Variant` | `enum` | No | The variant to configure (`default`, `alternative`, `dark`, `light`, `grayed`). Default is `default`. |
+| `Variant` | `enum` | No | The variant to configure (`default`, `alternative`, `dark`, `light`, `outline`, `alternativedark`, `alternativelight`). Default is `default`. |
 | `UseFallbackVariant` | `bool` | No | If `true`, searches for the default variant if the specified variant is missing. Default is `true`. |
 | `UseFallbackSource` | `bool` | No | If `true`, searches the default folder if the logo is not found in the theme folder. Default is `true`. |
 | `SetVariantByDefault` | `bool` | No | If `true`, this variant becomes the default for the object. Default is `false`. |

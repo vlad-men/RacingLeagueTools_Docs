@@ -25,6 +25,8 @@ The `LayoutInfo` and `Season` objects are available globally in every render typ
 | `DeepRatingsSeason` | `DeepRatings` |
 | `Teammates` | `Teammates` |
 | `TeamStandingsMultiseason` | `TeamStandingsMultiseason` |
+| `TeamStatistics` | `TeamStatistics` |
+| `TeamsStatistics` | `TeamsStatistics` |
 | `DriverStatistics` | `DriverStatistics` |
 | `DriversStatistics` | `DriversStatistics` |
 | `TrackStatistics` | `TrackStatistics` |
@@ -51,8 +53,8 @@ The table below shows how each template variable maps to an API class.
 | `Penalties` | `SeasonPenaltiesRenderHost` | In `PenaltySeasonStatistics` context |
 | `DeepRatings` | `DeepRatingsSeasonRenderData` | |
 | `Teammates` | `TeammatesSeasonRenderData` | |
-| `TeamStandingsMultiseason` | `TeamStandingsMultiseasonRenderData` | |
-| `DriverStatistics` | `DriverStatisticsMultiseasonRenderData` | |
+| `TeamStandingsMultiseason` | `TeamStandingsMultiseasonRenderData` | || `TeamStatistics` | `TeamStatisticsMultiseasonRenderData` |
+| `TeamsStatistics` | `TeamsStatisticsMultiseasonRenderData` || `DriverStatistics` | `DriverStatisticsMultiseasonRenderData` | |
 | `DriversStatistics` | `DriversStatisticsMultiseasonRenderData` | |
 | `TrackStatistics` | `TrackStatisticsMultiseasonRenderData` | |
 | `TracksStatistics` | `TracksStatisticsMultiseasonRenderData` | |

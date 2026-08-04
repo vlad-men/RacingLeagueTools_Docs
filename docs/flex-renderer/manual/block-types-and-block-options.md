@@ -106,6 +106,8 @@ Similar to Stack, with the following differences:
 
 Similar to Stack, but inner blocks are generated automatically based on a data collection. The `Items` property is ignored.
 
+Blocks within the `ItemTemplate` have access to the `Item` and `ItemIndex` expressions. If the `ItemStack` is nested within another iteration, they also have access to `ParentItem` and `ParentItemIndex`.
+
 | Property | Type | Description |
 | --- | --- | --- |
 | `ItemSource` | `string` | Data access expression for the collection/list. |
@@ -168,6 +170,8 @@ A container that arranges inner blocks manually. Each inner block must define `P
 
 Generates blocks as a table based on a collection/list. The `Items` property is not used.
 
+Blocks within column templates have access to the `Item`, `ItemIndex`, and `ColumnIndex` expressions. If the `Table` is nested within another iteration, they also have access to `ParentItem` and `ParentItemIndex`.
+
 | Property | Type | Description |
 | --- | --- | --- |
 | `ItemsSource` | `string` | Data access expression for the collection/list. |
@@ -199,6 +203,9 @@ Generates blocks as a table based on a collection/list. The `Items` property is 
 | `MultiColumnHeadersSource` | `string` | Data expression (only for collection/list) for multicolumn headers. |
 | `MultiColumnItemsSource` | `string` | Data expression (only for collection/list) for multicolumn items. |
 | `MultiColumnHeaderTemplate` | `block` | Template for multicolumn items. |
+| `MultiColumnLimit` | `int` | Maximum number of items to display in multicolumn. |
+| `MultiColumnIndexStart` | `int` | Start index for multicolumn items. |
+| `MultiColumnIndexEnd` | `int` | End index for multicolumn items. |
 
 ### Multicolumn
 

@@ -70,6 +70,8 @@ Render types define which root data objects are passed to layout layers and how 
 | `DeepRatingsSeason` | DeepRatings | 1 | 3 | "Render deep ratings" |
 | `Teammates` | Teammates | 1 | 3 | "Render teammates" |
 | `TeamStandingsMultiseason` | TeamStandingsMultiseason | 1 | 3 | "Render team standings (multiseason)" |
+| `TeamStatistics` | TeamStatistics | 1 | 3 | "Render team statistics" |
+| `TeamsStatistics` | TeamsStatistics | 1 | 3 | "Render teams statistics" |
 | `DriverStatistics` | DriverStatistics | 1 | 3 | "Render driver statistics" |
 | `DriversStatistics` | DriversStatistics | 1 | 3 | "Render drivers statistics" |
 | `TrackStatistics` | TrackStatistics | 1 | 3 | "Render track statistics" |
