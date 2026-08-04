@@ -203,6 +203,9 @@ Blocks within column templates have access to the `Item`, `ItemIndex`, and `Colu
 | `MultiColumnHeadersSource` | `string` | Data expression (only for collection/list) for multicolumn headers. |
 | `MultiColumnItemsSource` | `string` | Data expression (only for collection/list) for multicolumn items. |
 | `MultiColumnHeaderTemplate` | `block` | Template for multicolumn items. |
+| `MultiColumnLimit` | `int` | Maximum number of items to display in multicolumn. |
+| `MultiColumnIndexStart` | `int` | Start index for multicolumn items. |
+| `MultiColumnIndexEnd` | `int` | End index for multicolumn items. |
 
 ### Multicolumn
 

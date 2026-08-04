@@ -72,7 +72,12 @@ The following table lists available converters that take one parameter or no par
 | `PercentTo` | Calculates percentage (value is total, parameter is part). | `int` | `100`, `10` -> `10` |
 | `NumberIsEven` | Checks if number is even. | - | `1` -> `false` |
 | `NumberIsOdd` | Checks if number is odd. | - | `1` -> `true` |
+| `NumberIsZero` | Checks if number is zero. | - | `0` -> `true` |
+| `NumberIsNotZero` | Checks if number is not zero. | - | `5` -> `true` |
+| `NumberToSignedString` | Converts number to string with sign. | - | `5` -> `"+5"`<br>`-3` -> `"-3"` |
 | `TruncateString` | Truncates string to length, adding "..." if needed. | `int` | `"Long string"`, `5` -> `"Long..."` |
+| `GetStringLength` | Returns the length of a string as an integer. | - | `"hello"` -> `5`<br>`null` -> `0` |
+| `MaxStringLength` | Truncates string to the specified length without adding "...". | `int` | `"hello world test"`, `11` -> `"hello world"`<br>`"abcdefghij"`, `5` -> `"abcde"` |
 
 
 ## Converters with Multiple Parameters

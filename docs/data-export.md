@@ -1,15 +1,15 @@
-# JSON Data Export
+# JSON Data Export System
 
 Racing League Tools can export league data to structured **JSON files** for use in third-party tools, websites, overlays, and custom integrations. The export system produces four distinct export types, each targeting a different level of data granularity:
 
 | Export Type | Description | Root JSON Key |
 | --- | --- | --- |
 | **Session** | Results of a single race, qualification, or practice session | `session` |
-| **Event** | All sessions of an event | `sessions[]` |
+| **Event** | All sessions of a single race weekend (rounds + qualifications) | `sessions[]` |
 | **Season Statistics** | Full season standings, statistics, and per-event breakdowns | `seasonStatistics` |
 | **Multi-Season** | Aggregated driver/team/track statistics across multiple seasons | `multiSeasonStatistics` |
 
-All exports share the same top-level `metadata` block and follow the same conventions for data types, time formatting, and feature gating.
+All exports share the same top-level `metadata` block and follow the same conventions for data types, time formatting, and feature-gating.
 
 ---
 
@@ -21,10 +21,10 @@ All exports share the same top-level `metadata` block and follow the same conven
 | --- | --- | --- |
 | Date only | `yyyy-MM-dd` | `"2024-06-23"` |
 | Date + time (UTC) | `yyyy-MM-ddTHH:mm:ssZ` | `"2024-06-23T14:30:00Z"` |
-| Lap / sector time | `m:ss.fff` | `"1:23.456"` |
-| Duration in milliseconds | `integer` | `83456` |
+| Lap/sector time (string) | `m:ss.fff` | `"1:23.456"` |
+| Duration (milliseconds) | integer, `*Ms` suffix | `83456` |
 
-Time values are provided as **both** a human-readable string and a raw millisecond integer. This allows easy display without parsing and accurate arithmetic without locale issues.
+Time values are consistently provided as **both** a human-readable string and a raw millisecond integer. This allows easy display without parsing and accurate arithmetic without locale issues.
 
 ```json
 "fastestLapTime": "1:23.456",
@@ -60,7 +60,11 @@ Team and class colours are expressed as **hex strings**.
 
 - Fields that are not applicable (e.g. `gridPosition` for a qualification) are `null` or omitted entirely.
 - Fields gated behind feature tiers are `null` when the league does not have access to that tier.
-- Array fields with no data are `null` rather than an empty array `[]`.
+- Array fields with no data are `null` (not an empty array `[]`).
+
+### Booleans
+
+Boolean values use lowercase JSON notation: `true` / `false`.
 
 ---
 
@@ -75,6 +79,20 @@ Some export fields are only populated when the league subscription includes the 
 | **Pro** | Attack rating, defense rating, overtakes count, positions-lost count, top-battle details |
 
 When a field requires a tier the league does not have, it is `null` in the output. The field is always present in the JSON structure so integrations can check for `null` rather than handling missing keys.
+
+---
+
+## Desktop Export Options
+
+The only user-facing Desktop option that changes JSON content is configured in **Application Options**:
+
+| UI setting | Effect | Applies to |
+| --- | --- | --- |
+| **Include standings history in export** (default: off) | When enabled, Season Statistics export includes a `seasonStatisticsHistory` block with a full standings snapshot after each completed round. | Season Statistics only |
+
+Session, Event, and Multi-Season Desktop exports do not expose additional content toggles: the file always contains the full available payload for that export type (subject to feature tiers and whether the multi-season definition enables team/track stats).
+
+---
 
 ## Shared Building Blocks
 
@@ -200,7 +218,7 @@ A single session (race, qualification, or practice) with full driver results.
 | `sessionType` | `string` | `"Race"`, `"Qualification"`, or `"Practice"`. |
 | `raceType` | `string\|null` | Race sub-type: `"Feature"`, `"Sprint"`, `"Endurance"`, etc. Race sessions only. |
 | `qualificationType` | `string\|null` | Qualification sub-type: `"Regular"`, `"TimeAttack"`, etc. Qualification sessions only. |
-| `sessionPosition` | `integer` | Position within the event (1 = first session). |
+| `sessionPosition` | `integer` | Position within the event (1 = first session, 2 = second, etc.). |
 | `sessionCaption` | `string\|null` | Display caption (e.g. `"Feature Race"`, `"Sprint Qualifying"`). |
 | `completedStatus` | `string` | `"Completed"`, `"InProgress"`, `"Scheduled"`, or `"Cancelled"`. |
 | `sessionDate` | `string\|null` | Session date/time (ISO 8601, with timezone offset). |
@@ -241,7 +259,7 @@ Present when a fastest lap has been recorded for the session.
 
 Entries are sorted by classification position (ascending), with unclassified drivers at the end.
 
-**Core fields**
+**Core fields (always present)**
 
 | Field | Type | Description |
 | --- | --- | --- |
@@ -271,7 +289,7 @@ Entries are sorted by classification position (ascending), with unclassified dri
 | `fastestLapNumber` | `integer\|null` | Lap number of fastest lap. |
 | `fastestLapTyreCompound` | `string\|null` | Tyre compound on fastest lap. |
 
-**Nested objects (conditional)**
+**Nested conditional objects**
 
 | Field | Present when | Description |
 | --- | --- | --- |
@@ -537,7 +555,7 @@ All ratings use the 0–10 scale. Sub-objects are `null` when the corresponding 
 
 ## Export Type 2 — Event Export
 
-An event export bundles all sessions of an event into one file. The structure mirrors the Session export but replaces the single `session` block with a `sessions` array.
+An event export bundles all sessions of a single race weekend into one file. The structure mirrors the Session export but replaces the single `session` block with a `sessions` array.
 
 ### Root Structure
 
@@ -566,7 +584,7 @@ The `season`, `event`, `sessionInfo`, and `drivers` blocks are identical in stru
 
 ## Export Type 3 — Season Statistics Export
 
-The most detailed export type. Contains full season standings, per-driver and per-team statistics, event-by-event breakdowns, and optionally the complete standings progression after each round.
+The most detailed export type. Contains full season standings, statistics per driver and team, event-by-event breakdowns, and — when **Include standings history in export** is enabled in Application Options — the complete standings progression after each round.
 
 ### Root Structure
 
@@ -580,7 +598,7 @@ The most detailed export type. Contains full season standings, per-driver and pe
     teamStandings?: [ ... ],
     classes?: [ ... ]   // multiclass seasons only
   },
-  seasonStatisticsHistory?  // optional
+  seasonStatisticsHistory?  // only when "Include standings history in export" is enabled
 }
 ```
 
@@ -646,12 +664,12 @@ This is an extended version of the season context used in Session exports.
 
 **Statistics sub-blocks**
 
-| Field | Present | Description |
+| Field | Always present | Description |
 | --- | --- | --- |
-| `participation` | Always | Event, race, and qualification participation counts and completion rates. |
-| `positions` | Always | Best/worst/average positions, wins, podiums, top-5/10, poles, fastest laps, position distributions. |
-| `raceDetails` | Always | Season-total race stats: laps led, pit stops, max speed, and Pro-tier overtake/positions-lost stats. |
-| `events` | Always | Per-event breakdown (see below). |
+| `participation` | ✅ | Event, race, and qualification participation counts and completion rates. |
+| `positions` | ✅ | Best/worst/average positions, wins, podiums, top-5/10, poles, fastest laps, position distributions. |
+| `raceDetails` | ✅ | Season-total race stats: laps led, pit stops, max speed, and Pro-tier overtake/positions-lost stats. |
+| `events` | ✅ | Per-event breakdown (see below). |
 | `penalties` | When penalties exist | Penalty totals split by source. |
 | `discardInfo` | When discard rules are active | Discard configuration and list of dropped results. |
 | `ratings` | Advanced / Pro tier | Season-aggregated pace, consistency, attack, defense ratings. |
@@ -719,14 +737,14 @@ This is an extended version of the season context used in Session exports.
 | `totalPositionsLost` | Pro | Total positions lost to opponents. |
 | `averagePositionsLostPerRace` | Pro | Average positions lost per race. |
 
-**`events[]` — Per-Event Breakdown**
+**`events[]` — per-event breakdown**
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `roundNumber` | `integer` | Round number in the season (1-based). |
 | `eventName` | `string` | Event/track name. |
 | `trackName` | `string` | Track name. |
-| `eventDate` | `string\|null` | Event date. |
+| `eventDate` | `datetime\|null` | Event date. |
 | `pointsEarned` | `string\|null` | Total points earned this event. |
 | `isDiscarded` | `boolean` | Whether this event's result was discarded (dropped score). |
 | `races` | `array\|null` | Race session results for this driver at this event. |
@@ -765,7 +783,7 @@ Team standings entries mirror driver standings in structure with the following d
 
 ### `seasonStatisticsHistory` (optional)
 
-Optional: contains one snapshot per completed round showing the full standings as they stood after that round.
+Added when **Include standings history in export** is enabled in Application Options. Contains one snapshot per completed round, showing the full standings as they stood after that round.
 
 ```
 seasonStatisticsHistory: {
@@ -782,7 +800,7 @@ seasonStatisticsHistory: {
 }
 ```
 
-Snapshot standings are a simplified subset — position, points, and gap fields only (no per-event breakdowns or detailed statistics).
+Snapshot driver/team standings are a simplified subset — position, points, and gap fields only (no per-event breakdowns or detailed statistics).
 
 ### `seasonStatistics.classes[]` (multiclass)
 
@@ -849,17 +867,17 @@ Aggregated statistics spanning multiple seasons. Useful for career statistics, a
 
 ### `multiSeasonStatistics.drivers[]`
 
-| Field | Present | Description |
+| Field | Always present | Description |
 | --- | --- | --- |
-| `driverId` | Always | Internal driver identifier (stable across seasons). |
-| `driverName` | Always | Driver display name. |
+| `driverId` | ✅ | Internal driver identifier (stable across seasons). |
+| `driverName` | ✅ | Driver display name. |
 | `driverInfo` | Optional | Extended driver info block. |
-| `participation` | Always | Multi-season participation counts and completion rates. |
-| `points` | Always | Total and average points statistics. |
-| `racePositions` | Always | Best/average positions, wins, podiums, top-5/10. |
-| `qualPositions` | Always | Poles, front rows, best/average qualifying position. |
-| `standings` | Always | Championship history: titles, best/average position, per-season results. |
-| `discipline` | Always | DNFs, penalties, and race incident statistics. |
+| `participation` | ✅ | Multi-season participation counts and completion rates. |
+| `points` | ✅ | Total and average points statistics. |
+| `racePositions` | ✅ | Best/average positions, wins, podiums, top-5/10. |
+| `qualPositions` | ✅ | Poles, front rows, best/average qualifying position. |
+| `standings` | ✅ | Championship history: titles, best/average position, per-season results. |
+| `discipline` | ✅ | DNFs, penalties, and race incident statistics. |
 
 **`participation` block**
 
@@ -997,15 +1015,15 @@ Each entry in `races[]` / `qualifications[]`:
 
 ---
 
-## Top-Level Keys by Export Type
+## Summary: Top-Level Keys by Export Type
 
 | Key | Session | Event | Season Statistics | Multi-Season |
-| --- | --- | --- | --- | --- |
-| `metadata` | Yes | Yes | Yes | Yes |
-| `season` | Yes | Yes | Yes (extended) | No |
-| `event` | Yes | Yes | No | No |
-| `session` | Yes | No | No | No |
-| `sessions` | No | Yes | No | No |
-| `seasonStatistics` | No | No | Yes | No |
-| `seasonStatisticsHistory` | No | No | Optional | No |
-| `multiSeasonStatistics` | No | No | No | Yes |
+| --- | :---: | :---: | :---: | :---: |
+| `metadata` | ✅ | ✅ | ✅ | ✅ |
+| `season` | ✅ | ✅ | ✅ (extended) | ❌ |
+| `event` | ✅ | ✅ | ❌ | ❌ |
+| `session` | ✅ | ❌ | ❌ | ❌ |
+| `sessions` | ❌ | ✅ | ❌ | ❌ |
+| `seasonStatistics` | ❌ | ❌ | ✅ | ❌ |
+| `seasonStatisticsHistory` | ❌ | ❌ | Optional | ❌ |
+| `multiSeasonStatistics` | ❌ | ❌ | ❌ | ✅ |
