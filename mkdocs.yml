@@ -15,6 +15,14 @@ nav:
       - Tyre Types: advanced/tyre-types.md
       - Driver Features: advanced/driver-features.md      
   - JSON Data Export: data-export.md
+  - Discord Bot:
+      - Overview: discord-bot/index.md
+      - Invite the bot: discord-bot/invite.md
+      - Link your league: discord-bot/linking.md
+      - Commands: discord-bot/commands.md
+      - Image cards: discord-bot/image-cards.md
+      - Server settings: discord-bot/settings.md
+      - Troubleshooting: discord-bot/troubleshooting.md
   - Image Renderer Manual:
       - Overview: flex-renderer/manual/index.md
       - Introduction: flex-renderer/manual/introduction.md
