@@ -139,3 +139,28 @@ If `RenderDataType` is not defined in `layout_description.json`, this layout wil
 | `PenTimeStewardSum` | 1 | 1 | "sum of steward's penalty time" |
 | `PointsBestSeries` | 1 | 1 | "points best series" |
 | `TotalTyresUsage` | 1 | 1 | "tyre compound usage" |
+
+### Per-stat render captions
+
+For `DriverSessionStatistics` and `DriverSeasonStatistics`, `RenderCaptions` also accepts per-stat overrides keyed by `RenderDataType` (the same keys as in the tables above). Priority, when `RenderDataType` is set on the layout:
+
+1. `RenderCaptions[<RenderDataType>]` — used as-is if present.
+2. `RenderCaption` — composed as `"{RenderCaption} — {default stat caption}"` if no matching key above.
+3. Otherwise — the default stat caption is used, same as without `RenderCaption`.
+
+The `(N)` version suffix (see above) is still appended only when `RenderVersion > 1`.
+
+```json
+{
+  "RenderType": "DriverSessionStatistics",
+  "RenderVersion": 2,
+  "RenderCaption": "Broadcast driver session statistics",
+  "RenderCaptions": {
+    "PureRacePaceRating": "Broadcast pure race pace",
+    "FastestLaps": "Broadcast fastest laps"
+  }
+}
+```
+
+Here `PureRacePaceRating` and `FastestLaps` use the captions from `RenderCaptions`, while every other stat (e.g. `ConsistancyRating`) falls back to `"Broadcast driver session statistics — consistency rating"`.
+

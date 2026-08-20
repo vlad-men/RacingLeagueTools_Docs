@@ -19,6 +19,7 @@ Used to display an image.
 | `VerticalAlignment` | `enum` | Options: `Top`, `Center`, `Bottom`. |
 | `Opacity` | `int` | Opacity level. |
 | `Rotation` | `int` | Rotates the image clockwise around its center. Supports values beyond -360/360. |
+| `RotateAroundCenter` | `bool` | If true, rotates the image around its center. Defaults to false. |
 
 ### Path Specification
 
@@ -48,6 +49,7 @@ Used to display text.
 | `LineSpacing` | `int` | Spacing between lines. |
 | `Wrap` | `bool` | Enables text wrapping. (Experimental). To make the text wrap, it may need to force the width of the text block. Dev in progress. |
 | `Rotation` | `int` | Rotates text clockwise around its center. |
+| `RotateAroundCenter` | `bool` | If true, rotates the text around its center. Defaults to false. |
 | `ColorizeRating` | `ColorizeRatingOptions` | Sets foreground color based on rating value. |
 
 
@@ -225,6 +227,7 @@ Displays a simple geometric figure.
 | `ShapeType` | `enum` | Options: `rectangle`, `ellipse`. |
 | `Fill` | `color` | Fill color. |
 | `Rotation` | `int` | Rotates the shape clockwise around its center. |
+| `RotateAroundCenter` | `bool` | If true, rotates the shape around its center. Defaults to false. |
 
 ## Component
 
