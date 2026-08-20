@@ -79,6 +79,20 @@ sessions of the matching kind.
     Practice sessions are not supported by any command. If you point a command at one, it replies
     that the session is of the wrong kind.
 
+## Which name goes where
+
+Racing League Tools keeps two names for a season, and they mean different things: the
+**championship name** is the game and ruleset (for example *F1 2025*), while the **season name** is
+the season of your league (*Pro League Season 11*).
+
+Every embed puts them in fixed places and never substitutes one for the other:
+
+* **Title** — the season name.
+* **Footer** — the championship name, ahead of the rest of the footer.
+
+A missing name leaves its place empty instead of borrowing the other one, so a league that fills in
+only one of the two still gets a tidy embed.
+
 ## `/standings`
 
 Championship standings for a season.
@@ -89,7 +103,8 @@ Championship standings for a season.
 | `type` | `Drivers` (default) or `Constructors`. |
 
 The table lists position, name, points and gap to the leader. The embed's colour stripe takes the
-leader's team colour.
+leader's team colour. The title carries the season name — plus *Constructors* in that view — and the
+footer the championship name with the rounds completed so far, e.g. *F1 2025 · 14/16 rounds*.
 
 ## `/race-results`
 
@@ -103,8 +118,8 @@ Race results for one session.
 | `type` | `Drivers` (default) or `Constructors`. |
 
 Shows the fastest lap of the session above the table, then positions with time or gap and points.
-`type:Constructors` sums each team's points for that race instead. The footer carries the season,
-date, lap count and how many drivers retired.
+`type:Constructors` sums each team's points for that race instead. The season name is in the title;
+the footer carries the championship name, the date, the lap count and how many drivers retired.
 
 For the same race as an image card, use [`/render-race-results`](image-cards.md#race-result).
 
@@ -119,7 +134,8 @@ Qualifying results for one session.
 | `session` | Qualifying session in that round. Omitted = the latest one. |
 
 Shows pole position above the table, then positions with gap to pole and each driver's best lap.
-There is no constructors view here — qualifying awards no points.
+There is no constructors view here — qualifying awards no points. The footer carries the
+championship name, the date and how many drivers took part.
 
 For the same session as an image card, use [`/render-qual-results`](image-cards.md#qualifying).
 
