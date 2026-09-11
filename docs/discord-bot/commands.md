@@ -40,6 +40,9 @@ families.
 | `/render-qual-results` | Qualifying result table |
 | `/render-race-highlights` | Session highlights — stat tiles |
 | `/render-race-strategy` | Tyre strategy — stint chart |
+| `/render-standings` | Championship standings — wins, podiums, poles per row |
+| `/render-lineup` | Season lineups — who drives for whom |
+| `/render-calendar` | Season calendar — rounds, sessions, dates |
 
 ### Utility and admin commands
 
@@ -48,11 +51,12 @@ families.
 | `/ping` | Whether the bot is alive, and its latency | plain text |
 | `/setlang` | [Response language](settings.md#response-language) for this server | plain text, private |
 | `/setup` | [Linking](linking.md) and [server settings](settings.md) | plain text, private |
+| `/setup refresh` | [Re-read the option suggestions](#setup-refresh) from RLT right away | plain text, private |
 
-!!! tip "Same session, either form"
-    `/race-results` and `/render-race-results` (likewise `/qual-results` and `/render-qual-results`)
-    look at exactly the same session and accept the same options. Swapping the command is all it
-    takes to get the other form.
+!!! tip "Same data, either form"
+    `/race-results` and `/render-race-results` (likewise `/qual-results` / `/render-qual-results`,
+    `/standings` / `/render-standings` and `/season` / `/render-calendar`) read exactly the same data
+    and accept the same options. Swapping the command is all it takes to get the other form.
 
 ## How season, round and session are chosen
 
@@ -79,6 +83,42 @@ sessions of the matching kind.
     Practice sessions are not supported by any command. If you point a command at one, it replies
     that the session is of the wrong kind.
 
+## How results are ordered
+
+A driver row carries two positions, and they are not the same thing: where the car **crossed the
+line**, and the **official classification** after penalties have been applied. Every results view —
+embeds and image cards alike — sorts and numbers by the official one, because that is what the
+points and the gap in the same row belong to. A driver who finishes second and takes a five-second
+penalty is shown sixth, with the points and the time that go with sixth.
+
+Drivers who are **not classified** — retirements and disqualifications — come last, among themselves
+in the order they finished on track, and their position column shows `—` rather than a number. Their result is told by the time
+column (`DNF`), not by a number from a classification they are not part of.
+
+## How rounds are counted
+
+Where a command shows a rounds counter — *6/11 rounds* in `/standings`, `/season`, `/league` and
+their cards — it counts the rounds that **score championship points**. A league can put an event on
+the calendar that is not part of the championship; the event stays in the calendar listing, marked
+*outside the championship*, but it is not counted in that fraction.
+
+One place stays calendar-based on purpose: the round label on a result (*R7/16*) is the round's place
+in the calendar, so both halves of it mean the same thing.
+
+## Which name goes where
+
+Racing League Tools keeps two names for a season, and they mean different things: the
+**championship name** is the game and ruleset (for example *F1 2025*), while the **season name** is
+the season of your league (*Pro League Season 11*).
+
+Every embed puts them in fixed places and never substitutes one for the other:
+
+* **Title** — the season name.
+* **Footer** — the championship name, ahead of the rest of the footer.
+
+A missing name leaves its place empty instead of borrowing the other one, so a league that fills in
+only one of the two still gets a tidy embed.
+
 ## `/standings`
 
 Championship standings for a season.
@@ -89,7 +129,13 @@ Championship standings for a season.
 | `type` | `Drivers` (default) or `Constructors`. |
 
 The table lists position, name, points and gap to the leader. The embed's colour stripe takes the
-leader's team colour.
+leader's team colour. The title carries the season name — plus *Constructors* in that view — and the
+footer the championship name with the championship rounds completed so far, e.g. *F1 2025 ·
+14/16 rounds*.
+
+For the same standings as an image card — the same field, plus wins, podiums and poles per row —
+use [`/render-standings`](image-cards.md#championship-standings). In a multiclass season each row
+also carries its [class badge](image-cards.md#multiclass-seasons).
 
 ## `/race-results`
 
@@ -103,8 +149,12 @@ Race results for one session.
 | `type` | `Drivers` (default) or `Constructors`. |
 
 Shows the fastest lap of the session above the table, then positions with time or gap and points.
-`type:Constructors` sums each team's points for that race instead. The footer carries the season,
-date, lap count and how many drivers retired.
+`type:Constructors` sums each team's points for that race instead. The season name is in the title;
+the footer carries the championship name, the date, the lap count and how many drivers retired.
+
+In a multiclass season the table gains a class column with each driver's
+[class badge](image-cards.md#multiclass-seasons). The top 10 is the overall one — to see one class on
+its own, use the image card with `class:`.
 
 For the same race as an image card, use [`/render-race-results`](image-cards.md#race-result).
 
@@ -119,7 +169,8 @@ Qualifying results for one session.
 | `session` | Qualifying session in that round. Omitted = the latest one. |
 
 Shows pole position above the table, then positions with gap to pole and each driver's best lap.
-There is no constructors view here — qualifying awards no points.
+There is no constructors view here — qualifying awards no points. The footer carries the
+championship name, the date and how many drivers took part.
 
 For the same session as an image card, use [`/render-qual-results`](image-cards.md#qualifying).
 
@@ -176,12 +227,35 @@ Season overview.
 
 The full calendar lists every round with its status — ✅ done, ⏭️ skipped, ⏳ upcoming — and its date.
 `view:Upcoming` lists only rounds still to come, with Discord's live timestamps: everyone sees the
-date in their own time zone plus a countdown that keeps ticking.
+date in their own time zone plus a countdown that keeps ticking. The listed time is the **race**
+start where Racing League Tools publishes per-session times; where it only publishes when the round
+begins, the entry says so.
+
+For the same calendar as an image card, use [`/render-calendar`](image-cards.md#season-calendar) —
+at the cost of the live timestamps, which a PNG cannot carry.
 
 ## `/league`
 
 Information about the league this server is linked to: how many seasons in total, how many active,
 how many archived, and the most recent seasons with their round progress.
+
+## `/setup refresh`
+
+```
+/setup refresh
+```
+
+Re-reads your league's seasons, rounds, teams and drivers from Racing League Tools straight away, and
+reports what came back. **Manage Server** only; the reply is private.
+
+Results are always fetched live, so this is not about stale results — it is about the **option
+suggestions** and the defaults built on them. Those lists are cached for a few minutes to keep
+autocomplete inside Discord's three-second budget, which means a round or a driver added in RLT a
+moment ago may not be offered yet. `/setup refresh` is the way to stop waiting.
+
+!!! tip
+    The usual moment for it is right after adding a round or signing a new driver, when
+    `/race-results` without options still answers with the previous round.
 
 ## `/ping`
 
