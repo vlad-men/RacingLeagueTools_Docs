@@ -30,7 +30,7 @@ Every command answers in one of two forms, and the command name tells you which:
     Discord; the look is fixed by the server's [card theme](settings.md#image-card-theme).
 
     `/render-race-results` · `/render-qual-results` · `/render-race-highlights` ·
-    `/render-race-strategy`
+    `/render-race-strategy` · `/render-standings` · `/render-lineup` · `/render-calendar`
 
 </div>
 
@@ -41,9 +41,12 @@ day and the image card when it is worth framing:
 |---|---|---|
 | Race results | `/race-results` | `/render-race-results` |
 | Qualifying results | `/qual-results` | `/render-qual-results` |
+| Championship standings | `/standings` | `/render-standings` |
+| Season calendar | `/season` | `/render-calendar` |
 | Session highlights | — | `/render-race-highlights` |
 | Tyre strategy | — | `/render-race-strategy` |
-| Standings, driver profiles, head-to-head, calendar, league | embed only | — |
+| Season lineups | — | `/render-lineup` |
+| Driver profiles, head-to-head, league | embed only | — |
 
 ## What it can do
 
@@ -60,6 +63,13 @@ Through **image cards**:
 * **Race and qualifying results** — the full classification as a table.
 * **Session highlights** — stat tiles for the session.
 * **Tyre strategy** — a stint chart across the race distance.
+* **Championship standings** — with wins, podiums and poles per row.
+* **Season lineups** — who drives for whom, with cars and reserve drivers marked.
+* **Season calendar** — every round with its status, sessions and date.
+
+**Multiclass seasons** are supported throughout: class badges appear on their own wherever Racing
+League Tools reports classes, and three of the cards can narrow to a single class — see
+[Multiclass seasons](image-cards.md#multiclass-seasons).
 
 Every reply is in your language: the bot speaks English and Polish, selected per server with
 `/setlang`. That covers both forms — embed text and the labels drawn on the image cards.
@@ -93,6 +103,6 @@ That is the whole setup. Nothing to host, nothing to configure, no API key to co
 * [Invite the bot](invite.md) — the invite link and what permissions it asks for.
 * [Link your league](linking.md) — pairing codes, checking the link, unlinking.
 * [Commands](commands.md) — every command, its options, and what the defaults do.
-* [Image cards](image-cards.md) — the four PNG cards, with examples.
+* [Image cards](image-cards.md) — the seven PNG cards, with examples.
 * [Server settings](settings.md) — language, card theme, archived seasons.
 * [Troubleshooting](troubleshooting.md) — what the bot's messages mean.

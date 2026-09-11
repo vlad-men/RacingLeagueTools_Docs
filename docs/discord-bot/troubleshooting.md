@@ -66,6 +66,15 @@ revoked. An admin should re-link the server with a fresh pairing code.
 Some errors add a small second line with the season, round and session the command was actually
 working on. That is the quickest way to see whether the defaults picked what you expected.
 
+## Multiclass and lineup messages
+
+| Message | Meaning | What to do |
+|---|---|---|
+| This season has no class … | The `class` value isn't a class of that season — classes are defined per season | Pick one from the suggestions, or drop the option for the whole field |
+| No … entries in this session | The class exists in the season, but nobody in that class took part in this session | Check the session, or drop `class` |
+| RLT doesn't publish constructor standings per class | Constructor standings exist per season, not per class | Drop `class` for the overall constructors table, or keep it with `type:Drivers` |
+| RLT doesn't publish any lineup for this season | The season has no drivers in its standings yet — usual before a season starts | Try again once the season has entries |
+
 ## "This session has no live telemetry"
 
 `/render-race-highlights` and `/render-race-strategy` are built from telemetry. The session you asked
@@ -83,6 +92,19 @@ works for both kinds. See [Live sessions versus manually entered results](image-
 | Pick **either** a team, **or** driver1 + driver2 | `/head2head` takes a team *or* two drivers, never both and never just one |
 | Need two drivers to compare | That team has fewer than two drivers in the season |
 | Pick two different drivers | `driver1` and `driver2` are the same person |
+
+## Suggestions are missing a new round or driver
+
+The `season`, `round`, `session`, `driver` and `team` suggestions are cached for a few minutes so
+they can answer inside Discord's three-second budget. A round or driver added in Racing League Tools
+a moment ago may therefore not be offered yet — and a command run without options may still pick the
+previous round, because it chooses its default from the same lists.
+
+An admin can run **`/setup refresh`**, which re-reads them immediately. Results themselves are always
+fetched live, so this never affects the classification you see, only what the options offer.
+
+If `/setup refresh` answers that it couldn't refresh, run `/setup status` first: the league may have
+lost access rather than have no data.
 
 ## "⏳ Still loading — type again in a second"
 
