@@ -75,6 +75,11 @@ The following properties apply to most block types.
 | `UseBackgroundCrop` | `bool` | Whether the background image should be cropped. |
 | `BackgroundImageOpacity` | `int` | Opacity of the background image (0-100). |
 | `BackgroundImageFitMode` | `enum` | Background image fit mode. Values: `Stretch` (default), `Cover` (scale and crop overflow), `Contain` (scale to fit, may leave bars), `None` (original size). Respects `HorizontalAlignment` (`Left`/`Center`/`Right`) and `VerticalAlignment` (`Top`/`Center`/`Bottom`). Backwards compatibility: `UseBackgroundCrop: true` with no `BackgroundImageFitMode` is treated as `Cover`. |
+| `BorderRadius` | `int` / `string` | Rounds the corners of the block (background, padding area and nested blocks), in pixels. One value for all corners (`12`) or four values in the order top-left, top-right, bottom-right, bottom-left (`"12, 0, 12, 0"`). Added in 0.9.9. |
+| `BorderRadiusTL` | `int` | Top-left corner radius. Has priority over `BorderRadius`. Added in 0.9.9. |
+| `BorderRadiusTR` | `int` | Top-right corner radius. Has priority over `BorderRadius`. Added in 0.9.9. |
+| `BorderRadiusBR` | `int` | Bottom-right corner radius. Has priority over `BorderRadius`. Added in 0.9.9. |
+| `BorderRadiusBL` | `int` | Bottom-left corner radius. Has priority over `BorderRadius`. Added in 0.9.9. |
 | `GridRow` | `int` | Row number (if the block is a child of a grid). |
 | `GridCol` | `int` | Column number (if the block is a child of a grid). |
 | `PositionX` | `int` | X position (if the block is a child of a canvas). |
@@ -101,6 +106,7 @@ The following properties apply to most block types.
 block options are placed in the block itself too. You can use them both ways, but the block properties have higher priority than the option properties.
 - **Source**: Duplicates specific properties (like `ImagePath`, `Text`) and has higher priority.
 - **Dimensions**: `Width` and `Height` default to `0`, meaning the engine calculates size based on content. Use `"*"` to fill available space.
+- **BorderRadius**: In `image` blocks the picture itself is rounded too, so an image with `Padding` (for example a flag) keeps rounded corners. Radii larger than the block are reduced to fit: a very large value gives a pill shape, half the side of a square block gives a circle.
 
 ## Examples
 
