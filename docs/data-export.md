@@ -224,6 +224,32 @@ A single session (race, qualification, or practice) with full driver results.
 | `sessionDate` | `string\|null` | Session date/time (ISO 8601, with timezone offset). |
 | `totalLaps` | `integer\|null` | Total race laps. `null` for timed or unconfigured sessions. |
 | `driversCount` | `integer` | Total number of drivers classified in the session. |
+| `weatherTimeline` | `array\|null` | Weather and temperature changes during the session, in time order; the first point is the start. `null` when the session has no recorded history (live timing since 0.9.9). Added in 0.9.9. |
+| `safetyCarPeriods` | `array\|null` | Safety car and VSC periods, in time order. Empty when none were deployed, `null` when the session has no recorded history. Added in 0.9.9. |
+
+**`sessionInfo.weatherTimeline[]`**
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `time` | `string` | Session time of the change (e.g. `"12:34"`). |
+| `timeMs` | `integer` | Session time in milliseconds. |
+| `lap` | `integer\|null` | Leader lap in progress at the change. `null` outside races. |
+| `weatherType` | `string` | `"Clear"`, `"LightCloud"`, `"Overcast"`, `"LightRain"`, `"HeavyRain"`, or `"Storm"`. |
+| `airTemperature` | `integer` | Air temperature in degrees Celsius. |
+| `trackTemperature` | `integer` | Track temperature in degrees Celsius. |
+
+**`sessionInfo.safetyCarPeriods[]`**
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `kind` | `string` | `"SC"` or `"VSC"`. |
+| `startLap` | `integer\|null` | First leader lap the period touched. `null` outside races. |
+| `endLap` | `integer\|null` | Last leader lap the period touched. `null` outside races. |
+| `lapsCount` | `integer\|null` | Number of leader laps the period touched. |
+| `startTime` | `string` | Session time when the period started. |
+| `startTimeMs` | `integer` | Start time in milliseconds. |
+| `duration` | `string` | Length of the period (e.g. `"3:05"`). |
+| `durationMs` | `integer` | Length in milliseconds. |
 
 ### `session.fastestLap`
 
@@ -462,11 +488,16 @@ All ratings use the 0–10 scale. Sub-objects are `null` when the corresponding 
 | `isValid` | `boolean` | Whether the lap was valid (no track limit violations). |
 | `isPersonalBest` | `boolean` | Whether this was the driver's personal best lap. |
 | `isSessionFastest` | `boolean` | Whether this was the overall fastest lap of the session. |
-| `positionAfterLap` | `integer\|null` | Race position after completing this lap. |
+| `positionAfterLap` | `integer\|null` | Race position after completing this lap: recorded by live timing, otherwise estimated from lap times. `null` when unknown. |
+| `isPositionEstimated` | `boolean\|null` | `true` when `positionAfterLap` is estimated from lap times, `false` when recorded. `null` when the position is unknown. Added in 0.9.9. |
 | `gapToLeader` | `string\|null` | Gap to race leader after this lap. |
 | `gapToLeaderMs` | `integer\|null` | Gap in milliseconds. |
 | `gapToAhead` | `string\|null` | Gap to driver immediately ahead. |
 | `gapToAheadMs` | `integer\|null` | Gap ahead in milliseconds. |
+| `tyreWear` | `integer\|null` | Average tyre wear in percent at the end of the lap. `null` when not recorded. Added in 0.9.9. |
+| `isPitEntryLap` | `boolean\|null` | Whether the driver entered the pit lane on this lap. `null` without recorded history. Added in 0.9.9. |
+| `isPitExitLap` | `boolean\|null` | Whether the driver left the pit lane on this lap. `null` without recorded history. Added in 0.9.9. |
+| `isSafetyCarLap` | `boolean\|null` | Whether the leader lap with the same number was under SC or VSC. `null` without recorded history. Added in 0.9.9. |
 | `deltaToPreviousLap` | `string\|null` | Delta vs. the driver's previous lap. |
 | `deltaToPreviousLapMs` | `integer\|null` | Delta in milliseconds. |
 | `deltaToPersonalBest` | `string\|null` | Delta vs. the driver's best lap. |
