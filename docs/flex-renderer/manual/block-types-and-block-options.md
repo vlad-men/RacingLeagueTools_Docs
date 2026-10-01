@@ -163,7 +163,9 @@ The Grid calculates column widths and row heights based on inner block dimension
 **BlockType:** `canvas`
 **BlockOptions:** `CanvasOptions`
 
-A container that arranges inner blocks manually. Each inner block must define `PositionX` and `PositionY` to indicate its top-left coordinate. `CanvasOptions` currently contains no properties.
+A container that arranges inner blocks manually. Each inner block must define `PositionX` and `PositionY` to indicate its top-left coordinate, or `PlotPosition` to sit at a data point of a chart (see [Block](block.md)). `CanvasOptions` currently contains no properties.
+
+A canvas also accepts `ItemStackOptions` (same properties as `ItemStack`). The `ItemTemplate` is then repeated for every item of the collection, and all copies are drawn at the same place, one over another. This is how one chart line per driver is drawn on a single chart. Static `Items` are drawn first, the generated copies on top. Added in 0.9.9.
 
 ## Table
 
@@ -220,14 +222,130 @@ A feature for expanding one column into multiple columns.
 **BlockType:** `shape`
 **BlockOptions:** `ShapeOptions`
 
-Displays a simple geometric figure.
+Displays a simple geometric figure, a line, or a chart line built from data.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `ShapeType` | `enum` | Options: `rectangle`, `ellipse`. |
-| `Fill` | `color` | Fill color. |
+| `ShapeType` | `enum` | Options: `rectangle`, `ellipse`, `line`, `polyline`. `line` and `polyline` added in 0.9.9. |
+| `Fill` | `color` | Fill color of `rectangle` and `ellipse`. |
 | `Rotation` | `int` | Rotates the shape clockwise around its center. |
 | `RotateAroundCenter` | `bool` | If true, rotates the shape around its center. Defaults to false. |
+| `Stroke` | `StrokeOptions` | Outline of `rectangle` and `ellipse`, the line itself for `line` and `polyline`. Added in 0.9.9. |
+| `X1`, `Y1`, `X2`, `Y2` | `number` | `line`: start and end point, in pixels of the block or in data units when `Scale` is set.<br>`rectangle` and `ellipse` with `Scale`: the data range the shape covers (bars, bands). Nothing is drawn when a value is missing. Added in 0.9.9. |
+| `GapX`, `GapY` | `number` | `rectangle` and `ellipse` with `Scale`: pixels left empty between neighbouring bars. The shape shrinks by half of the gap on each side. Added in 0.9.9. |
+| `Points` | `string` | `polyline`: data access expression for the collection of points, for example `{Item.LapPositions}`. Added in 0.9.9. |
+| `PointX` | `string` | `polyline`: point property holding X. Defaults to `X`. The item index is used when the value is missing. Added in 0.9.9. |
+| `PointY` | `string` | `polyline`: point property holding Y. Defaults to `Y`. An empty value is a missing point. Added in 0.9.9. |
+| `MissingData` | `enum` | `polyline`: `break` (default) splits the line at a missing point, `connect` joins its neighbours. Added in 0.9.9. |
+| `Smoothing` | `enum` | `polyline`: `none` (default) or `curve` (smooth curve through every point). Added in 0.9.9. |
+| `Markers` | `MarkerOptions` | `polyline`: marks drawn on every point. Added in 0.9.9. |
+| `Scale` | `ScaleOptions` | Maps data values onto the block. Without it `line` uses pixels and `polyline` fits its own data. Added in 0.9.9. |
+
+### StrokeOptions
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `Color` | `color` | Line color. Defaults to white. |
+| `Thickness` | `number` | Line thickness in pixels. Defaults to `1`. |
+| `Opacity` | `number` | `0` to `1`, multiplied with the color alpha. Defaults to `1`. |
+| `DashStyle` | `enum` | `solid` (default), `dash`, `dot`, `dashdot`, `dashdotdot`. |
+| `DashPattern` | `string` | Custom dash pattern in line thicknesses, for example `"6,2,1,2"`. Overrides `DashStyle`. |
+| `LineCap` | `enum` | Line ends: `butt` (default), `round`, `square`. |
+| `LineJoin` | `enum` | Line corners: `miter` (default), `round`, `bevel`. |
+
+### ScaleOptions
+
+The plotted area is the block minus `Inset` on every side. A data value is placed proportionally between the minimum and the maximum.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `XMin`, `XMax` | `number` | X range. Defaults to the range of the data of the shape. |
+| `YMin`, `YMax` | `number` | Y range. Defaults to the range of the data of the shape. |
+| `InvertY` | `bool` | If true, the smallest Y is at the top (for example position 1 on a lap chart). Defaults to false: the smallest Y is at the bottom. |
+| `Inset` | `number` | Pixels between the block edge and the plotted area. Defaults to half the stroke plus the marker size for lines, `0` for bars and `PlotPosition`. Set the same value on stacked chart layers so that their scales line up. |
+| `BandX`, `BandY` | `bool` | Category axis: every whole value from min to max gets its own slot. Points and labels sit in the slot center. A bar with `X1` = `X2` = `i` fills slot `i`. |
+
+### MarkerOptions
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `Shape` | `enum` | `ellipse` (default) or `rectangle`. |
+| `Size` | `number` | Marker size in pixels. Defaults to `6`. |
+| `Fill` | `color` | Marker fill. Defaults to the line color. |
+| `Stroke` | `StrokeOptions` | Marker outline. |
+
+### Charts
+
+A chart is a `canvas` with several layers of the same size. Shapes with the same `Width`, `Height` and `Scale` are drawn over each other, so their data coordinates match. Labels use `PlotPosition` with the same scale and area size. The default theme layout `session_results_race_lapchart` is a complete example.
+
+A position chart, one line per driver in the team color:
+
+```json
+{
+  "BlockType": "canvas",
+  "ItemStackOptions": {
+    "ItemSource": "{Session.Drivers}",
+    "Reverse": true,
+    "ItemTemplate": {
+      "BlockType": "shape",
+      "Width": 1400,
+      "Height": 720,
+      "ShapeOptions": {
+        "ShapeType": "polyline",
+        "Points": "{Item.LapPositions}",
+        "PointX": "Lap",
+        "PointY": "Position",
+        "Scale": { "XMin": 0, "XMax": "{Session.LeaderLapsCount}", "YMin": 1, "YMax": "{Session.DriversCount}", "InvertY": true, "Inset": 18 },
+        "Stroke": { "Color": "{Item.Team.Color}", "Thickness": 4, "LineJoin": "round" }
+      }
+    }
+  }
+}
+```
+
+A bar chart of race points with a value label above each bar:
+
+```json
+{
+  "BlockType": "canvas",
+  "ItemStackOptions": {
+    "ItemSource": "{Session.Drivers}",
+    "ItemTemplate": {
+      "BlockType": "canvas",
+      "Items": [
+        {
+          "BlockType": "shape",
+          "Width": 900,
+          "Height": 200,
+          "ShapeOptions": {
+            "ShapeType": "rectangle",
+            "X1": "{ItemIndex}",
+            "X2": "{ItemIndex}",
+            "Y1": 0,
+            "Y2": "{Item.DriverPoints.FloatValue}",
+            "GapX": 8,
+            "Fill": "{Item.Team.Color}",
+            "Scale": { "XMin": 0, "XMax": "{Session.DriversCount, Converter=NumberSubtract, Parameter=1}", "YMin": 0, "YMax": 30, "BandX": true }
+          }
+        },
+        {
+          "BlockType": "text",
+          "Source": "{Item.DriverPoints.Value}",
+          "PlotPosition": {
+            "X": "{ItemIndex}",
+            "Y": "{Item.DriverPoints.FloatValue}",
+            "AreaWidth": 900,
+            "AreaHeight": 200,
+            "AnchorY": "Bottom",
+            "OffsetY": -4,
+            "Scale": { "XMin": 0, "XMax": "{Session.DriversCount, Converter=NumberSubtract, Parameter=1}", "YMin": 0, "YMax": 30, "BandX": true }
+          }
+        }
+      ]
+    }
+  }
+}
+```
 
 ## Component
 
