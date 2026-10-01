@@ -85,6 +85,7 @@ The following properties apply to most block types.
 | `PositionX` | `int` | X position (if the block is a child of a canvas). |
 | `PositionY` | `int` | Y position (if the block is a child of a canvas). |
 | `PositionZ` | `int` | Z-index for child blocks of stack, canvas, and dock (limited support). |
+| `PlotPosition` | `PlotPositionOptions` | Places a child block of a canvas at a data point of a chart instead of `PositionX` and `PositionY`, for example a value label above a bar or a name at the end of a line. Added in 0.9.9. |
 | `Colorize` | `ColorizeOptions` | Colorizes the final block image using a specific color. |
 | `ColorizeBackground` | `ColorizeOptions` | Colorizes the background of the block using a specific color. |
 | `Triggers` | `List<TriggerItem>` | Triggers for properties. |
@@ -107,6 +108,7 @@ block options are placed in the block itself too. You can use them both ways, bu
 - **Source**: Duplicates specific properties (like `ImagePath`, `Text`) and has higher priority.
 - **Dimensions**: `Width` and `Height` default to `0`, meaning the engine calculates size based on content. Use `"*"` to fill available space.
 - **BorderRadius**: In `image` blocks the picture itself is rounded too, so an image with `Padding` (for example a flag) keeps rounded corners. Radii larger than the block are reduced to fit: a very large value gives a pill shape, half the side of a square block gives a circle.
+- **PlotPosition**: `X` and `Y` are data values. `Scale` (see [ScaleOptions](block-types-and-block-options.md#scaleoptions)) and `AreaWidth`, `AreaHeight` (size of the chart shapes in pixels) define the chart. `AnchorX` (`Left`, `Center`, `Right`) and `AnchorY` (`Top`, `Center`, `Bottom`) choose which point of the block sits on the data point; both default to `Center`. `OffsetX` and `OffsetY` shift the block in pixels. When `X`, `Y` or the area size is missing, `PositionX` and `PositionY` are used.
 
 ## Examples
 
