@@ -21,17 +21,34 @@ Examples:
 - `red.bull.2023.png`
 - `bmw.m4gt3.png`
 
-### Variants
+### Team and Car Pair
 
-Additional livery variants for the same team or car are supported. To add a variant, use the following naming format:
+A livery can be bound to a team and a car together. The filename format is:
 
 ```text
-{teamID}.{prefix}.png
+{teamName}__{carUniqueName}.png
 ```
 
-Example: `red.bull.2023.v2.png`.
+Example: `alfa__ferrari.499p.png`.
 
-Specific livery variants can be selected for a driver on the application's line-ups page.
+For `{teamName}`, the application tries these values in order: team `UniqueName`, then `Name`, then `Origin` (the same priority as team logos). Teams that share a name or origin and use the same car pick up the same file. Added in 0.9.9.
+
+When both a team and a car are known, the application resolves liveries in this order: team-and-car pair, then the team set, then the car set.
+
+### Variants
+
+Additional livery variants for the same team, car, or team-and-car pair are supported. To add a variant, use the following naming format:
+
+```text
+{id}.{prefix}.png
+```
+
+Examples:
+
+- `red.bull.2023.v2.png`
+- `alfa__ferrari.499p.wet.png`
+
+Specific livery variants can be selected for a driver on the application's line-ups page. A manual selection on the line-ups page overrides the automatic choice inside the resolved set.
 
 ## Data Integration
 
