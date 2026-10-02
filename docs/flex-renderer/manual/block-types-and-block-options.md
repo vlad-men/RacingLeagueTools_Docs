@@ -119,6 +119,7 @@ Blocks within the `ItemTemplate` have access to the `Item` and `ItemIndex` expre
 | `OrderByDescending` | `string` | Property name for descending sort (supports `OrderByDescending2`, `3`). |
 | `FilterMember` | `string` | Property name for filtering the collection. Can be data access expression. |
 | `FilterMemberValue` | `string` | Value to filter by. |
+| `DistinctMember` | `string` | Property name. Keeps the first item for each distinct value (case-insensitive). Supports nested paths such as `CarClass.Name`. Null and empty values count as one value. Added in 0.9.9. |
 | `Reverse` | `bool` | Reverses the collection order. |
 | `Limit` | `int` | Limits the number of items. |
 | `IndexStart` | `int` | Starting index of the collection. |
@@ -189,7 +190,7 @@ Blocks within column templates have access to the `Item`, `ItemIndex`, and `Colu
 | `GroupSpaceReduction` | `int` | Space reduction between columns with the same `GroupId`. |
 | `Columns` | `List<TableColumnDefinition>` | Definitions for table columns. |
 
-*Note: Sorting and filtering properties (`SortMember`, `FilterMember`, etc.) are identical to `ItemStack`.*
+*Note: Sorting and filtering properties (`SortMember`, `FilterMember`, `DistinctMember`, etc.) are identical to `ItemStack`.*
 
 ### TableColumnDefinition
 
