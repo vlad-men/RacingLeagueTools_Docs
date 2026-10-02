@@ -22,7 +22,7 @@ Every command answers in one of two forms, and the command name tells you which:
     theme and reflows on mobile.
 
     `/standings` · `/race-results` · `/qual-results` · `/driver` · `/head2head` · `/season` ·
-    `/league`
+    `/track` · `/team` · `/league`
 
 *   **Image cards** — every command starting with `render-`
 
@@ -30,7 +30,8 @@ Every command answers in one of two forms, and the command name tells you which:
     Discord; the look is fixed by the server's [card theme](settings.md#image-card-theme).
 
     `/render-race-results` · `/render-qual-results` · `/render-race-highlights` ·
-    `/render-race-strategy` · `/render-standings` · `/render-lineup` · `/render-calendar`
+    `/render-race-strategy` · `/render-standings` · `/render-lineup` · `/render-calendar` ·
+    `/render-track` · `/render-team`
 
 </div>
 
@@ -46,6 +47,8 @@ day and the image card when it is worth framing:
 | Session highlights | — | `/render-race-highlights` |
 | Tyre strategy | — | `/render-race-strategy` |
 | Season lineups | — | `/render-lineup` |
+| Track history | `/track` | `/render-track` |
+| Team career | `/team` | `/render-team` |
 | Driver profiles, head-to-head, league | embed only | — |
 
 ## What it can do
@@ -57,6 +60,8 @@ Through **embeds**:
 * **Driver profiles** — career totals, a single season, or a group of seasons, plus telemetry ratings.
 * **Head-to-head** — two drivers, or a team's own pairing, compared across ten metrics.
 * **Season calendar** — round statuses and live countdowns to upcoming rounds.
+* **Track history** — the lap record, who wins there most often, and the recent races at a circuit.
+* **Team career** — titles, points and discipline of one team across a group of seasons.
 
 Through **image cards**:
 
@@ -66,13 +71,17 @@ Through **image cards**:
 * **Championship standings** — with wins, podiums and poles per row.
 * **Season lineups** — who drives for whom, with cars and reserve drivers marked.
 * **Season calendar** — every round with its status, sessions and date.
+* **Track history** — records, race-day numbers and every main race run there.
+* **Team career** — titles, every season of the team and its full line-up.
 
 **Multiclass seasons** are supported throughout: class badges appear on their own wherever Racing
 League Tools reports classes, and three of the cards can narrow to a single class — see
 [Multiclass seasons](image-cards.md#multiclass-seasons).
 
 Every reply is in your language: the bot speaks English and Polish, selected per server with
-`/setlang`. That covers both forms — embed text and the labels drawn on the image cards.
+[`/setup language`](settings.md#response-language). That covers both forms — embed text and the
+labels drawn on the image cards. Times follow the
+[league's time zone](settings.md#league-time-zone), which is a separate setting.
 
 ## Before you start
 
@@ -81,7 +90,7 @@ You need three things:
 | Requirement | Details |
 |---|---|
 | A **Pro Plus** league | The Public API is available on Pro, but the official bot requires **Pro Plus**. |
-| **Manage Server** permission on Discord | Needed to invite the bot and to run `/setup` and `/setlang`. Everyone else can use the data commands. |
+| **Manage Server** permission on Discord | Needed to invite the bot and to run `/setup`. Everyone else can use the data commands. |
 | A **pairing code** from RLT Desktop | Single use, expires after 60 minutes. |
 
 ## Quick start
@@ -103,6 +112,6 @@ That is the whole setup. Nothing to host, nothing to configure, no API key to co
 * [Invite the bot](invite.md) — the invite link and what permissions it asks for.
 * [Link your league](linking.md) — pairing codes, checking the link, unlinking.
 * [Commands](commands.md) — every command, its options, and what the defaults do.
-* [Image cards](image-cards.md) — the seven PNG cards, with examples.
-* [Server settings](settings.md) — language, card theme, archived seasons.
+* [Image cards](image-cards.md) — the nine PNG cards, with examples.
+* [Server settings](settings.md) — language, card theme, time zone, archived seasons.
 * [Troubleshooting](troubleshooting.md) — what the bot's messages mean.

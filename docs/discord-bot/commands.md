@@ -1,12 +1,12 @@
 # Commands
 
 Every command is a Discord slash command: type `/`, pick the command, fill in the options. Anyone on
-the server can use the data commands. Only members with **Manage Server** can use `/setup` and
-`/setlang`.
+the server can use the data commands. Only members with **Manage Server** can use `/setup`.
 
-Almost every option can be left empty — the bot then picks the sensible default (current season,
-latest round, drivers classification). Options like `season`, `round`, `session`, `driver` and `team`
-offer **autocomplete**: you start typing a name and pick from the list, so you never deal with IDs.
+Most options can be left empty — the bot then picks the sensible default (current season, latest
+round, drivers classification). Options like `season`, `round`, `session`, `driver`, `team`, `track`
+and `multiseason` offer **autocomplete**: you start typing a name and pick from the list, so you
+never deal with IDs.
 
 ## Text embeds or image cards
 
@@ -30,6 +30,8 @@ families.
 | `/driver` | Driver profile — career, one season, or a group of seasons |
 | `/head2head` | Two drivers, or a team's pairing, compared over a season |
 | `/season` | Season calendar with round statuses, or upcoming rounds with countdowns |
+| `/track` | Track history — records, who wins there, recent races |
+| `/team` | Team career across a group of seasons — titles, points, line-up |
 | `/league` | The linked league — season counts and the most recent seasons |
 
 ### Data commands — image cards
@@ -43,20 +45,23 @@ families.
 | `/render-standings` | Championship standings — wins, podiums, poles per row |
 | `/render-lineup` | Season lineups — who drives for whom |
 | `/render-calendar` | Season calendar — rounds, sessions, dates |
+| `/render-track` | Track history — records and every main race run there |
+| `/render-team` | Team career — titles, every season, full line-up |
 
 ### Utility and admin commands
 
 | Command | What it does | Reply |
 |---|---|---|
 | `/ping` | Whether the bot is alive, and its latency | plain text |
-| `/setlang` | [Response language](settings.md#response-language) for this server | plain text, private |
+| `/setlang` | Moved to `/setup language`; still works | plain text, private |
 | `/setup` | [Linking](linking.md) and [server settings](settings.md) | plain text, private |
 | `/setup refresh` | [Re-read the option suggestions](#setup-refresh) from RLT right away | plain text, private |
 
 !!! tip "Same data, either form"
     `/race-results` and `/render-race-results` (likewise `/qual-results` / `/render-qual-results`,
-    `/standings` / `/render-standings` and `/season` / `/render-calendar`) read exactly the same data
-    and accept the same options. Swapping the command is all it takes to get the other form.
+    `/standings` / `/render-standings`, `/season` / `/render-calendar`, `/track` / `/render-track`
+    and `/team` / `/render-team`) read exactly the same data and accept the same options. Swapping
+    the command is all it takes to get the other form.
 
 ## How season, round and session are chosen
 
@@ -233,6 +238,64 @@ begins, the entry says so.
 
 For the same calendar as an image card, use [`/render-calendar`](image-cards.md#season-calendar) —
 at the cost of the live timestamps, which a PNG cannot carry.
+
+## `/track`
+
+The history of one circuit in your league.
+
+| Option | Meaning |
+|---|---|
+| `track` | Circuit. Required — pick it from the suggestions. |
+| `multiseason` | Narrow the whole thing to a group of seasons. Omitted = all of them. |
+
+The reply carries the lap record with the driver and season who set it, the fastest **race** lap
+when that is a different time, who has the most wins, podiums and poles there, the race-day numbers
+and the five most recent races.
+
+A lap record is often set **in qualifying**, and the embed says so next to the time — without that,
+a qualifying lap reads like a race lap.
+
+!!! note "`multiseason` changes the numbers, it does not filter a list"
+    Everything is recalculated inside the group. The same circuit can have one record across the
+    whole league and a different one inside a single split, because the fastest lap of the league
+    was set in a season that split does not contain. The group's name is shown under the title so
+    the numbers are never read out of context.
+
+!!! note "Where the race-day numbers come from"
+    Pit stops, top speed, safety cars and the fastest lap's tyre compound exist only for sessions
+    recorded with **live telemetry**. The embed states how many of the races those numbers cover —
+    *live data: 4 of 6 races* — because an average over four races is not an average over the
+    circuit's whole history.
+
+For the same circuit as an image card — with **every** main race rather than the last five — use
+[`/render-track`](image-cards.md#track-history).
+
+## `/team`
+
+A team's career across a group of seasons: titles, points, race and qualifying records, discipline
+and the drivers who built it.
+
+| Option | Meaning |
+|---|---|
+| `multiseason` | Group of seasons. **Required.** |
+| `team` | Team. Required — pick it from the suggestions. |
+
+Both options are required, and `multiseason` is first because the team list depends on it.
+
+!!! warning "Switch team statistics on first"
+    Racing League Tools computes this block per multiseason, and only when the league enables
+    **team statistics** for that multiseason in RLT Desktop. Until then the bot answers that the
+    group has no team statistics and tells you where to switch them on. *All Seasons* never has
+    them — it is not a real multiseason, so there is nothing to enable on it.
+
+Teams arrive **merged across seasons** and carry their current name, so a team that was renamed
+keeps one history rather than splitting into two. The reply shows seasons entered, races and finish
+rate, total points with per-season and per-race averages, the best season, constructors' titles with
+runner-up finishes, wins, podiums and poles, DNFs, penalties and reliability, and the line-up with
+its top scorer — then the last eight seasons as a table.
+
+For every season and the full line-up with each driver's share of the points, use
+[`/render-team`](image-cards.md#team-career).
 
 ## `/league`
 

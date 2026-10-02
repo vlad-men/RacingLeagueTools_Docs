@@ -1,11 +1,11 @@
 # Image cards
 
-Seven commands upload your league data as a **PNG image** instead of replying with a text embed.
+Nine commands upload your league data as a **PNG image** instead of replying with a text embed.
 Every command whose name starts with `render-` belongs to this family; all the others are documented
 under [Commands](commands.md).
 
-They come in two groups. **Session cards** show one race or qualifying session; **season cards** show
-a whole season at once.
+They come in three groups. **Session cards** show one race or qualifying session, **season cards**
+show a whole season at once, and **history cards** look across many seasons.
 
 | Command | Card | Text-embed counterpart |
 |---|---|---|
@@ -16,12 +16,15 @@ a whole season at once.
 | `/render-standings` | Championship standings | `/standings` |
 | `/render-lineup` | Season lineups — who drives for whom | — |
 | `/render-calendar` | Season calendar | `/season` |
+| `/render-track` | Track history | `/track` |
+| `/render-team` | Team career | `/team` |
 
 The session cards take the same `season`, `round` and `session` options as the embed commands and
 follow the same defaults — see
 [How season, round and session are chosen](commands.md#how-season-round-and-session-are-chosen).
 The season cards have no session to pick, so they take `season` and nothing else beyond their own
-options.
+options. The history cards belong to neither a session nor a season: `/render-track` takes a circuit
+and `/render-team` a team plus the group of seasons to count it in.
 
 !!! note "Sample data"
     The cards on this page are rendered from sample data, so the drivers, teams and tracks are made
@@ -40,6 +43,7 @@ Neither form is better; they are good at different things.
 | Shareable outside Discord as a single file | no | yes |
 | Shows the whole field of a session, not just the top 10 | no | yes |
 | Highlights, tyre strategy, lineups | not available | yes |
+| The whole history — every race at a circuit, every season of a team | top of the list only | yes |
 
 A common pattern is to post the embed right after a race for quick reading and discussion, and the
 image card in a dedicated results channel, where it gets pinned and shared.
@@ -163,23 +167,36 @@ driver's team colour as a stripe. The subtitle counts the championship rounds an
 
 ![Lineup card, team-based league](images/lineup-teams.png)
 
-Who drives for whom this season, with each team's car and points per driver. A driver who is not in a
-primary seat is marked **RESERVE**; a driver no team claims goes to a **No team** section at the
-bottom.
+Who holds a seat this season. A driver outside the primary line-up is marked **RESERVE**; a seat
+with no team goes to a **No team** section at the bottom.
 
 | Option | Meaning |
 |---|---|
 | `season` | Season. Omitted = current. |
 
-The card follows how your league is set up. A **team-based** league (F1-style) gets the team tiles
-above. A **car-based** league — endurance, where the entry is a car rather than a team — has no teams
-to show, so the card lists drivers in two columns with their car, grouped by class:
+!!! note "Seats, not everyone who raced"
+    The card lists the season's **filled seats**. A driver who scored points without holding a seat —
+    a one-off stand-in, for example — is not in the lineup and is not drawn here. Their points are in
+    [`/standings`](commands.md#standings), which is the question they answer.
+
+There are no points on this card on purpose. It answers *who drives with whom*; the classification is
+one command away and says the rest.
+
+The layout follows what your league actually has. A **team-based** league (F1-style) gets the team
+tiles above. In an endurance league the entry is a **car**, not a team, and Racing League Tools
+publishes no team for those seats — so the card becomes a table of *car → its drivers*, grouped by
+class:
 
 ![Lineup card, car-based league](images/lineup-cars.png)
 
+!!! note "Two entries of the same car model share a row"
+    Racing League Tools identifies the **model** of a car, not the individual entry, so three
+    separate crews running the same GT3 car appear as one row with all their drivers. There is no
+    entry identifier in the data to split them by.
+
 !!! note
-    A season that hasn't started has no lineup yet: Racing League Tools publishes the teams, but no
-    drivers. The command says so rather than drawing a grid of empty tiles.
+    A season whose seats are not filled in yet has no lineup to draw, and the command says so rather
+    than drawing a grid of empty tiles.
 
 ## Season calendar
 
@@ -209,10 +226,89 @@ Reading the card:
 * **outside the championship** under a round that is on the calendar but scores no championship
   points.
 
-!!! warning "Times are in UTC"
+!!! note "One zone for everyone"
     A PNG cannot adapt to each reader's time zone the way Discord's live timestamps can, so the card
-    states one zone in the header and sticks to it. For times in everyone's own zone plus a
-    countdown, use the embed: `/season view:Upcoming`.
+    states one zone in its header and sticks to it. That zone is your
+    [league time zone](settings.md#league-time-zone); without the setting it is UTC, which is how
+    Racing League Tools sends the data. For times in everyone's own zone plus a countdown, use the
+    embed: `/season view:Upcoming`.
+
+## Track history
+
+```
+/render-track track:Monza
+/render-track track:Monza multiseason:Pro Overall
+```
+
+![Track history card](images/track.png)
+
+Everything your league has done at one circuit, on a single card.
+
+| Option | Meaning |
+|---|---|
+| `track` | Circuit. Required — pick it from the suggestions. |
+| `multiseason` | Narrow the whole card to a group of seasons. Omitted = all of them. |
+
+Reading the card:
+
+* **Track record** — the fastest lap ever set there, outlined in the accent colour. It is often a
+  **qualifying** lap, and the card says so, because a qualifying time reads very differently from a
+  race time. When the fastest *race* lap is a different time, it gets its own tile next to it.
+* **Race day** — average pit stops, top speed, safety cars and virtual safety cars, with a line
+  underneath saying how many races those numbers cover.
+* **Drivers / Teams** — who has the most wins, podiums and poles there.
+* **The table** — every main race at that circuit: date, round, season, winner and their team, laps,
+  race time and the fastest lap with its tyre compound.
+
+!!! note "Circuits with two layouts"
+    A circuit that your league has raced in more than one layout appears more than once in the
+    suggestions, with the years it was used — they are different tracks with different records, so
+    they are counted separately.
+
+!!! warning "Race-day numbers need live telemetry"
+    Pit stops, top speed, safety cars and tyre compounds come from sessions recorded with live
+    timing. Races entered by hand contribute positions and times but none of those, which is why
+    the card states *live data: 8 of 11 races* rather than implying it measured them all. A value
+    Racing League Tools does not have is left out rather than drawn as a zero.
+
+!!! note "Sprints are counted but not listed"
+    The table lists **main** races. A sprint counts towards the totals at the top but does not get
+    its own row, so the race count in the footer can be lower than the number of races held.
+
+## Team career
+
+```
+/render-team multiseason:Pro Overall team:McLaren
+```
+
+![Team career card](images/team.png)
+
+One team's whole history inside a group of seasons.
+
+| Option | Meaning |
+|---|---|
+| `multiseason` | Group of seasons. **Required.** |
+| `team` | Team. Required — pick it from the suggestions. |
+
+Reading the card:
+
+* **Four headline numbers** — constructors' titles, total points with its averages, wins with
+  podiums, and poles.
+* **The strip below** — average finish and grid, average qualifying, reliability, clean races and
+  the best season.
+* **Season by season** — every season with position, points, races, wins and podiums. A season the
+  team **won** is outlined in the accent colour.
+* **Line-up** — every driver who raced for the team, ordered by their share of the team's points,
+  with reserves marked.
+
+!!! warning "Switch team statistics on first"
+    Racing League Tools computes this per multiseason and only when the league enables **team
+    statistics** for that multiseason in RLT Desktop. Until then the command says so and names what
+    to switch on. *All Seasons* never has them — it is not a real multiseason.
+
+!!! note "A renamed team keeps one history"
+    Teams arrive merged across seasons under their current name, so a team that changed names mid-
+    history is one card rather than two.
 
 ## Multiclass seasons
 
@@ -254,7 +350,8 @@ meaning, not just lose rows.
 
 How much a **session** card can show depends on where the results came from, and that is decided
 **per session** — a single season can contain both kinds. The season cards (standings, lineup,
-calendar) don't depend on telemetry at all.
+calendar) and the team card don't depend on telemetry at all; the track card is a mix, since it
+sums up sessions of both kinds.
 
 | | Recorded live (UDP telemetry) | Entered manually |
 |---|---|---|
@@ -264,6 +361,7 @@ calendar) don't depend on telemetry at all.
 | Grid → finish | yes | — |
 | **LIVE RESULTS** marker | yes | — |
 | `/render-race-highlights`, `/render-race-strategy` | yes | not available |
+| Race-day numbers on the [track card](#track-history) | yes | — |
 
 The same race, entered by hand — same classification, none of the telemetry extras:
 
