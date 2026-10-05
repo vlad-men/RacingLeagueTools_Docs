@@ -7,7 +7,7 @@ are most likely to meet.
 
 Command lists are cached by the Discord client. Reload it (**Ctrl+R** on desktop) and give it a few
 minutes after inviting the bot. If `/setup` in particular is missing, check that you have the
-**Manage Server** permission — `/setup` and `/setlang` are hidden from members who don't.
+**Manage Server** permission — `/setup` is hidden from members who don't.
 
 ## "This server is not linked to an RLT league yet"
 
@@ -73,7 +73,18 @@ working on. That is the quickest way to see whether the defaults picked what you
 | This season has no class … | The `class` value isn't a class of that season — classes are defined per season | Pick one from the suggestions, or drop the option for the whole field |
 | No … entries in this session | The class exists in the season, but nobody in that class took part in this session | Check the session, or drop `class` |
 | RLT doesn't publish constructor standings per class | Constructor standings exist per season, not per class | Drop `class` for the overall constructors table, or keep it with `type:Drivers` |
-| RLT doesn't publish any lineup for this season | The season has no drivers in its standings yet — usual before a season starts | Try again once the season has entries |
+| This season has no seats filled in yet | Nobody is assigned to the season yet — usual before it starts | Try again once the league fills the line-up |
+
+## Track and team messages
+
+| Message | Meaning | What to do |
+|---|---|---|
+| No track named … | The circuit isn't one your league has in its calendar | Pick it from the suggestions |
+| The league has this track in its calendar but has never raced there yet | The circuit is scheduled but has no completed round | Nothing to fix — the card appears after the first race there |
+| The league has not raced at … in … | The circuit exists, but not inside the group of seasons you picked | Drop `multiseason`, or pick a group that contains it |
+| **…** has no team statistics | Team statistics are not enabled for that multiseason in RLT Desktop | Switch them on there; *All Seasons* never has them |
+| No team named … in this group | That team didn't race in the group you picked | Pick from the suggestions, or choose another group |
+| RLT didn't return track / team statistics | Racing League Tools didn't answer this request | Try again in a moment |
 
 ## "This session has no live telemetry"
 
@@ -95,7 +106,7 @@ works for both kinds. See [Live sessions versus manually entered results](image-
 
 ## Suggestions are missing a new round or driver
 
-The `season`, `round`, `session`, `driver` and `team` suggestions are cached for a few minutes so
+The `season`, `round`, `session`, `driver`, `team` and `track` suggestions are cached for a few minutes so
 they can answer inside Discord's three-second budget. A round or driver added in Racing League Tools
 a moment ago may therefore not be offered yet — and a command run without options may still pick the
 previous round, because it chooses its default from the same lists.
