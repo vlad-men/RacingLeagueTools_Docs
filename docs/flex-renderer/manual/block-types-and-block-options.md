@@ -119,6 +119,8 @@ Blocks within the `ItemTemplate` have access to the `Item` and `ItemIndex` expre
 | `OrderByDescending` | `string` | Property name for descending sort (supports `OrderByDescending2`, `3`). |
 | `FilterMember` | `string` | Property name for filtering the collection. Can be data access expression. |
 | `FilterMemberValue` | `string` | Value to filter by. |
+| `ExcludeFilterMember` | `string` | Property name. Removes items whose value of this property equals `ExcludeFilterMemberValue`, for example drivers with `0` in a ranking. Applied after sorting and before `IndexStart` and `Limit`. Added in 0.9.9. |
+| `ExcludeFilterMemberValue` | `string` | Value to exclude. When omitted, items with an empty or missing value are removed. Added in 0.9.9. |
 | `DistinctMember` | `string` | Property name. Keeps the first item for each distinct value (case-insensitive). Supports nested paths such as `CarClass.Name`. Null and empty values count as one value. Added in 0.9.9. |
 | `Reverse` | `bool` | Reverses the collection order. |
 | `Limit` | `int` | Limits the number of items. |
