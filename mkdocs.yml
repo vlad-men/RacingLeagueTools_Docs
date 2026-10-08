@@ -1,7 +1,7 @@
 site_name: Racing League Tools
 site_description: Living user guide for end users of the Racing League Tools application.
 site_author: Sirotkin
-site_url: ""
+site_url: https://docs.racingleaguetools.com/
 nav:
   - FAQ: faq.md
   - Help and Hints:
