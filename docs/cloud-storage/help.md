@@ -1,153 +1,139 @@
 # Cloud Storage
 
-**Cloud Storage** keeps one league database for several people. It is available in Racing League Tools **0.9.9** and newer.
+Cloud storage v2, Racing League Tools **0.9.9** and newer.
 
-## Quick Start
+## Quick start
 
-Creating a cloud requires access to **Advanced** or **Pro** features.
+To create a cloud you need access to **Advanced** or **Pro** features. How to get it: [support the project](https://discord.com/channels/904276286359347220/960444187403231262).
 
-1. Open the league and select _Cloud_ -> _Create cloud storage..._.
-2. The app uploads the league and opens the _Invite_ window.
-3. Choose a role (_Manager_ or _Viewer_), press _Copy link_ and send the link to the person.
+1. Open your league, **Cloud** -> **Create cloud storage...**
+2. The app uploads the league and opens **Invite** window.
+3. Choose role (**Manager** or **Viewer**), press **Copy link** and send it to other user.
 
-The invited person selects _Cloud_ -> _Join a cloud..._ and pastes the link. Joining with _Sign in and join_ is recommended over joining as a guest: a signed-in membership survives a Windows reinstall or a new PC.
+User opens **Cloud** -> **Join a cloud...**, pastes the link and that's all.
 
-All other cloud settings are in _Cloud_ -> _Open Cloud Storage..._.
+Everything else about the cloud is in **Cloud** -> **Open Cloud Storage...**
 
-![Invite window](images/quick-start-invite.png)
+![Cloud Storage overview](images/02-overview.png)
 
-## How It Works
+## How it works
 
-The cloud synchronizes the **whole database file**, not separate changes. The file can always be taken and used offline.
+Cloud synchronizes **whole database file**, not separate changes. Same as before, so you can always take the file and use it offline.
 
-- About **1 minute** after a change, the app publishes a new version. It also publishes when the app closes; a small progress window is shown.
-- Nothing is published during a live session. Results go to the cloud when the session ends.
-- While the app is active, it checks for a new version every 30 seconds.
-- A new version is applied with a quick restart of the app. By default this happens automatically after 2 minutes without user activity, with a 10-second countdown and a _Not now_ button. The _Load others' changes automatically_ option is in the status bar flyout.
-- Before applying any version, the app makes a local backup of the database.
-- Without internet the app works as usual. Changes are published when the connection is back.
-- The cloud keeps the latest versions of the league; the number depends on the cloud type.
+- You change something, about **1 minute** later the app publishes new version. Also when you close the app (you will see small progress window).
+- During live session nothing is published. Results go to the cloud when session ends.
+- Other members check for new version every 30 seconds while the app is active.
+- New version is applied with quick restart of the app. By default it happens by itself, when you don't touch PC for 2 minutes. You will see 10 seconds countdown with **Not now** button. Option **Load others' changes automatically** is in the status bar flyout.
+- Before applying any version the app makes local backup of your database.
+- No internet? Work as usual. Changes are published when connection is back.
+- Cloud keeps last versions of the league (how many depends on cloud type). So you can always go back.
 
-Permissions are checked by the server, not only by the app.
+## Who is online, conflicts
 
-![Cloud indicator in the status bar](images/how-it-works-indicator.png)
+Cloud indicator in the status bar shows state of your league: **Up to date**, **N changes not published**, **Update available**, **Conflict**, **Offline**. Click it and you see who is online, who is **editing** right now (and since when) and who runs **live session**. Before you start big work, look there.
 
-## Who Is Online and Conflicts
+If you start editing old version, the app asks first: *A newer version from User is available*. Better press **Load changes**, it takes few seconds.
 
-The cloud indicator in the status bar shows the state of the league: _Up to date_, _N changes not published_, _Update available_, _Conflict_, _Offline_. Clicking it shows who is online, who is **editing** right now (and since when) and who is running a **live session**. Checking it before a big change is a good habit.
+If two people still published at the same time, nothing is lost. Your version goes to **History**, indicator shows **Conflict**. Press **Resolve**, you see what each side changed, and choose:
 
-When editing starts on an old version, the app warns first: _A newer version from Anna is available_. Pressing _Load changes_ takes a few seconds and avoids a conflict.
+- **Take theirs** - your version stays in History.
+- **Keep mine** - only owner or manager with full access.
+- **Save my version as a file...** - your local file with everything.
 
-![Newer version warning](images/conflicts-update-first.png)
+![Cloud indicator in the status bar](images/2-how-it-works-indicator.png)
 
-If two people still publish at the same time, nothing is lost. The local version goes to _History_ and the indicator shows _Conflict_. Press _Resolve_ to see what each side changed and choose:
+![Conflict dialog](images/4-conflicts-dialog.png)
 
-- _Take theirs_ - the local version stays in History.
-- _Keep mine_ - available only to the owner or a manager with full access.
-- _Save my version as a file..._ - saves the local file with all changes.
+## History and restore
 
-![Conflict dialog](images/conflicts-dialog.png)
+History is not log of edits, it's saved copies of the whole league. **Cloud Storage** window -> **History**.
+Every version shows who published it, when and what was changed.
 
-## History and Restore
+- **Make current** - roll back the league to this version. Version which was current before is pinned automatically, so you can come back.
+- **Save as file...** - download any version as normal database file. Useful to check something without touching the cloud.
+- **Pin** - pinned version is never removed by history limit. Pin it before something risky, e.g. big import or new season.
 
-History is not a log of edits: it stores saved copies of the whole league. Open the _Cloud Storage_ window -> _History_. Every version shows who published it, when, and what changed.
+How many versions are kept and how many you can pin - see cloud types below. Current and pinned versions don't count.
 
-- _Make current_ - rolls the league back to this version. The version that was current before is pinned automatically, so it is possible to come back.
-- _Save as file..._ - downloads any version as a normal database file, without touching the cloud.
-- _Pin_ - a pinned version is never removed by the history limit. Pinning before something risky, such as a big import or a new season, is recommended.
+Only owner and managers with full access can restore.
 
-The number of kept and pinned versions depends on the cloud type. The current and pinned versions do not count toward the limit. Only the owner and managers with full access can restore.
+![History](images/5-history.png)
 
-![History](images/history.png)
-
-## Roles and Permission Profiles
+## Roles and permission profiles
 
 - **Owner** - one per cloud, manages everything.
-- **Manager** - edits the league, with full access or limited by a permission profile.
-- **Viewer** - read-only. The app shows the league with edit buttons disabled.
+- **Manager** - edits the league. Full access or limited by permission profile.
+- **Viewer** - read-only. The app shows the league, edit buttons are disabled.
 
-**Permission profiles** (Team and above) are set in the _Cloud Storage_ window -> _Permissions_. A profile is a list of database categories (Season, Event, Session results, Penalty, Driver, Lineup and others), optionally narrowed by league category tags; a manager with such a profile can edit only seasons with these tags. A profile can be chosen already when creating an invite.
+**Permission profiles** *(Team and above)*. **Cloud Storage** window -> **Permissions**. Profile is list of database categories (Season, Event, Session results, Penalty, Driver, Lineup...), optionally narrowed by league category tags. Then manager can edit only seasons with these tags. You can choose profile already when you create invite.
 
-**Public read-only access** replaces the old Public Cloud ID. It is in the _Invites_ section: one code with the Viewer role and unlimited uses. Posted in a league Discord, it lets people follow the league in the app. The viewer limit of the cloud type still applies.
+**Public read-only access** replaces old Public Cloud ID. It's in **Invites** section: one code with Viewer role and unlimited uses. Post it in your league Discord, people can follow the league in the app. Viewer limit of cloud type still applies.
 
-![Permission profiles](images/roles-permissions.png)
+## Things you may miss
 
-## Useful Details
+- **Invite link.** Instead of code you can send link (**Copy link**). User opens it in browser and sees what to do. If code or link is in clipboard, the start window of the app offers to join with it.
+- **Change owner.** **Members** -> owner menu on member -> **Make owner...** New owner must be signed in member, guest can't be owner. Cloud type changes to new owner's type at once.
+- **Lost guest.** **Members** -> **Re-issue access...** Old access stops working, you send new code.
+- **Guest -> account.** Guest can link membership later: **Settings** -> **Link to my account**. History of this member is kept.
+- **Devices.** **Members** shows app version of each member and how far behind he is (e.g. *2 versions behind*). Good place to find who forgot to update.
+- **Several leagues.** **Cloud** -> **My clouds...** switches between your cloud leagues in one click.
+- **Website.** [racingleaguetools.com/account/cloud-storages](https://racingleaguetools.com/account/cloud-storages) shows all clouds you belong to, without the app.
+- **Exit without publishing** on close - your last changes stay only on this PC. Use carefully.
 
-- **Invite link.** Instead of a code, a link can be sent (_Copy link_). Opened in a browser, it explains what to do. If a code or link is in the clipboard, the start window of the app offers to join with it.
-- **Change owner.** _Members_ -> member menu -> _Make owner..._. The new owner must be a signed-in member; a guest cannot be an owner. The cloud type changes to the new owner's type at once.
-- **Lost guest access.** _Members_ -> _Re-issue access..._. The old access stops working, and a new code is sent.
-- **Guest to account.** A guest can link the membership to an account later: _Settings_ -> _Link to my account_. The member's history is kept.
-- **Devices.** _Members_ shows the app version of each member and how far behind it is (for example, _2 versions behind_).
-- **Several leagues.** _Cloud_ -> _My clouds..._ switches between cloud leagues in one click.
-- **Website.** The [account page](https://racingleaguetools.com/account/cloud-storages) shows all clouds the user belongs to, without the app.
-- **Exit without publishing.** On close, this option keeps the latest changes only on this PC. Use it carefully.
+## Cloud types
 
-![Members](images/things-you-may-miss-members.png)
-
-## Cloud Types
-
-The cloud type depends on the support level of the owner.
+Type depends on support of the owner.
 
 ![Cloud types](images/cloud-types.png)
 
-| | Free | Standard | Team | Pro | Pro+ |
-| --- | --- | --- | --- | --- | --- |
-| Managers (owner included) | 1 | 3 | 6 | 20 | 30 |
-| Viewers | - | 10 | 25 | 60 | 120 |
-| Invites | - | Yes | Yes | Yes | Yes |
-| Features for members | - | Advanced | Advanced | Pro | Pro |
-| History (saved versions) | 1 | 3 | 5 | 10 | 20 |
-| Pinned versions | - | 1 | 1 | 2 | 3 |
-| Permission profiles | - | - | Yes | Yes | Yes |
-| Public API keys | - | - | 1 | 2 | 5 |
-| Encryption | - | - | - | Yes | Yes |
-| Official Discord bot | - | - | - | 30-day trial | Yes |
-| Clouds per owner | - | 1 | 2 or 3 | 5 | 5 |
-| Max database file | 100 MB | 100 MB | 100 MB | 100 MB | 100 MB |
-| Who gets it | When the owner's support ends | Lifetime Advanced features | Supporter (2 clouds), Advanced Supporter (3 clouds) | Pro Supporter, Pro key | Pro+ Supporter |
+### How type changes?
 
-A Free cloud cannot be created; a cloud becomes Free only when the owner's support ends. Clouds of the old system count toward the clouds-per-owner limit until they are switched or deleted.
+Automatically, by support of the owner. Upgrade is immediate.
+If support ends, you get notification and have **7 days**. Then type goes down:
 
-### How the Type Changes
+- managers above new limit become viewers (last joined first), they get access back when type returns;
+- new viewers and invites follow new limits, members already in stay;
+- History is trimmed to new depth, current and pinned versions are kept;
+- encryption stays on.
 
-The type changes automatically with the owner's support. An upgrade is immediate. When support ends, the owner gets a notification and **7 days** of grace. After that the type goes down:
+League itself is never deleted because of this.
 
-- Managers above the new limit become viewers (the last joined first) and get their access back when the type returns.
-- New viewers and invites follow the new limits; members who are already in stay.
-- History is trimmed to the new depth; the current and pinned versions are kept.
-- Encryption stays on.
+### What do members get?
 
-The league itself is never deleted because of a type change.
+Every member gets features of the owner, but **limited**: Standard and Team give **Advanced** features, Pro and Pro+ give **Pro** features. Limited means they work only in this cloud's league. For example member can render graphics or see statistics which need Pro, but can't create own cloud with it.
+Paid themes bought by the owner work for all members too, also only in this league.
 
-### What Members Get
+### How many clouds can I own?
 
-Every member gets the owner's features in a **limited** form: Standard and Team give **Advanced** features, Pro and Pro+ give **Pro** features. Limited means the features work only in this cloud's league. For example, a member can render graphics or see statistics that need Pro, but cannot create an own cloud with it. Paid themes bought by the owner also work for all members, only in this league.
+Standard - 1, Supporter - 2, Advanced Supporter - 3, Pro and Pro+ - 5. Old clouds count too, until you switch or delete them.
 
-### Encryption
+### Encryption (Pro, Pro+)
 
-Available for Pro and Pro+: _Settings_ -> encryption. Nobody types a password; the app handles it for every member. It is basic protection, not a vault. While encryption is on, the **Public API and the Discord bot do not work**.
+**Settings** -> encryption. Nobody types password, the app does it for everyone. It's basic protection, not a vault. While it's on, Public API and Discord bot **don't work.**
 
-## Switching an Old Cloud
+## Old cloud? Switch it before 1 December 2026
 
-Old clouds (slots, Cloud ID and password) work only in 0.9.8 and earlier. After **1 December 2026** they are deleted automatically.
+Old clouds (slots, Cloud ID + password) work only in 0.9.8 and earlier. After **1 December 2026** they are deleted automatically.
 
-Only the owner can switch a cloud:
+Only owner can switch:
 
-- In the app: open the league, _Cloud_ -> _Cloud storage management..._ -> _Switch to the new cloud system..._.
-- On the website: the [account page](https://racingleaguetools.com/account/cloud-storages) -> the old cloud -> _Switch to the new Cloud Storage_.
+- app: open the league, **Cloud** -> **Cloud storage management...** -> **Switch to the new cloud system...**
+- or website: [racingleaguetools.com/account/cloud-storages](https://racingleaguetools.com/account/cloud-storages) -> your old cloud -> **Switch to the new Cloud Storage**
 
-The Cloud ID and league data stay the same. Members on 0.9.9 are switched automatically; members on older versions lose access and need a new invite after the switch. Slot permissions become permission profiles, the Public Cloud ID becomes a public viewer code, and API keys and Discord bot links stay. Asking all members to update the app before the switch saves time.
+Same Cloud ID and same league data. Members on 0.9.9 are switched automatically. Members on older versions lose access, send them invite after switch. Slot permissions become permission profiles, Public Cloud ID becomes public Viewer code, API keys and Discord bot links stay.
 
-![Switching an old cloud](images/old-cloud-switch.png)
+Ask everybody to update the app before. It saves you time.
 
 ## FAQ
 
-??? question "\"No free seat for that role\" when joining"
-    The cloud reached the manager or viewer limit of its type. The owner can change roles or upgrade the cloud.
+> *"No free seat for that role" when joining*
 
-??? question "\"Update the app to get new data\""
-    Someone published a version from a newer app. Select _Help_ -> _Check for updates_.
+Cloud reached limit of managers or viewers for its type. Owner can change roles or upgrade the cloud.
 
-??? question "How to leave or delete a cloud?"
-    To leave: _Cloud_ -> _Leave cloud storage..._. To delete (owner only): _Settings_ -> _Delete this cloud..._; deletion is immediate and cannot be undone. In both cases the local database stays on the PC.
+> *"Update the app to get new data"*
+
+Someone published version from newer app. **Help** -> **Check for updates**.
+
+> *How to leave or delete the cloud?*
+
+Leave: **Cloud** -> **Leave cloud storage...** Delete (owner): **Settings** -> **Delete this cloud...**, immediate, no restore. In both cases local database stays on PC.
