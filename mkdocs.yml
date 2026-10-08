@@ -44,7 +44,8 @@ nav:
       - Data Objects: flex-renderer/manual/data-objects.md
       - Data Converters: flex-renderer/manual/data-converters.md
       - Localization support: flex-renderer/manual/localization-support.md
-      - Appendix: flex-renderer/manual/appendix.md  
+      - Appendix: flex-renderer/manual/appendix.md
+  - Website: https://racingleaguetools.com/
 theme:
   name: material
   logo: assets/logo.png
@@ -56,22 +57,28 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
+  # The site is dark-only, so the docs are too: one scheme, colors come from extra.css.
   palette:
-    - scheme: slate # built-in dark scheme
-      primary: teal
-      accent: teal
-      toggle:
-        icon: material/weather-night
-        name: Switch to light theme
-    - scheme: default 
-      primary: teal
-      accent: teal
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to dark theme
+    scheme: slate
+    primary: custom
+    accent: custom
+  font:
+    text: Inter
+    code: Roboto Mono
 
 extra_css:
+  - https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@800&display=swap
   - assets/css/extra.css
+
+extra:
+  generator: false
+  social:
+    - icon: material/web
+      link: https://racingleaguetools.com/
+      name: Racing League Tools website
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/faE4bmnJmz
+      name: Discord
 
 markdown_extensions:
   - admonition

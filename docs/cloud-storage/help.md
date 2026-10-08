@@ -1,145 +1,139 @@
 # Cloud Storage
 
-**Share your database with different users using cloud storage.** See also the [video guide](https://www.youtube.com/watch?v=FDg9FgoGlDg).
+Cloud storage v2, Racing League Tools **0.9.9** and newer.
 
-## Basic terms
+## Quick start
 
-- **Cloud storage** — dedicated space on the cloud server to store all cloud user databases for a single league. Each storage has a unique Cloud ID.
-- **Cloud slot / database** — a slot in the cloud storage, allocated to each cloud storage user.
-- **Cloud storage owner** — the user who created the cloud storage. They have maximum access rights and the ability to manage it.
+To create a cloud you need access to **Advanced** or **Pro** features. How to get it: [support the project](https://discord.com/channels/904276286359347220/960444187403231262).
 
-### How it works
+1. Open your league, **Cloud** -> **Create cloud storage...**
+2. The app uploads the league and opens **Invite** window.
+3. Choose role (**Manager** or **Viewer**), press **Copy link** and send it to other user.
 
-All league information is stored in a single database file. You can use it standalone and offline. However, this makes it difficult when multiple users need to work on the same database. Racing League Tools provides a cloud-based system that automatically synchronizes the database file between different users. Within a set interval it checks whether changes have occurred, and if so, delivers the updated database file to all other users of the cloud storage.
+User opens **Cloud** -> **Join a cloud...**, pastes the link and that's all.
 
-### How to create cloud storage
+Everything else about the cloud is in **Cloud** -> **Open Cloud Storage...**
 
-First, you must be a supporter of the project on *Boosty* or *Patreon*, or have *Advanced* or *Pro* features.
-To create a storage, you need to register in the app first ("*Help*" → "*Register user*"). Use the email you registered with *Boosty* or *Patreon* so the app can verify your support. Then choose "**Cloud**" → "**Create new cloud storage**" from the app's main menu.
+![Cloud Storage overview](images/02-overview.png)
 
-## Storage types
+## How it works
 
-Depending on your level of project support, you can manage different types of cloud storage: **Standard**, **Advanced**, and **Pro**:
+Cloud synchronizes **whole database file**, not separate changes. Same as before, so you can always take the file and use it offline.
 
-![Storage types overview](images/1256968446315466804_20260331_112443_image.png)
+- You change something, about **1 minute** later the app publishes new version. Also when you close the app (you will see small progress window).
+- During live session nothing is published. Results go to the cloud when session ends.
+- Other members check for new version every 30 seconds while the app is active.
+- New version is applied with quick restart of the app. By default it happens by itself, when you don't touch PC for 2 minutes. You will see 10 seconds countdown with **Not now** button. Option **Load others' changes automatically** is in the status bar flyout.
+- Before applying any version the app makes local backup of your database.
+- No internet? Work as usual. Changes are published when connection is back.
+- Cloud keeps last versions of the league (how many depends on cloud type). So you can always go back.
 
-![Storage type comparison](images/1256968551525257236_20260331_112442_image.png)
+## Who is online, conflicts
 
-> **Can I change cloud storage type after it has been created?**
-> Yes. If you become a Boosty or Patreon subscriber, upgrade your tier to Pro Supporter, or get access to Pro Features, you can upgrade your cloud storages (where you are the owner).
+Cloud indicator in the status bar shows state of your league: **Up to date**, **N changes not published**, **Update available**, **Conflict**, **Offline**. Click it and you see who is online, who is **editing** right now (and since when) and who runs **live session**. Before you start big work, look there.
 
-> **What happens if I unsubscribe or Pro Features expire?**
-> There may be a downgrade of your cloud storage (the type can change to Standard or Advanced). This can happen without notice, but at least one month after your support period has expired. Note that downgrading may remove Public Cloud ID and reduce the number of users by removing the oldest versions of the cloud databases. None of the cloud storages will be deleted after the end of support.
+If you start editing old version, the app asks first: *A newer version from User is available*. Better press **Load changes**, it takes few seconds.
 
-## User registration
+If two people still published at the same time, nothing is lost. Your version goes to **History**, indicator shows **Conflict**. Press **Resolve**, you see what each side changed, and choose:
 
-There is a user registration option in the app. After registering, the app can detect if you have Boosty and Patreon subscriptions. The cloud storage **owner must be a registered user**. To register, simply enter your email address — you will receive a confirmation code.
+- **Take theirs** - your version stays in History.
+- **Keep mine** - only owner or manager with full access.
+- **Save my version as a file...** - your local file with everything.
 
-To register, choose "**Help**" → "**Register user**":
+![Cloud indicator in the status bar](images/2-how-it-works-indicator.png)
 
-![Register user menu](images/1257122848019841034_20260331_112441_image.png)
+![Conflict dialog](images/4-conflicts-dialog.png)
 
-![Confirmation code](images/1257122960091648022_20260331_112440_image.png)
+## History and restore
 
-!!! note
-    You can re-register an unlimited number of times. This will prevent you from using the same account on many different devices simultaneously, but once you have unlocked Advanced or Pro features you may need to re-register so the server recognizes it.
+History is not log of edits, it's saved copies of the whole league. **Cloud Storage** window -> **History**.
+Every version shows who published it, when and what was changed.
 
-## Storage owner
+- **Make current** - roll back the league to this version. Version which was current before is pinned automatically, so you can come back.
+- **Save as file...** - download any version as normal database file. Useful to check something without touching the cloud.
+- **Pin** - pinned version is never removed by history limit. Pin it before something risky, e.g. big import or new season.
 
-Only the storage owner can manage the storage through the "**Cloud Storage Management**" window. If necessary, you can transfer storage owner rights to another user (they must be registered using email). To transfer owner rights, right-click on the desired user and select "**Change owner**".
+How many versions are kept and how many you can pin - see cloud types below. Current and pinned versions don't count.
 
-To delete storage, first select "*Detach from the current cloud storage*", then select "**Create new cloud storage**" and in the list of existing storages delete the desired one.
+Only owner and managers with full access can restore.
 
-![Storage management](images/1257123605997817998_20260331_112439_image.png)
+![History](images/5-history.png)
 
-![Storage owner options](images/1257123672871665815_20260331_112438_image.png)
+## Roles and permission profiles
 
-## Users
+- **Owner** - one per cloud, manages everything.
+- **Manager** - edits the league. Full access or limited by permission profile.
+- **Viewer** - read-only. The app shows the league, edit buttons are disabled.
 
-The number of users that can have access to edit the database is limited, depending on the type of storage (the *owner* is also counted as a user). After creating the storage, *pass the **Cloud ID** and corresponding slot **password** to each user*. No one can access the storage without a password. You cannot pass the same password to multiple users.
+**Permission profiles** *(Team and above)*. **Cloud Storage** window -> **Permissions**. Profile is list of database categories (Season, Event, Session results, Penalty, Driver, Lineup...), optionally narrowed by league category tags. Then manager can edit only seasons with these tags. You can choose profile already when you create invite.
 
-After registration in the cloud storage, the cloud database is linked to the user's hardware configuration. If you need to change the user, just reset the slot/DB password.
+**Public read-only access** replaces old Public Cloud ID. It's in **Invites** section: one code with Viewer role and unlimited uses. Post it in your league Discord, people can follow the league in the app. Viewer limit of cloud type still applies.
 
-If the storage owner needs to register their email and be a project supporter, this is **not** required for other users — Cloud ID and slot password are sufficient to connect.
+## Things you may miss
 
-## User roles and permissions
+- **Invite link.** Instead of code you can send link (**Copy link**). User opens it in browser and sees what to do. If code or link is in clipboard, the start window of the app offers to join with it.
+- **Change owner.** **Members** -> owner menu on member -> **Make owner...** New owner must be signed in member, guest can't be owner. Cloud type changes to new owner's type at once.
+- **Lost guest.** **Members** -> **Re-issue access...** Old access stops working, you send new code.
+- **Guest -> account.** Guest can link membership later: **Settings** -> **Link to my account**. History of this member is kept.
+- **Devices.** **Members** shows app version of each member and how far behind he is (e.g. *2 versions behind*). Good place to find who forgot to update.
+- **Several leagues.** **Cloud** -> **My clouds...** switches between your cloud leagues in one click.
+- **Website.** [racingleaguetools.com/account/cloud-storages](https://racingleaguetools.com/account/cloud-storages) shows all clouds you belong to, without the app.
+- **Exit without publishing** on close - your last changes stay only on this PC. Use carefully.
 
-*Available only for Advanced and Pro storages.*
+## Cloud types
 
-You can restrict write access for certain database users. Go to the League Roles page, create or edit roles. For each role you can specify a different set of database categories for which write access is allowed. If no categories are specified, the role has full access to the database.
+Type depends on support of the owner.
 
-![User roles](images/1257124486847791115_20260331_112436_image.png)
+![Cloud types](images/cloud-types.png)
 
-Any editing on the roles page will not change the actual access rights. To really set or change permissions you must open the "**Cloud Storage Management**" window (only the storage owner can do this). In this window you can set or change roles for specific users. The final set of categories available for editing is determined by the intersection of allowed categories across all roles assigned to the user.
+### How type changes?
 
-**Important:** you can additionally set one or more *league categories* for a specific user. This will restrict access to editing seasons (all session results, events, season properties, line-ups) that share the same categories. If no categories are assigned, the user has access to edit all seasons.
+Automatically, by support of the owner. Upgrade is immediate.
+If support ends, you get notification and have **7 days**. Then type goes down:
 
-After making any changes to league roles or league categories in the Cloud Storage Management window, remember to click the up arrow button to push those changes to the cloud server. Changes take effect when the end user restarts the app.
+- managers above new limit become viewers (last joined first), they get access back when type returns;
+- new viewers and invites follow new limits, members already in stay;
+- History is trimmed to new depth, current and pinned versions are kept;
+- encryption stays on.
 
-![Cloud Storage Management window](images/1257124752460349451_20260331_112435_image.png)
+League itself is never deleted because of this.
 
-## Public cloud
+### What do members get?
 
-*Available only for Pro storages.*
+Every member gets features of the owner, but **limited**: Standard and Team give **Advanced** features, Pro and Pro+ give **Pro** features. Limited means they work only in this cloud's league. For example member can render graphics or see statistics which need Pro, but can't create own cloud with it.
+Paid themes bought by the owner work for all members too, also only in this league.
 
-You can generate a public Cloud ID in the "**Cloud Storage Management**" window, then share it publicly. With this Public Cloud ID, other users can download your database in **read-only** mode — they cannot change anything, and most sensitive sections will be hidden. By default, only seasons, calendar, session results, line-ups, and penalties are visible.
+### How many clouds can I own?
 
-The number of public users is unlimited. You can remove the Public Cloud ID at any time to revoke access.
+Standard - 1, Supporter - 2, Advanced Supporter - 3, Pro and Pro+ - 5. Old clouds count too, until you switch or delete them.
 
-## Last connection
+### Encryption (Pro, Pro+)
 
-*Available only for Advanced and Pro storages.*
+**Settings** -> encryption. Nobody types password, the app does it for everyone. It's basic protection, not a vault. While it's on, Public API and Discord bot **don't work.**
 
-After any user launches Racing League Tools and synchronizes, it updates a timestamp so that all other users can see the most recently connected user in the status bar.
+## Old cloud? Switch it before 1 December 2026
 
-## Database file linking
+Old clouds (slots, Cloud ID + password) work only in 0.9.8 and earlier. After **1 December 2026** they are deleted automatically.
 
-*Available only for Advanced and Pro storages.*
+Only owner can switch:
 
-You can link your database file to a specific cloud storage. This creates a special mark in the database file indicating that it should not be opened outside the cloud storage, making it very difficult for other users to change the database by opening the file directly. Use this feature carefully if you plan to delete the cloud storage later.
+- app: open the league, **Cloud** -> **Cloud storage management...** -> **Switch to the new cloud system...**
+- or website: [racingleaguetools.com/account/cloud-storages](https://racingleaguetools.com/account/cloud-storages) -> your old cloud -> **Switch to the new Cloud Storage**
 
-## Database encryption
+Same Cloud ID and same league data. Members on 0.9.9 are switched automatically. Members on older versions lose access, send them invite after switch. Slot permissions become permission profiles, Public Cloud ID becomes public Viewer code, API keys and Discord bot links stay.
 
-*Part of Pro features.*
-
-After the encryption operation, the entire database file is encrypted with the password you specify. Select "**Database**" → "**Encrypt database**". This feature works for both offline databases and databases in cloud storage. If you encrypt a cloud storage database, all other users' passwords will be reset and they will lose access to the old version — a new password must be provided to them.
-
-!!! warning
-    This feature is in beta stage. If you forget the password, you may permanently lose access to the database. Use with caution.
-
-After encryption, you can decrypt the database file back at any time.
+Ask everybody to update the app before. It saves you time.
 
 ## FAQ
 
-> **I forgot my Cloud ID or password — how do I restore access?**
+> *"No free seat for that role" when joining*
 
-You must be the storage's owner.
+Cloud reached limit of managers or viewers for its type. Owner can change roles or upgrade the cloud.
 
-1. If you have a fresh install of the app: create any test database.
-2. If you haven't registered a user in the app: click "**Help**" → "**Register user**". Enter the email associated with the cloud storage owner.
-3. Go to "**Cloud**" → "**Create a new cloud storage**". In the list you will find all your cloud storages, including their passwords.
-4. Note the Cloud ID and password, close the window. Then press "**Cloud**" → "**Load database using CloudID**" and enter the Cloud ID and password.
+> *"Update the app to get new data"*
 
-*Note: you don't have to enter a password for your own storage — Cloud ID alone is sufficient.*
+Someone published version from newer app. **Help** -> **Check for updates**.
 
----
+> *How to leave or delete the cloud?*
 
-> **Why may the last changes disappear after synchronization?**
-
-This can happen when different users change the database at the same time.
-
-Since a primitive approach to cloud sync is used — exchanging the entire database file — the loss of recent changes during simultaneous writes is almost unavoidable.
-
-The best ways to avoid this:
-
-1. **Do not allow different users to perform write operations at the same time.**
-2. Make sure the app has synchronized immediately before making changes ("**Cloud**" → "**Synchronize now**", not available for all storage types).
-
----
-
-> **I get an "access denied" error when trying to load from the cloud.**
-
-This is possible when a user tries to use the same Cloud ID and password on different computers. To fix this:
-
-1. If you have been registered in the app before (confirmed email), try to re-register with the same email before attempting to load from the cloud.
-2. Ask the storage's owner to reset the password for your slot and provide you with a new one.
+Leave: **Cloud** -> **Leave cloud storage...** Delete (owner): **Settings** -> **Delete this cloud...**, immediate, no restore. In both cases local database stays on PC.
