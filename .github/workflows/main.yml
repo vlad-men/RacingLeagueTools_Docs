@@ -4,6 +4,11 @@ permissions:
   contents: write
 
 on:
+  # Publish only what has landed in main.
+  push:
+    branches:
+      - main
+  # A pull request only checks that the site builds; it never publishes.
   pull_request:
     branches:
       - main
@@ -13,10 +18,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
@@ -24,6 +29,13 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Build
+        if: github.event_name == 'pull_request'
+        run: |
+          mkdocs build
+
+      # docs/CNAME is copied into the built site, so every deploy keeps docs.racingleaguetools.com.
       - name: Deploy to GitHub Pages
+        if: github.event_name != 'pull_request'
         run: |
           mkdocs gh-deploy --force
