@@ -1,0 +1,2664 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Living user guide for end users of the Racing League Tools application.">
+      
+      
+        <meta name="author" content="Sirotkin">
+      
+      
+        <link rel="canonical" href="https://docs.racingleaguetools.com/discord-bot/image-cards/">
+      
+      
+        <link rel="prev" href="../commands/">
+      
+      
+        <link rel="next" href="../settings/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Image cards - Racing League Tools</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@800&display=swap">
+    
+      <link rel="stylesheet" href="../../assets/css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#image-cards" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Racing League Tools" class="md-header__button md-logo" aria-label="Racing League Tools" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Racing League Tools
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Image cards
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../drivers/hints/" class="md-tabs__link">
+          
+  
+  
+  Help and Hints
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../advanced/tyre-types/" class="md-tabs__link">
+          
+  
+  
+  Advanced Configuration
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../data-export/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  JSON Data Export
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Discord Bot
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../flex-renderer/manual/" class="md-tabs__link">
+          
+  
+  
+  Image Renderer Manual
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://racingleaguetools.com/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Website
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Racing League Tools" class="md-nav__button md-logo" aria-label="Racing League Tools" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Racing League Tools
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help and Hints
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Help and Hints
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../drivers/hints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drivers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../championships/help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Championships
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sessions/hints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../live-timing/hints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Timing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../penalty-system/help-channel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Penalty System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cloud-storage/help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/tyre-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tyre Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/driver-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Driver Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Data Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discord Bot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Discord Bot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../invite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Invite the bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Link your league
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image cards
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image cards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#which-form-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which form to use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#race-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Race result
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qualifying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qualifying
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session highlights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tyre-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tyre strategy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#championship-standings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Championship standings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#season-lineup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Season lineup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#season-calendar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Season calendar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#track-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Track history
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#team-career" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Team career
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiclass-seasons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiclass seasons
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multiclass seasons">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-class-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The class option
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#live-sessions-versus-manually-entered-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live sessions versus manually entered results
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Server settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image Renderer Manual
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Image Renderer Manual
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/folders-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Folders structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/theme-resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theme resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/layouts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layouts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/logotypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logotypes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/liveries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Liveries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/block/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/block-types-and-block-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Styles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Triggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/public-properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Public properties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/data-objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/data-converters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Converters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/localization-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Localization support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flex-renderer/manual/appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://racingleaguetools.com/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Website
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#which-form-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which form to use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#race-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Race result
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qualifying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qualifying
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session highlights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tyre-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tyre strategy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#championship-standings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Championship standings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#season-lineup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Season lineup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#season-calendar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Season calendar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#track-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Track history
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#team-career" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Team career
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiclass-seasons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiclass seasons
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multiclass seasons">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-class-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The class option
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#live-sessions-versus-manually-entered-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live sessions versus manually entered results
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="image-cards">Image cards<a class="headerlink" href="#image-cards" title="Permanent link">&para;</a></h1>
+<p>Nine commands upload your league data as a <strong>PNG image</strong> instead of replying with a text embed.
+Every command whose name starts with <code>render-</code> belongs to this family; all the others are documented
+under <a href="../commands/">Commands</a>.</p>
+<p>They come in three groups. <strong>Session cards</strong> show one race or qualifying session, <strong>season cards</strong>
+show a whole season at once, and <strong>history cards</strong> look across many seasons.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Card</th>
+<th>Text-embed counterpart</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/render-race-results</code></td>
+<td>Race result table</td>
+<td><code>/race-results</code></td>
+</tr>
+<tr>
+<td><code>/render-qual-results</code></td>
+<td>Qualifying result table</td>
+<td><code>/qual-results</code></td>
+</tr>
+<tr>
+<td><code>/render-race-highlights</code></td>
+<td>Session highlights (stat tiles)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>/render-race-strategy</code></td>
+<td>Tyre strategy (stint chart)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>/render-standings</code></td>
+<td>Championship standings</td>
+<td><code>/standings</code></td>
+</tr>
+<tr>
+<td><code>/render-lineup</code></td>
+<td>Season lineups — who drives for whom</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>/render-calendar</code></td>
+<td>Season calendar</td>
+<td><code>/season</code></td>
+</tr>
+<tr>
+<td><code>/render-track</code></td>
+<td>Track history</td>
+<td><code>/track</code></td>
+</tr>
+<tr>
+<td><code>/render-team</code></td>
+<td>Team career</td>
+<td><code>/team</code></td>
+</tr>
+</tbody>
+</table>
+<p>The session cards take the same <code>season</code>, <code>round</code> and <code>session</code> options as the embed commands and
+follow the same defaults — see
+<a href="../commands/#how-season-round-and-session-are-chosen">How season, round and session are chosen</a>.
+The season cards have no session to pick, so they take <code>season</code> and nothing else beyond their own
+options. The history cards belong to neither a session nor a season: <code>/render-track</code> takes a circuit
+and <code>/render-team</code> a team plus the group of seasons to count it in.</p>
+<div class="admonition note">
+<p class="admonition-title">Sample data</p>
+<p>The cards on this page are rendered from sample data, so the drivers, teams and tracks are made
+up. The layout is exactly what your league gets.</p>
+</div>
+<h2 id="which-form-to-use">Which form to use<a class="headerlink" href="#which-form-to-use" title="Permanent link">&para;</a></h2>
+<p>Neither form is better; they are good at different things.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Text embed</th>
+<th>Image card</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text can be selected, copied and searched in Discord</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Follows each reader's own Discord light/dark theme</td>
+<td>yes</td>
+<td>no — fixed by <code>/setup theme</code></td>
+</tr>
+<tr>
+<td>Reflows on narrow phone screens</td>
+<td>yes</td>
+<td>shown as a scaled-down preview, tap to enlarge</td>
+</tr>
+<tr>
+<td>Team colours, tyre compounds, stint bars, podium boxes</td>
+<td>no</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Shareable outside Discord as a single file</td>
+<td>no</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Shows the whole field of a session, not just the top 10</td>
+<td>no</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Highlights, tyre strategy, lineups</td>
+<td>not available</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>The whole history — every race at a circuit, every season of a team</td>
+<td>top of the list only</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<p>A common pattern is to post the embed right after a race for quick reading and discussion, and the
+image card in a dedicated results channel, where it gets pinned and shared.</p>
+<div class="admonition note">
+<p class="admonition-title">Theme</p>
+<p>The colour theme is a per-server setting, not a command option — see
+<a href="../settings/#image-card-theme">Image card theme</a>.</p>
+</div>
+<h2 id="race-result">Race result<a class="headerlink" href="#race-result" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>/render-race-results
+</code></pre></div>
+<p><img alt="Race result card" src="../images/race-result-dark.png" /></p>
+<p>Reading the card:</p>
+<ul>
+<li><strong>Conditions bar</strong> under the title — weather, air and track temperature, and how many times the
+  safety car and virtual safety car were deployed.</li>
+<li><strong>Podium boxes</strong> for the top three, each with the driver's team colour.</li>
+<li><strong>Tyre pills</strong> — the compound of each stint and how many laps it lasted (<code>M 12</code>, <code>H 40</code>). White is
+  Hard, yellow Medium, red Soft, green Intermediate, blue Wet.</li>
+<li><strong>Grid → finish</strong>, e.g. <code>P4 +3</code> — started fourth, gained three places. Green for places gained,
+  orange for places lost.</li>
+<li><strong>Time or gap</strong>, then <strong>points</strong>.</li>
+<li>A red <code>+5s</code> badge next to a name marks a time penalty; <code>DNF</code> replaces the gap for retirements.</li>
+<li><strong>Footer</strong> — fastest lap of the session, total laps, and a green <strong>LIVE RESULTS</strong> dot when the
+  session came from telemetry.</li>
+</ul>
+<p>The order and the position numbers follow the <strong>official classification</strong>, the one that counts after
+penalties — see <a href="../commands/#how-results-are-ordered">How results are ordered</a>.</p>
+<h2 id="qualifying">Qualifying<a class="headerlink" href="#qualifying" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>/render-qual-results
+</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Dark</label><label for="__tabbed_1_2">Light</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="Qualifying card, dark theme" src="../images/qualifying-dark.png" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Qualifying card, light theme" src="../images/qualifying-light.png" /></p>
+</div>
+</div>
+</div>
+<p>The layout matches the race card, with qualifying-specific columns: the pole box shows the pole time,
+and each row carries the gap and the driver's best lap. Where the race card shows a gap to the
+winner, qualifying shows <code>INT</code> — the interval to the driver <strong>directly ahead</strong>.</p>
+<p>When the session was recorded from telemetry, the rows also carry the compound the best lap was set
+on, the number of laps completed, and top speed.</p>
+<h2 id="session-highlights">Session highlights<a class="headerlink" href="#session-highlights" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>/render-race-highlights
+</code></pre></div>
+<p><img alt="Session highlights card" src="../images/highlights.png" /></p>
+<p>Stat tiles for the session: top speed, best pace, most consistent driver, most overtakes, battles
+won, pit stops with the compounds used, and total penalty time.</p>
+<div class="admonition warning">
+<p class="admonition-title">Needs telemetry</p>
+<p>This card is built entirely from telemetry data. For a session whose results were entered by
+hand, the command says so and points you at <code>/render-race-results</code> instead.</p>
+</div>
+<h2 id="tyre-strategy">Tyre strategy<a class="headerlink" href="#tyre-strategy" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>/render-race-strategy
+</code></pre></div>
+<p><img alt="Tyre strategy card" src="../images/tyre-strategy.png" /></p>
+<p>A stint chart across the full race distance: one bar per driver, split by compound with the lap count
+in each stint, and the number of pit stops on the right. Also needs telemetry.</p>
+<h2 id="championship-standings">Championship standings<a class="headerlink" href="#championship-standings" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>/render-standings
+/render-standings type:Constructors
+</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Dark</label><label for="__tabbed_2_2">Light</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="Standings card, dark theme" src="../images/standings-dark.png" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Standings card, light theme" src="../images/standings-light.png" /></p>
+</div>
+</div>
+</div>
+<p>The same classification the embed lists, with room for more of it: the top three get their own
+boxes, and every row carries wins, podiums, poles, the gap to the leader and the points, with the
+driver's team colour as a stripe. The subtitle counts the championship rounds and names the next one.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>season</code></td>
+<td>Season. Omitted = current.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>Drivers</code> (default) or <code>Constructors</code>.</td>
+</tr>
+<tr>
+<td><code>class</code></td>
+<td>One class of a multiclass season — see <a href="#multiclass-seasons">Multiclass seasons</a>.</td>
+</tr>
+</tbody>
+</table>
+<p><code>type:Constructors</code> swaps the drivers for teams, and each row's subtitle becomes that team's drivers:</p>
+<p><img alt="Constructors standings card" src="../images/standings-constructors.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Drivers outside the classification</p>
+<p>Racing League Tools numbers the classified entries 1..N and can leave others unnumbered — a
+reserve driver who scored in a one-off, for instance. Those rows keep their points but get a <code>—</code>
+instead of a position, under a <strong>Not classified</strong> heading at the bottom. Hiding them would eat
+somebody's points; calling them "0" would read like a position.</p>
+</div>
+<h2 id="season-lineup">Season lineup<a class="headerlink" href="#season-lineup" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>/render-lineup
+</code></pre></div>
+<p><img alt="Lineup card, team-based league" src="../images/lineup-teams.png" /></p>
+<p>Who holds a seat this season. A driver outside the primary line-up is marked <strong>RESERVE</strong>; a seat
+with no team goes to a <strong>No team</strong> section at the bottom.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>season</code></td>
+<td>Season. Omitted = current.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Seats, not everyone who raced</p>
+<p>The card lists the season's <strong>filled seats</strong>. A driver who scored points without holding a seat —
+a one-off stand-in, for example — is not in the lineup and is not drawn here. Their points are in
+<a href="../commands/#standings"><code>/standings</code></a>, which is the question they answer.</p>
+</div>
+<p>There are no points on this card on purpose. It answers <em>who drives with whom</em>; the classification is
+one command away and says the rest.</p>
+<p>The layout follows what your league actually has. A <strong>team-based</strong> league (F1-style) gets the team
+tiles above. In an endurance league the entry is a <strong>car</strong>, not a team, and Racing League Tools
+publishes no team for those seats — so the card becomes a table of <em>car → its drivers</em>, grouped by
+class:</p>
+<p><img alt="Lineup card, car-based league" src="../images/lineup-cars.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Two entries of the same car model share a row</p>
+<p>Racing League Tools identifies the <strong>model</strong> of a car, not the individual entry, so three
+separate crews running the same GT3 car appear as one row with all their drivers. There is no
+entry identifier in the data to split them by.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A season whose seats are not filled in yet has no lineup to draw, and the command says so rather
+than drawing a grid of empty tiles.</p>
+</div>
+<h2 id="season-calendar">Season calendar<a class="headerlink" href="#season-calendar" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>/render-calendar
+/render-calendar view:Upcoming
+</code></pre></div>
+<p><img alt="Season calendar card" src="../images/calendar.png" /></p>
+<p>Every round with its status, track, sessions and date.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>season</code></td>
+<td>Season. Omitted = current.</td>
+</tr>
+<tr>
+<td><code>view</code></td>
+<td><code>Full calendar</code> (default) or <code>Upcoming</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Reading the card:</p>
+<ul>
+<li><strong>DONE / NEXT / SKIPPED / UPCOMING</strong> — the round's status as a word. The next unraced round is
+  also outlined in the accent colour; a skipped round is dimmed, because it is the one status that
+  means <em>this will not happen</em>.</li>
+<li><strong>Session pills</strong> — the sessions of that round, in order. A sprint weekend shows <code>Qual 1 · Sprint ·
+  Qual 2 · Race</code>, numbered exactly as the <code>session</code> autocomplete numbers them.</li>
+<li><strong>Date and time</strong>, with <code>round start</code> under the time when Racing League Tools only publishes when
+  the <em>round</em> begins rather than the race itself.</li>
+<li><strong>outside the championship</strong> under a round that is on the calendar but scores no championship
+  points.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">One zone for everyone</p>
+<p>A PNG cannot adapt to each reader's time zone the way Discord's live timestamps can, so the card
+states one zone in its header and sticks to it. That zone is your
+<a href="../settings/#league-time-zone">league time zone</a>; without the setting it is UTC, which is how
+Racing League Tools sends the data. For times in everyone's own zone plus a countdown, use the
+embed: <code>/season view:Upcoming</code>.</p>
+</div>
+<h2 id="track-history">Track history<a class="headerlink" href="#track-history" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>/render-track track:Monza
+/render-track track:Monza multiseason:Pro Overall
+</code></pre></div>
+<p><img alt="Track history card" src="../images/track.png" /></p>
+<p>Everything your league has done at one circuit, on a single card.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>track</code></td>
+<td>Circuit. Required — pick it from the suggestions.</td>
+</tr>
+<tr>
+<td><code>multiseason</code></td>
+<td>Narrow the whole card to a group of seasons. Omitted = all of them.</td>
+</tr>
+</tbody>
+</table>
+<p>Reading the card:</p>
+<ul>
+<li><strong>Track record</strong> — the fastest lap ever set there, outlined in the accent colour. It is often a
+  <strong>qualifying</strong> lap, and the card says so, because a qualifying time reads very differently from a
+  race time. When the fastest <em>race</em> lap is a different time, it gets its own tile next to it.</li>
+<li><strong>Race day</strong> — average pit stops, top speed, safety cars and virtual safety cars, with a line
+  underneath saying how many races those numbers cover.</li>
+<li><strong>Drivers / Teams</strong> — who has the most wins, podiums and poles there.</li>
+<li><strong>The table</strong> — every main race at that circuit: date, round, season, winner and their team, laps,
+  race time and the fastest lap with its tyre compound.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Circuits with two layouts</p>
+<p>A circuit that your league has raced in more than one layout appears more than once in the
+suggestions, with the years it was used — they are different tracks with different records, so
+they are counted separately.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Race-day numbers need live telemetry</p>
+<p>Pit stops, top speed, safety cars and tyre compounds come from sessions recorded with live
+timing. Races entered by hand contribute positions and times but none of those, which is why
+the card states <em>live data: 8 of 11 races</em> rather than implying it measured them all. A value
+Racing League Tools does not have is left out rather than drawn as a zero.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Sprints are counted but not listed</p>
+<p>The table lists <strong>main</strong> races. A sprint counts towards the totals at the top but does not get
+its own row, so the race count in the footer can be lower than the number of races held.</p>
+</div>
+<h2 id="team-career">Team career<a class="headerlink" href="#team-career" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>/render-team multiseason:Pro Overall team:McLaren
+</code></pre></div>
+<p><img alt="Team career card" src="../images/team.png" /></p>
+<p>One team's whole history inside a group of seasons.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>multiseason</code></td>
+<td>Group of seasons. <strong>Required.</strong></td>
+</tr>
+<tr>
+<td><code>team</code></td>
+<td>Team. Required — pick it from the suggestions.</td>
+</tr>
+</tbody>
+</table>
+<p>Reading the card:</p>
+<ul>
+<li><strong>Four headline numbers</strong> — constructors' titles, total points with its averages, wins with
+  podiums, and poles.</li>
+<li><strong>The strip below</strong> — average finish and grid, average qualifying, reliability, clean races and
+  the best season.</li>
+<li><strong>Season by season</strong> — every season with position, points, races, wins and podiums. A season the
+  team <strong>won</strong> is outlined in the accent colour.</li>
+<li><strong>Line-up</strong> — every driver who raced for the team, ordered by their share of the team's points,
+  with reserves marked.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Switch team statistics on first</p>
+<p>Racing League Tools computes this per multiseason and only when the league enables <strong>team
+statistics</strong> for that multiseason in RLT Desktop. Until then the command says so and names what
+to switch on. <em>All Seasons</em> never has them — it is not a real multiseason.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">A renamed team keeps one history</p>
+<p>Teams arrive merged across seasons under their current name, so a team that changed names mid-
+history is one card rather than two.</p>
+</div>
+<h2 id="multiclass-seasons">Multiclass seasons<a class="headerlink" href="#multiclass-seasons" title="Permanent link">&para;</a></h2>
+<p>In a season with racing classes, every driver row on a card carries a <strong>class badge</strong> in the class's
+own colour, and the class column takes its width from the name column so the table stays the same
+width on a phone:</p>
+<p><img alt="Multiclass race result card" src="../images/multiclass-race-result.png" /></p>
+<p>Nothing needs switching on. The badges appear when Racing League Tools reports classes for the
+session or season, and a single-class season renders exactly as it did before.</p>
+<h3 id="the-class-option">The <code>class</code> option<a class="headerlink" href="#the-class-option" title="Permanent link">&para;</a></h3>
+<p>Three cards can narrow to one class: <code>/render-race-results</code>, <code>/render-qual-results</code> and
+<code>/render-standings</code>. Pick the class from the autocomplete list.</p>
+<div class="highlight"><pre><span></span><code>/render-race-results class:LMP3
+</code></pre></div>
+<p><img alt="Race result card narrowed to one class" src="../images/multiclass-class-view.png" /></p>
+<p>The card is then the classification <strong>of that class</strong>: positions are class positions, the fastest lap
+is the class's fastest lap, and the class is named once as a pill in the header instead of being
+repeated on every row. In a race, a driver a lap or more down shows <code>+1 Lap</code> rather than a time.</p>
+<p>Two cards deliberately have no <code>class</code> option: <code>/render-race-highlights</code> and
+<code>/render-race-strategy</code> compare the <strong>whole</strong> session — the tiles and the stint chart would change
+meaning, not just lose rows.</p>
+<div class="admonition note">
+<p class="admonition-title">What Racing League Tools doesn't publish per class</p>
+<p><code>class</code> with <code>type:Constructors</code> says so instead of drawing an empty table: constructor standings
+exist per season, not per class. Text embeds (<code>/standings</code>, <code>/race-results</code>, <code>/qual-results</code>)
+show the class badges too, but have no <code>class</code> option — their tables are the overall
+classification, so the results top 10 can be ten drivers from the fastest class.</p>
+</div>
+<h2 id="live-sessions-versus-manually-entered-results">Live sessions versus manually entered results<a class="headerlink" href="#live-sessions-versus-manually-entered-results" title="Permanent link">&para;</a></h2>
+<p>How much a <strong>session</strong> card can show depends on where the results came from, and that is decided
+<strong>per session</strong> — a single season can contain both kinds. The season cards (standings, lineup,
+calendar) and the team card don't depend on telemetry at all; the track card is a mix, since it
+sums up sessions of both kinds.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Recorded live (UDP telemetry)</th>
+<th>Entered manually</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Positions, times, gaps, points, best lap</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Conditions bar (weather, temperatures, SC/VSC)</td>
+<td>yes</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Tyre pills and stints</td>
+<td>yes</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Grid → finish</td>
+<td>yes</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>LIVE RESULTS</strong> marker</td>
+<td>yes</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>/render-race-highlights</code>, <code>/render-race-strategy</code></td>
+<td>yes</td>
+<td>not available</td>
+</tr>
+<tr>
+<td>Race-day numbers on the <a href="#track-history">track card</a></td>
+<td>yes</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>The same race, entered by hand — same classification, none of the telemetry extras:</p>
+<p><img alt="Race result card from a manually entered session" src="../images/race-result-manual.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Recording sessions with live timing is what unlocks the highlights and strategy cards. See
+<a href="../../live-timing/hints/">Live Timing</a> for how to set it up.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://racingleaguetools.com/" target="_blank" rel="noopener" title="Racing League Tools website" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://discord.gg/faE4bmnJmz" target="_blank" rel="noopener" title="Discord" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

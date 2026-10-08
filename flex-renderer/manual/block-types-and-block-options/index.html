@@ -1,0 +1,3408 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Living user guide for end users of the Racing League Tools application.">
+      
+      
+        <meta name="author" content="Sirotkin">
+      
+      
+        <link rel="canonical" href="https://docs.racingleaguetools.com/flex-renderer/manual/block-types-and-block-options/">
+      
+      
+        <link rel="prev" href="../block/">
+      
+      
+        <link rel="next" href="../components/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Block Types - Racing League Tools</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@800&display=swap">
+    
+      <link rel="stylesheet" href="../../../assets/css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#block-types-and-block-options" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Racing League Tools" class="md-header__button md-logo" aria-label="Racing League Tools" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Racing League Tools
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Block Types
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../drivers/hints/" class="md-tabs__link">
+          
+  
+  
+  Help and Hints
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../advanced/tyre-types/" class="md-tabs__link">
+          
+  
+  
+  Advanced Configuration
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../data-export/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  JSON Data Export
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../discord-bot/" class="md-tabs__link">
+          
+  
+  
+  Discord Bot
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Image Renderer Manual
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://racingleaguetools.com/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Website
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Racing League Tools" class="md-nav__button md-logo" aria-label="Racing League Tools" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    Racing League Tools
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help and Hints
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Help and Hints
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../drivers/hints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drivers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../championships/help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Championships
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sessions/hints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../live-timing/hints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Timing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../penalty-system/help-channel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Penalty System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cloud-storage/help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/tyre-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tyre Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/driver-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Driver Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Data Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discord Bot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Discord Bot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discord-bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discord-bot/invite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Invite the bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discord-bot/linking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Link your league
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discord-bot/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discord-bot/image-cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image cards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discord-bot/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Server settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discord-bot/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image Renderer Manual
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Image Renderer Manual
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../folders-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Folders structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theme-resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theme resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layouts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layouts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logotypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logotypes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../liveries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Liveries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block Types
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Specification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Text">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#colorizeratingoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ColorizeRatingOptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradientstop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GradientStop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack-and-dock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack and Dock
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stack and Dock">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dock
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paneloptions-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PanelOptions Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#itemstack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ItemStack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gridrowdefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GridRowDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gridcoldefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GridColDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canvas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tablecolumndefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TableColumnDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multicolumn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multicolumn
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shape
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shape">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strokeoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StrokeOptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaleoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ScaleOptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markeroptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MarkerOptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Charts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colorizeoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ColorizeOptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ColorizeOptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#layer-mask-behavior-luminance-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer Mask Behavior (Luminance Mode)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Styles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Triggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../public-properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Public properties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-converters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Converters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../localization-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Localization support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://racingleaguetools.com/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Website
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Specification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Text">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#colorizeratingoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ColorizeRatingOptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradientstop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GradientStop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack-and-dock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack and Dock
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stack and Dock">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dock
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paneloptions-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PanelOptions Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#itemstack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ItemStack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gridrowdefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GridRowDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gridcoldefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GridColDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canvas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tablecolumndefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TableColumnDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multicolumn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multicolumn
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shape
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shape">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strokeoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StrokeOptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaleoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ScaleOptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markeroptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MarkerOptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Charts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colorizeoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ColorizeOptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ColorizeOptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#layer-mask-behavior-luminance-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer Mask Behavior (Luminance Mode)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="block-types-and-block-options">Block Types and Block Options<a class="headerlink" href="#block-types-and-block-options" title="Permanent link">&para;</a></h1>
+<p>Individual properties required for a specific type of block are placed in separate objects called <strong>Block Options</strong> (e.g., <code>ImageOptions</code>). It is not always necessary to specify this object if default values are sufficient.</p>
+<p>The following sections describe properties for specific block options.</p>
+<h2 id="image">Image<a class="headerlink" href="#image" title="Permanent link">&para;</a></h2>
+<p><strong>BlockType:</strong> <code>image</code>
+<strong>BlockOptions:</strong> <code>ImageOptions</code></p>
+<p>Used to display an image.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Path</code></td>
+<td><code>string</code></td>
+<td>Specifies the data object or path to the image file (<code>.png</code>, <code>.jpg</code>, <code>.jpeg</code>).</td>
+</tr>
+<tr>
+<td><code>DefaultPath</code></td>
+<td><code>string</code></td>
+<td>Used if retrieving an image from <code>Path</code> fails.</td>
+</tr>
+<tr>
+<td><code>HorizontalAlignment</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>Left</code>, <code>Center</code>, <code>Right</code>.</td>
+</tr>
+<tr>
+<td><code>VerticalAlignment</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>Top</code>, <code>Center</code>, <code>Bottom</code>.</td>
+</tr>
+<tr>
+<td><code>Opacity</code></td>
+<td><code>int</code></td>
+<td>Opacity level.</td>
+</tr>
+<tr>
+<td><code>Rotation</code></td>
+<td><code>int</code></td>
+<td>Rotates the image clockwise around its center. Supports values beyond -360/360.</td>
+</tr>
+<tr>
+<td><code>RotateAroundCenter</code></td>
+<td><code>bool</code></td>
+<td>If true, rotates the image around its center. Defaults to false.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="path-specification">Path Specification<a class="headerlink" href="#path-specification" title="Permanent link">&para;</a></h3>
+<p>The <code>Path</code> property (or <code>Source</code> property of the block) can be specified as:</p>
+<p><strong>Relative path</strong>: e.g., <code>separators/separator_red.png</code>. Specifies the full path relative to the <code>images</code> folder in the theme root (or layout/layer).</p>
+<h2 id="text">Text<a class="headerlink" href="#text" title="Permanent link">&para;</a></h2>
+<p><strong>BlockType:</strong> <code>text</code>
+<strong>BlockOptions:</strong> <code>TextOptions</code></p>
+<p>Used to display text.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Text</code></td>
+<td><code>string</code></td>
+<td>The text content to display.</td>
+</tr>
+<tr>
+<td><code>FontName</code></td>
+<td><code>string</code></td>
+<td>Font family. Defaults to global variable <code>FontNameDefault</code> if empty.</td>
+</tr>
+<tr>
+<td><code>FontSize</code></td>
+<td><code>int</code></td>
+<td>Font size. Defaults to global variable <code>FontSizeDefault</code> if empty.</td>
+</tr>
+<tr>
+<td><code>FontStyle</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>Regular</code>, <code>Bold</code>, <code>Italic</code>, <code>BoldItalic</code>. (Experimental).</td>
+</tr>
+<tr>
+<td><code>Foreground</code></td>
+<td><code>color</code></td>
+<td>Text color. Defaults to global variable <code>ForegroundDefault</code> if empty.</td>
+</tr>
+<tr>
+<td><code>TextAlignment</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>Start</code>, <code>End</code>, <code>Center</code>. (Experimental).</td>
+</tr>
+<tr>
+<td><code>HorizontalAlignment</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>Left</code>, <code>Center</code>, <code>Right</code>.</td>
+</tr>
+<tr>
+<td><code>VerticalAlignment</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>Top</code>, <code>Center</code>, <code>Bottom</code>.</td>
+</tr>
+<tr>
+<td><code>LineSpacing</code></td>
+<td><code>int</code></td>
+<td>Spacing between lines.</td>
+</tr>
+<tr>
+<td><code>Wrap</code></td>
+<td><code>bool</code></td>
+<td>Enables text wrapping. (Experimental). To make the text wrap, it may need to force the width of the text block. Dev in progress.</td>
+</tr>
+<tr>
+<td><code>Rotation</code></td>
+<td><code>int</code></td>
+<td>Rotates text clockwise around its center.</td>
+</tr>
+<tr>
+<td><code>RotateAroundCenter</code></td>
+<td><code>bool</code></td>
+<td>If true, rotates the text around its center. Defaults to false.</td>
+</tr>
+<tr>
+<td><code>ColorizeRating</code></td>
+<td><code>ColorizeRatingOptions</code></td>
+<td>Sets foreground color based on rating value.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="colorizeratingoptions">ColorizeRatingOptions<a class="headerlink" href="#colorizeratingoptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IsEnabled</code></td>
+<td><code>bool</code></td>
+<td>Enables or disables the block.</td>
+</tr>
+<tr>
+<td><code>Level</code></td>
+<td><code>int</code></td>
+<td>Value (0-100) determining the color.</td>
+</tr>
+<tr>
+<td><code>GradientStops</code></td>
+<td><code>List&lt;GradientStop&gt;</code></td>
+<td>List of gradient stops for custom color assignment. If not specified, default values are used.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gradientstop">GradientStop<a class="headerlink" href="#gradientstop" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Color</code></td>
+<td><code>color</code></td>
+<td>Specific color override.</td>
+</tr>
+<tr>
+<td><code>Offset</code></td>
+<td><code>int</code></td>
+<td>Offset value (0-100).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stack-and-dock">Stack and Dock<a class="headerlink" href="#stack-and-dock" title="Permanent link">&para;</a></h2>
+<p><strong>BlockTypes:</strong> <code>stack</code>, <code>dock</code>
+<strong>BlockOptions:</strong> <code>PanelOptions</code></p>
+<p>Container blocks that arrange nested blocks.</p>
+<h3 id="stack">Stack<a class="headerlink" href="#stack" title="Permanent link">&para;</a></h3>
+<p>Arranges nested (inner) blocks sequentially.</p>
+<p><img alt="Stack layout example" src="../../images/page-25-image-01.png" /></p>
+<h3 id="dock">Dock<a class="headerlink" href="#dock" title="Permanent link">&para;</a></h3>
+<p>Similar to Stack, with the following differences:</p>
+<ul>
+<li>By default, it fills all available space (<code>StretchWidth</code> or <code>StretchHeight</code> is true, depending on <code>Orientation</code>).</li>
+<li>If inner blocks specify alignment, Dock uses this to dock them to the sides.</li>
+<li>Only one inner block can specify center alignment.</li>
+</ul>
+<p><img alt="Dock layout example" src="../../images/page-25-image-02.png" /></p>
+<h3 id="paneloptions-properties">PanelOptions Properties<a class="headerlink" href="#paneloptions-properties" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Orientation</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>Horizontal</code>, <code>Vertical</code>.</td>
+</tr>
+<tr>
+<td><code>HorizontalDirection</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>LeftToRight</code>, <code>RightToLeft</code>.</td>
+</tr>
+<tr>
+<td><code>VerticalDirection</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>TopToBottom</code>, <code>BottomToTop</code>.</td>
+</tr>
+<tr>
+<td><code>Spacing</code></td>
+<td><code>int</code></td>
+<td>Spacing in pixels between inner blocks.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="itemstack">ItemStack<a class="headerlink" href="#itemstack" title="Permanent link">&para;</a></h2>
+<p><strong>BlockType:</strong> <code>itemstack</code>
+<strong>BlockOptions:</strong> <code>ItemStackOptions</code>, <code>PanelOptions</code></p>
+<p>Similar to Stack, but inner blocks are generated automatically based on a data collection. The <code>Items</code> property is ignored.</p>
+<p>Blocks within the <code>ItemTemplate</code> have access to the <code>Item</code> and <code>ItemIndex</code> expressions. If the <code>ItemStack</code> is nested within another iteration, they also have access to <code>ParentItem</code> and <code>ParentItemIndex</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ItemSource</code></td>
+<td><code>string</code></td>
+<td>Data access expression for the collection/list.</td>
+</tr>
+<tr>
+<td><code>ItemTemplate</code></td>
+<td><code>block</code></td>
+<td>Template for inner blocks.</td>
+</tr>
+<tr>
+<td><code>SortMember</code></td>
+<td><code>string</code></td>
+<td>Property name for sorting the collection. Can be data access expression.</td>
+</tr>
+<tr>
+<td><code>OrderBy</code></td>
+<td><code>string</code></td>
+<td>Property name for sorting (supports <code>OrderBy2</code>, <code>OrderBy3</code>).</td>
+</tr>
+<tr>
+<td><code>OrderByDescending</code></td>
+<td><code>string</code></td>
+<td>Property name for descending sort (supports <code>OrderByDescending2</code>, <code>3</code>).</td>
+</tr>
+<tr>
+<td><code>FilterMember</code></td>
+<td><code>string</code></td>
+<td>Property name for filtering the collection. Can be data access expression.</td>
+</tr>
+<tr>
+<td><code>FilterMemberValue</code></td>
+<td><code>string</code></td>
+<td>Value to filter by.</td>
+</tr>
+<tr>
+<td><code>ExcludeFilterMember</code></td>
+<td><code>string</code></td>
+<td>Property name. Removes items whose value of this property equals <code>ExcludeFilterMemberValue</code>, for example drivers with <code>0</code> in a ranking. Applied after sorting and before <code>IndexStart</code> and <code>Limit</code>. Added in 0.9.9.</td>
+</tr>
+<tr>
+<td><code>ExcludeFilterMemberValue</code></td>
+<td><code>string</code></td>
+<td>Value to exclude. When omitted, items with an empty or missing value are removed. Added in 0.9.9.</td>
+</tr>
+<tr>
+<td><code>DistinctMember</code></td>
+<td><code>string</code></td>
+<td>Property name. Keeps the first item for each distinct value (case-insensitive). Supports nested paths such as <code>CarClass.Name</code>. Null and empty values count as one value. Added in 0.9.9.</td>
+</tr>
+<tr>
+<td><code>Reverse</code></td>
+<td><code>bool</code></td>
+<td>Reverses the collection order.</td>
+</tr>
+<tr>
+<td><code>Limit</code></td>
+<td><code>int</code></td>
+<td>Limits the number of items.</td>
+</tr>
+<tr>
+<td><code>IndexStart</code></td>
+<td><code>int</code></td>
+<td>Starting index of the collection.</td>
+</tr>
+<tr>
+<td><code>IndexEnd</code></td>
+<td><code>int</code></td>
+<td>Ending index of the collection.</td>
+</tr>
+<tr>
+<td><code>TakeItemIndex</code></td>
+<td><code>int</code></td>
+<td>Selects a single item by index (will be consist only of one item by specified index).</td>
+</tr>
+<tr>
+<td><code>TakeItemsFirst</code></td>
+<td><code>int</code></td>
+<td>Selects the first N items.</td>
+</tr>
+<tr>
+<td><code>TakeItemsLast</code></td>
+<td><code>int</code></td>
+<td>Selects the last N items.</td>
+</tr>
+<tr>
+<td><code>CollectionPart</code></td>
+<td><code>string</code></td>
+<td>Specifies a part of the collection (e.g., "1/3" for the first third).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="grid">Grid<a class="headerlink" href="#grid" title="Permanent link">&para;</a></h2>
+<p><strong>BlockType:</strong> <code>grid</code>
+<strong>BlockOptions:</strong> <code>GridOptions</code></p>
+<p>Container for arranging inner blocks in a grid.</p>
+<p><img alt="Grid layout example" src="../../images/page-27-image-01.png" /></p>
+<p>The Grid calculates column widths and row heights based on inner block dimensions. Use <code>GridCol</code> and <code>GridRow</code> properties on inner blocks to place them. Only one block per cell.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Rows</code></td>
+<td><code>List&lt;GridRowDefinition&gt;</code></td>
+<td>Definitions for grid rows.</td>
+</tr>
+<tr>
+<td><code>Cols</code></td>
+<td><code>List&lt;GridColDefinition&gt;</code></td>
+<td>Definitions for grid columns.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gridrowdefinition">GridRowDefinition<a class="headerlink" href="#gridrowdefinition" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Height</code></td>
+<td><code>int</code></td>
+<td>Height of the row.</td>
+</tr>
+<tr>
+<td><code>IsStretchHeight</code></td>
+<td><code>bool</code></td>
+<td>If true, fills available vertical space (only one row can be true).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gridcoldefinition">GridColDefinition<a class="headerlink" href="#gridcoldefinition" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Width</code></td>
+<td><code>int</code></td>
+<td>Width of the column.</td>
+</tr>
+<tr>
+<td><code>IsStretchWidth</code></td>
+<td><code>bool</code></td>
+<td>If true, fills available horizontal space (only one column can be true).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="canvas">Canvas<a class="headerlink" href="#canvas" title="Permanent link">&para;</a></h2>
+<p><strong>BlockType:</strong> <code>canvas</code>
+<strong>BlockOptions:</strong> <code>CanvasOptions</code></p>
+<p>A container that arranges inner blocks manually. Each inner block must define <code>PositionX</code> and <code>PositionY</code> to indicate its top-left coordinate, or <code>PlotPosition</code> to sit at a data point of a chart (see <a href="../block/">Block</a>). <code>CanvasOptions</code> currently contains no properties.</p>
+<p>A canvas also accepts <code>ItemStackOptions</code> (same properties as <code>ItemStack</code>). The <code>ItemTemplate</code> is then repeated for every item of the collection, and all copies are drawn at the same place, one over another. This is how one chart line per driver is drawn on a single chart. Static <code>Items</code> are drawn first, the generated copies on top. Added in 0.9.9.</p>
+<h2 id="table">Table<a class="headerlink" href="#table" title="Permanent link">&para;</a></h2>
+<p><strong>BlockType:</strong> <code>table</code>
+<strong>BlockOptions:</strong> <code>TableOptions</code></p>
+<p>Generates blocks as a table based on a collection/list. The <code>Items</code> property is not used.</p>
+<p>Blocks within column templates have access to the <code>Item</code>, <code>ItemIndex</code>, and <code>ColumnIndex</code> expressions. If the <code>Table</code> is nested within another iteration, they also have access to <code>ParentItem</code> and <code>ParentItemIndex</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ItemsSource</code></td>
+<td><code>string</code></td>
+<td>Data access expression for the collection/list.</td>
+</tr>
+<tr>
+<td><code>HeaderTemplate</code></td>
+<td><code>block</code></td>
+<td>Template for table headers.</td>
+</tr>
+<tr>
+<td><code>HeaderHeight</code></td>
+<td><code>int</code></td>
+<td>Height of the header row.</td>
+</tr>
+<tr>
+<td><code>RowHeight</code></td>
+<td><code>int</code></td>
+<td>Height of data rows.</td>
+</tr>
+<tr>
+<td><code>RowCount</code></td>
+<td><code>int</code></td>
+<td>Number of rows.</td>
+</tr>
+<tr>
+<td><code>ColSpacing</code></td>
+<td><code>int</code></td>
+<td>Spacing between columns.</td>
+</tr>
+<tr>
+<td><code>RowSpacing</code></td>
+<td><code>int</code></td>
+<td>Spacing between rows.</td>
+</tr>
+<tr>
+<td><code>SeparatorSpace</code></td>
+<td><code>int</code></td>
+<td>Additional space if a column is a separator.</td>
+</tr>
+<tr>
+<td><code>GroupSpaceReduction</code></td>
+<td><code>int</code></td>
+<td>Space reduction between columns with the same <code>GroupId</code>.</td>
+</tr>
+<tr>
+<td><code>Columns</code></td>
+<td><code>List&lt;TableColumnDefinition&gt;</code></td>
+<td>Definitions for table columns.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: Sorting and filtering properties (<code>SortMember</code>, <code>FilterMember</code>, <code>DistinctMember</code>, etc.) are identical to <code>ItemStack</code>.</em></p>
+<h3 id="tablecolumndefinition">TableColumnDefinition<a class="headerlink" href="#tablecolumndefinition" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Width</code></td>
+<td><code>int</code></td>
+<td>Width of the column.</td>
+</tr>
+<tr>
+<td><code>MarginLeft</code></td>
+<td><code>int</code></td>
+<td>Left margin.</td>
+</tr>
+<tr>
+<td><code>MarginRight</code></td>
+<td><code>int</code></td>
+<td>Right margin.</td>
+</tr>
+<tr>
+<td><code>IsStretchWidth</code></td>
+<td><code>bool</code></td>
+<td>If true, fills available horizontal space.</td>
+</tr>
+<tr>
+<td><code>Header</code></td>
+<td><code>string</code></td>
+<td>Text for the header template (will be replace text property of any text block of header template).</td>
+</tr>
+<tr>
+<td><code>RenderIf</code></td>
+<td><code>bool</code></td>
+<td>Conditional rendering flag.</td>
+</tr>
+<tr>
+<td><code>Template</code></td>
+<td><code>block</code></td>
+<td>Template for each item in the column.</td>
+</tr>
+<tr>
+<td><code>IsSeparator</code></td>
+<td><code>bool</code></td>
+<td>Indicates if the column is a separator.</td>
+</tr>
+<tr>
+<td><code>GroupId</code></td>
+<td><code>int</code></td>
+<td>Groups columns to adjust spacing (same group Id (&gt;0) can be set for several column to bring them closer to each other in the column space).</td>
+</tr>
+<tr>
+<td><code>MultiColumnHeadersSource</code></td>
+<td><code>string</code></td>
+<td>Data expression (only for collection/list) for multicolumn headers.</td>
+</tr>
+<tr>
+<td><code>MultiColumnItemsSource</code></td>
+<td><code>string</code></td>
+<td>Data expression (only for collection/list) for multicolumn items.</td>
+</tr>
+<tr>
+<td><code>MultiColumnHeaderTemplate</code></td>
+<td><code>block</code></td>
+<td>Template for multicolumn items.</td>
+</tr>
+<tr>
+<td><code>MultiColumnLimit</code></td>
+<td><code>int</code></td>
+<td>Maximum number of items to display in multicolumn.</td>
+</tr>
+<tr>
+<td><code>MultiColumnIndexStart</code></td>
+<td><code>int</code></td>
+<td>Start index for multicolumn items.</td>
+</tr>
+<tr>
+<td><code>MultiColumnIndexEnd</code></td>
+<td><code>int</code></td>
+<td>End index for multicolumn items.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="multicolumn">Multicolumn<a class="headerlink" href="#multicolumn" title="Permanent link">&para;</a></h3>
+<p>A feature for expanding one column into multiple columns.</p>
+<p><img alt="Multicolumn layout example" src="../../images/page-29-image-01.jpeg" /></p>
+<h2 id="shape">Shape<a class="headerlink" href="#shape" title="Permanent link">&para;</a></h2>
+<p><strong>BlockType:</strong> <code>shape</code>
+<strong>BlockOptions:</strong> <code>ShapeOptions</code></p>
+<p>Displays a simple geometric figure, a line, or a chart line built from data.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ShapeType</code></td>
+<td><code>enum</code></td>
+<td>Options: <code>rectangle</code>, <code>ellipse</code>, <code>line</code>, <code>polyline</code>. <code>line</code> and <code>polyline</code> added in 0.9.9.</td>
+</tr>
+<tr>
+<td><code>Fill</code></td>
+<td><code>color</code></td>
+<td>Fill color of <code>rectangle</code> and <code>ellipse</code>.</td>
+</tr>
+<tr>
+<td><code>Rotation</code></td>
+<td><code>int</code></td>
+<td>Rotates the shape clockwise around its center.</td>
+</tr>
+<tr>
+<td><code>RotateAroundCenter</code></td>
+<td><code>bool</code></td>
+<td>If true, rotates the shape around its center. Defaults to false.</td>
+</tr>
+<tr>
+<td><code>Stroke</code></td>
+<td><code>StrokeOptions</code></td>
+<td>Outline of <code>rectangle</code> and <code>ellipse</code>, the line itself for <code>line</code> and <code>polyline</code>. Added in 0.9.9.</td>
+</tr>
+<tr>
+<td><code>X1</code>, <code>Y1</code>, <code>X2</code>, <code>Y2</code></td>
+<td><code>number</code></td>
+<td><code>line</code>: start and end point, in pixels of the block or in data units when <code>Scale</code> is set.<br><code>rectangle</code> and <code>ellipse</code> with <code>Scale</code>: the data range the shape covers (bars, bands). Nothing is drawn when a value is missing. Added in 0.9.9.</td>
+</tr>
+<tr>
+<td><code>GapX</code>, <code>GapY</code></td>
+<td><code>number</code></td>
+<td><code>rectangle</code> and <code>ellipse</code> with <code>Scale</code>: pixels left empty between neighbouring bars. The shape shrinks by half of the gap on each side. Added in 0.9.9.</td>
+</tr>
+<tr>
+<td><code>Points</code></td>
+<td><code>string</code></td>
+<td><code>polyline</code>: data access expression for the collection of points, for example <code>{Item.LapPositions}</code>. Added in 0.9.9.</td>
+</tr>
+<tr>
+<td><code>PointX</code></td>
+<td><code>string</code></td>
+<td><code>polyline</code>: point property holding X. Defaults to <code>X</code>. The item index is used when the value is missing. Added in 0.9.9.</td>
+</tr>
+<tr>
+<td><code>PointY</code></td>
+<td><code>string</code></td>
+<td><code>polyline</code>: point property holding Y. Defaults to <code>Y</code>. An empty value is a missing point. Added in 0.9.9.</td>
+</tr>
+<tr>
+<td><code>MissingData</code></td>
+<td><code>enum</code></td>
+<td><code>polyline</code>: <code>break</code> (default) splits the line at a missing point, <code>connect</code> joins its neighbours. Added in 0.9.9.</td>
+</tr>
+<tr>
+<td><code>Smoothing</code></td>
+<td><code>enum</code></td>
+<td><code>polyline</code>: <code>none</code> (default) or <code>curve</code> (smooth curve through every point). Added in 0.9.9.</td>
+</tr>
+<tr>
+<td><code>Markers</code></td>
+<td><code>MarkerOptions</code></td>
+<td><code>polyline</code>: marks drawn on every point. Added in 0.9.9.</td>
+</tr>
+<tr>
+<td><code>Scale</code></td>
+<td><code>ScaleOptions</code></td>
+<td>Maps data values onto the block. Without it <code>line</code> uses pixels and <code>polyline</code> fits its own data. Added in 0.9.9.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="strokeoptions">StrokeOptions<a class="headerlink" href="#strokeoptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Color</code></td>
+<td><code>color</code></td>
+<td>Line color. Defaults to white.</td>
+</tr>
+<tr>
+<td><code>Thickness</code></td>
+<td><code>number</code></td>
+<td>Line thickness in pixels. Defaults to <code>1</code>.</td>
+</tr>
+<tr>
+<td><code>Opacity</code></td>
+<td><code>number</code></td>
+<td><code>0</code> to <code>1</code>, multiplied with the color alpha. Defaults to <code>1</code>.</td>
+</tr>
+<tr>
+<td><code>DashStyle</code></td>
+<td><code>enum</code></td>
+<td><code>solid</code> (default), <code>dash</code>, <code>dot</code>, <code>dashdot</code>, <code>dashdotdot</code>.</td>
+</tr>
+<tr>
+<td><code>DashPattern</code></td>
+<td><code>string</code></td>
+<td>Custom dash pattern in line thicknesses, for example <code>"6,2,1,2"</code>. Overrides <code>DashStyle</code>.</td>
+</tr>
+<tr>
+<td><code>LineCap</code></td>
+<td><code>enum</code></td>
+<td>Line ends: <code>butt</code> (default), <code>round</code>, <code>square</code>.</td>
+</tr>
+<tr>
+<td><code>LineJoin</code></td>
+<td><code>enum</code></td>
+<td>Line corners: <code>miter</code> (default), <code>round</code>, <code>bevel</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scaleoptions">ScaleOptions<a class="headerlink" href="#scaleoptions" title="Permanent link">&para;</a></h3>
+<p>The plotted area is the block minus <code>Inset</code> on every side. A data value is placed proportionally between the minimum and the maximum.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>XMin</code>, <code>XMax</code></td>
+<td><code>number</code></td>
+<td>X range. Defaults to the range of the data of the shape.</td>
+</tr>
+<tr>
+<td><code>YMin</code>, <code>YMax</code></td>
+<td><code>number</code></td>
+<td>Y range. Defaults to the range of the data of the shape.</td>
+</tr>
+<tr>
+<td><code>InvertY</code></td>
+<td><code>bool</code></td>
+<td>If true, the smallest Y is at the top (for example position 1 on a lap chart). Defaults to false: the smallest Y is at the bottom.</td>
+</tr>
+<tr>
+<td><code>Inset</code></td>
+<td><code>number</code></td>
+<td>Pixels between the block edge and the plotted area. Defaults to half the stroke plus the marker size for lines, <code>0</code> for bars and <code>PlotPosition</code>. Set the same value on stacked chart layers so that their scales line up.</td>
+</tr>
+<tr>
+<td><code>BandX</code>, <code>BandY</code></td>
+<td><code>bool</code></td>
+<td>Category axis: every whole value from min to max gets its own slot. Points and labels sit in the slot center. A bar with <code>X1</code> = <code>X2</code> = <code>i</code> fills slot <code>i</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="markeroptions">MarkerOptions<a class="headerlink" href="#markeroptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Shape</code></td>
+<td><code>enum</code></td>
+<td><code>ellipse</code> (default) or <code>rectangle</code>.</td>
+</tr>
+<tr>
+<td><code>Size</code></td>
+<td><code>number</code></td>
+<td>Marker size in pixels. Defaults to <code>6</code>.</td>
+</tr>
+<tr>
+<td><code>Fill</code></td>
+<td><code>color</code></td>
+<td>Marker fill. Defaults to the line color.</td>
+</tr>
+<tr>
+<td><code>Stroke</code></td>
+<td><code>StrokeOptions</code></td>
+<td>Marker outline.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="charts">Charts<a class="headerlink" href="#charts" title="Permanent link">&para;</a></h3>
+<p>A chart is a <code>canvas</code> with several layers of the same size. Shapes with the same <code>Width</code>, <code>Height</code> and <code>Scale</code> are drawn over each other, so their data coordinates match. Labels use <code>PlotPosition</code> with the same scale and area size. The default theme layout <code>session_results_race_lapchart</code> is a complete example.</p>
+<p>A position chart, one line per driver in the team color:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"BlockType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"canvas"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"ItemStackOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"ItemSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{Session.Drivers}"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"Reverse"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"ItemTemplate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"BlockType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shape"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"Width"</span><span class="p">:</span><span class="w"> </span><span class="mi">1400</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"Height"</span><span class="p">:</span><span class="w"> </span><span class="mi">720</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"ShapeOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"ShapeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"polyline"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"Points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{Item.LapPositions}"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"PointX"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lap"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"PointY"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Position"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"Scale"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"XMin"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"XMax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{Session.LeaderLapsCount}"</span><span class="p">,</span><span class="w"> </span><span class="nt">"YMin"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"YMax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{Session.DriversCount}"</span><span class="p">,</span><span class="w"> </span><span class="nt">"InvertY"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nt">"Inset"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">"Stroke"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"Color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{Item.Team.Color}"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Thickness"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="nt">"LineJoin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"round"</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A bar chart of race points with a value label above each bar:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"BlockType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"canvas"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"ItemStackOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"ItemSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{Session.Drivers}"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"ItemTemplate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"BlockType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"canvas"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"Items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"BlockType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shape"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"Width"</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"Height"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"ShapeOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"ShapeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rectangle"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"X1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{ItemIndex}"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"X2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{ItemIndex}"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"Y1"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"Y2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{Item.DriverPoints.FloatValue}"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"GapX"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"Fill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{Item.Team.Color}"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"Scale"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"XMin"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"XMax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{Session.DriversCount, Converter=NumberSubtract, Parameter=1}"</span><span class="p">,</span><span class="w"> </span><span class="nt">"YMin"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"YMax"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="nt">"BandX"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"BlockType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"Source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{Item.DriverPoints.Value}"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"PlotPosition"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"X"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{ItemIndex}"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"Y"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{Item.DriverPoints.FloatValue}"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"AreaWidth"</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"AreaHeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"AnchorY"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bottom"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"OffsetY"</span><span class="p">:</span><span class="w"> </span><span class="mi">-4</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"Scale"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"XMin"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"XMax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{Session.DriversCount, Converter=NumberSubtract, Parameter=1}"</span><span class="p">,</span><span class="w"> </span><span class="nt">"YMin"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"YMax"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="nt">"BandX"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="component">Component<a class="headerlink" href="#component" title="Permanent link">&para;</a></h2>
+<p><strong>BlockType:</strong> <code>component</code>
+<strong>BlockOptions:</strong> <code>ComponentOptions</code></p>
+<p>Used to reuse complex blocks across different places in a layer or layout.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vars</code></td>
+<td><code>Dictionary&lt;string, object&gt;</code></td>
+<td>Variables passed to the component.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="colorizeoptions">ColorizeOptions<a class="headerlink" href="#colorizeoptions" title="Permanent link">&para;</a></h2>
+<p><strong>BlockOptions:</strong> <code>ColorizeOptions</code></p>
+<p>Describes how the background or final image of a block should be colored or masked.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Enabled</code></td>
+<td><code>bool</code></td>
+<td>Enables colorization.</td>
+</tr>
+<tr>
+<td><code>Color</code></td>
+<td><code>color</code></td>
+<td>Target color (used if <code>ColorImage</code> is not specified).</td>
+</tr>
+<tr>
+<td><code>ColorImage</code></td>
+<td><code>string</code></td>
+<td>Relative path to a PNG image to be used as a color overlay or a layer mask.</td>
+</tr>
+<tr>
+<td><code>ColorImageMode</code></td>
+<td><code>enum</code></td>
+<td>How the <code>ColorImage</code> is applied. Options: <code>Alpha</code> (draws image over source), <code>Luminance</code> (uses image as a Photoshop-like layer mask). Default: <code>Luminance</code>.</td>
+</tr>
+<tr>
+<td><code>BlendPercentage</code></td>
+<td><code>int</code></td>
+<td>Intensity of the effect (0-100). For <code>Luminance</code> masks, it controls how much the mask affects the original alpha.</td>
+</tr>
+<tr>
+<td><code>AlphaCompositionMode</code></td>
+<td><code>enum</code></td>
+<td>Composition mode. Possible values: <code>SrcOver</code>, <code>Src</code>, <code>SrcAtop</code>, <code>SrcIn</code>, <code>SrcOut</code>, <code>Dest</code>, <code>DestAtop</code>, <code>DestOver</code>, <code>DestIn</code>, <code>DestOut</code>, <code>Clear</code>, <code>Xor</code>. Default: <code>SrcAtop</code>.</td>
+</tr>
+<tr>
+<td><code>ColorBlendingMode</code></td>
+<td><code>enum</code></td>
+<td>Blending mode. Possible values: <code>Normal</code>, <code>Multiply</code>, <code>Add</code>, <code>Subtract</code>, <code>Screen</code>, <code>Darken</code>, <code>Lighten</code>, <code>Overlay</code>, <code>HardLight</code>. Default: <code>Screen</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="layer-mask-behavior-luminance-mode">Layer Mask Behavior (Luminance Mode)<a class="headerlink" href="#layer-mask-behavior-luminance-mode" title="Permanent link">&para;</a></h3>
+<p>When <code>ColorImageMode</code> is set to <code>Luminance</code>, the <code>ColorImage</code> acts as a <strong>Layer Mask</strong>:
+- The mask is automatically resized to match the source block dimensions.
+- <strong>Transparent areas</strong> in the mask are treated as black (fully transparent for the source).
+- <strong>Bright/White areas</strong> in the mask keep the source image opaque.
+- <strong>Dark/Black areas</strong> in the mask make the source image transparent.
+- The mask uses both the RGB luminance and the Alpha channel of the <code>ColorImage</code> to determine the final transparency, allowing for smooth gradients even with transparent PNGs.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://racingleaguetools.com/" target="_blank" rel="noopener" title="Racing League Tools website" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://discord.gg/faE4bmnJmz" target="_blank" rel="noopener" title="Discord" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
