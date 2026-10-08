@@ -479,3 +479,8 @@
 ::selection {
   background: rgba(242, 118, 46, 0.35);
 }
+
+/* "Docs" in the home page title, colored like the header label. */
+.md-typeset .rlt-docs-accent {
+  color: var(--rlt-orange);
+}
