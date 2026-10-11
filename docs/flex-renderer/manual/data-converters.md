@@ -40,8 +40,8 @@ The following table lists available converters that take one parameter or no par
 
 | Converter Name | Description | Parameter Type | Example |
 | --- | --- | --- | --- |
-| `StringToLower` | Converts string to lower case. | - | `"ABC"` -> `"abc"` |
-| `StringToUpper` | Converts string to upper case. | - | `"abc"` -> `"ABC"` |
+| `StringToLowerString` | Converts string to lower case. | - | `"ABC"` -> `"abc"` |
+| `StringToUpperString` | Converts string to upper case. | - | `"abc"` -> `"ABC"` |
 | `StringEquals` | Compares with another string. | `string` | `"str1"`, `"str1"` -> `true` |
 | `StringNotEquals` | Compares with another string for inequality. | `string` | `"str1"`, `"str1"` -> `false` |
 | `EmptyObjectToFalse` | Converts null or empty value to `false`. | - | `""` -> `false` |
