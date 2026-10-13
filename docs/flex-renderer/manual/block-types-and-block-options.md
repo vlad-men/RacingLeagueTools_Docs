@@ -159,7 +159,7 @@ The Grid calculates column widths and row heights based on inner block dimension
 | Property | Type | Description |
 | --- | --- | --- |
 | `Width` | `int` | Width of the column. |
-| `IsStretchWidth` | `bool` | If true, fills available horizontal space (only one column can be true). |
+| `WidthStretch` | `bool` | If true, fills available horizontal space (only one column can be true). |
 
 ## Canvas
 
@@ -185,7 +185,9 @@ Blocks within column templates have access to the `Item`, `ItemIndex`, and `Colu
 | `HeaderTemplate` | `block` | Template for table headers. |
 | `HeaderHeight` | `int` | Height of the header row. |
 | `RowHeight` | `int` | Height of data rows. |
-| `RowCount` | `int` | Number of rows. |
+| `RowCount` | `int` | Number of rows. With `ColCount`, the number of rows in each column group. |
+| `ColCount` | `int` | Number of column groups placed side by side (see [Column Groups](#column-groups)). Added in 0.9.9. |
+| `ColGroupSpacing` | `int` | Additional space between column groups. Added in 0.9.9. |
 | `ColSpacing` | `int` | Spacing between columns. |
 | `RowSpacing` | `int` | Spacing between rows. |
 | `SeparatorSpace` | `int` | Additional space if a column is a separator. |
@@ -201,7 +203,7 @@ Blocks within column templates have access to the `Item`, `ItemIndex`, and `Colu
 | `Width` | `int` | Width of the column. |
 | `MarginLeft` | `int` | Left margin. |
 | `MarginRight` | `int` | Right margin. |
-| `IsStretchWidth` | `bool` | If true, fills available horizontal space. |
+| `WidthStretch` | `bool` | If true, fills available horizontal space. |
 | `Header` | `string` | Text for the header template (will be replace text property of any text block of header template). |
 | `RenderIf` | `bool` | Conditional rendering flag. |
 | `Template` | `block` | Template for each item in the column. |
@@ -219,6 +221,39 @@ Blocks within column templates have access to the `Item`, `ItemIndex`, and `Colu
 A feature for expanding one column into multiple columns.
 
 ![Multicolumn layout example](../images/page-29-image-01.jpeg)
+
+### Column Groups
+
+`ColCount` splits the items of one table into several column groups placed side by side.
+
+- Items fill the first group top to bottom, then the next group.
+- `RowCount` sets the rows in each group. Without it, the items are split evenly between the groups.
+- Items that do not fit are not shown. Free places stay empty.
+- Each group repeats all columns with their headers.
+- `ItemIndex` continues from group to group. `ColumnIndex` is the same in every group.
+- A `WidthStretch` column shares the free width between its copies in all groups.
+
+Ten events in two groups of five:
+
+```json
+{
+  "BlockType": "table",
+  "TableOptions": {
+    "ItemsSource": "{Events.Events}",
+    "ColCount": 2,
+    "RowCount": 5,
+    "ColGroupSpacing": 24,
+    "Columns": [
+      {
+        "Template": {
+          "BlockType": "text",
+          "Source": "{ItemIndex, Converter=NumberAdd, Parameter=1}. {Item.Name}"
+        }
+      }
+    ]
+  }
+}
+```
 
 ## Shape
 
