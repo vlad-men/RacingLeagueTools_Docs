@@ -1,0 +1,486 @@
+/*
+  Racing League Tools docs skin.
+  Mirrors racingleaguetools.com: dark-only canvas, orange accent, Inter for everything,
+  Saira Condensed 800 only for the wordmark and the page h1.
+  Colors come from the website design tokens (RacingLeagueTools.WEB/design-system/tokens).
+*/
+
+:root {
+  --rlt-canvas: #0B0D12;
+  --rlt-raised: #14161D;
+  --rlt-overlay: #1C1F29;
+  --rlt-hairline: #262B38;
+  --rlt-border-strong: rgba(244, 245, 247, 0.14);
+  --rlt-hover: rgba(244, 245, 247, 0.045);
+  --rlt-text: #F4F5F7;
+  --rlt-text-secondary: #B9BDC7;
+  --rlt-text-faint: #7E8496;
+  --rlt-orange: #F2762E;
+  --rlt-orange-hover: #FF9152;
+  --rlt-orange-soft: rgba(242, 118, 46, 0.14);
+  --rlt-green: #2ED47A;
+  --rlt-topbar: rgba(20, 22, 29, 0.82);
+  --rlt-font-display: 'Saira Condensed', 'Arial Narrow', sans-serif;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-hue: 225;
+  --md-default-bg-color: var(--rlt-canvas);
+  --md-default-fg-color: var(--rlt-text);
+  --md-default-fg-color--light: var(--rlt-text-secondary);
+  --md-default-fg-color--lighter: var(--rlt-text-faint);
+  --md-default-fg-color--lightest: var(--rlt-hairline);
+
+  --md-primary-fg-color: var(--rlt-raised);
+  --md-primary-fg-color--light: var(--rlt-overlay);
+  --md-primary-fg-color--dark: var(--rlt-canvas);
+  --md-primary-bg-color: var(--rlt-text);
+  --md-primary-bg-color--light: var(--rlt-text-secondary);
+
+  --md-accent-fg-color: var(--rlt-orange-hover);
+  --md-accent-fg-color--transparent: var(--rlt-orange-soft);
+  --md-accent-bg-color: var(--rlt-canvas);
+
+  --md-typeset-color: var(--rlt-text);
+  --md-typeset-a-color: var(--rlt-orange);
+  --md-typeset-table-color: var(--rlt-hairline);
+  --md-typeset-mark-color: var(--rlt-orange-soft);
+
+  --md-code-bg-color: var(--rlt-raised);
+  --md-code-fg-color: var(--rlt-text);
+
+  --md-footer-bg-color: var(--rlt-raised);
+  --md-footer-bg-color--dark: var(--rlt-canvas);
+  --md-footer-fg-color: var(--rlt-text);
+  --md-footer-fg-color--light: var(--rlt-text-secondary);
+  --md-footer-fg-color--lighter: var(--rlt-text-faint);
+
+  --md-shadow-z1: none;
+  --md-shadow-z2: none;
+  --md-shadow-z3: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Header: the website topbar ---------- */
+
+.md-header {
+  background: var(--rlt-topbar);
+  backdrop-filter: saturate(140%) blur(12px);
+  -webkit-backdrop-filter: saturate(140%) blur(12px);
+  border-bottom: 1px solid var(--rlt-hairline);
+  box-shadow: none;
+}
+
+.md-header--shadow {
+  box-shadow: none;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
+
+[dir="ltr"] .md-header__title {
+  margin-left: 0.4rem;
+}
+
+/* Wordmark, then a quiet "Docs" label so readers know which part of the site they are on. */
+.md-header__title .md-header__topic:first-child .md-ellipsis {
+  font-family: var(--rlt-font-display);
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.01em;
+}
+
+.md-header__title .md-header__topic:first-child .md-ellipsis::after {
+  content: "Docs";
+  margin-left: 0.6em;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--rlt-orange-soft);
+  color: var(--rlt-orange);
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  vertical-align: 3px;
+}
+
+/* The page title that replaces the wordmark on scroll stays in the body face. */
+.md-header__title .md-header__topic + .md-header__topic {
+  font-weight: 600;
+}
+
+/* Search: a field on the topbar, like the website inputs. */
+.md-search__form {
+  background: var(--rlt-overlay);
+  border: 1px solid var(--rlt-border-strong);
+  border-radius: 6px;
+  height: 34px;
+}
+
+.md-search__form:hover {
+  background: var(--rlt-overlay);
+  border-color: rgba(244, 245, 247, 0.24);
+}
+
+.md-search__input::placeholder {
+  color: var(--rlt-text-faint);
+}
+
+.md-search__output {
+  border-radius: 0 0 10px 10px;
+}
+
+[data-md-toggle="search"]:checked ~ .md-header .md-search__form {
+  border-radius: 6px 6px 0 0;
+  background: var(--rlt-overlay);
+}
+
+/* ---------- Tabs: the website nav pills ---------- */
+
+.md-tabs {
+  background: var(--rlt-canvas);
+  border-bottom: 1px solid var(--rlt-hairline);
+  color: var(--rlt-text-secondary);
+}
+
+.md-tabs__list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 44px;
+}
+
+.md-tabs__item {
+  height: auto;
+  padding: 0;
+}
+
+.md-tabs__link {
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  margin-top: 0;
+  padding: 0 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 1;
+  color: var(--rlt-text-secondary);
+  transition: color 120ms ease, background-color 120ms ease;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link:focus {
+  color: var(--rlt-text);
+  background: var(--rlt-hover);
+}
+
+.md-tabs__item--active .md-tabs__link {
+  color: var(--rlt-text);
+  background: var(--rlt-orange-soft);
+}
+
+/* The last tab leaves the docs for the website. */
+.md-tabs__item:last-child {
+  margin-left: auto;
+}
+
+.md-tabs__item:last-child .md-tabs__link::after {
+  content: "↗";
+  margin-left: 6px;
+  color: var(--rlt-text-faint);
+}
+
+/* ---------- Side navigation ---------- */
+
+.md-nav {
+  font-size: 14px;
+}
+
+.md-nav__title {
+  color: var(--rlt-text-faint);
+  font-weight: 600;
+}
+
+.md-nav__link {
+  color: var(--rlt-text-secondary);
+}
+
+.md-nav__link:hover,
+.md-nav__link:focus {
+  color: var(--rlt-text);
+}
+
+.md-nav__link--active,
+.md-nav__item .md-nav__link--active {
+  color: var(--rlt-orange);
+  font-weight: 500;
+}
+
+/* Section labels in the left sidebar (navigation.sections). */
+.md-nav--primary .md-nav__item--section > .md-nav__link {
+  color: var(--rlt-text);
+  font-weight: 600;
+}
+
+/* ---------- Page content ---------- */
+
+.md-typeset {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* The page h1 speaks as the brand, the same as the public h1 on the website. */
+.md-typeset h1 {
+  font-family: var(--rlt-font-display);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: 0.005em;
+  color: var(--rlt-text);
+  margin-bottom: 0.8em;
+}
+
+@media (max-width: 600px) {
+  .md-typeset h1 {
+    font-size: 32px;
+  }
+}
+
+/* Every other heading is Inter 600, as inside cards and sections on the website. */
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-weight: 600;
+  color: var(--rlt-text);
+  letter-spacing: -0.01em;
+}
+
+.md-typeset h2 {
+  font-size: 24px;
+  line-height: 1.3;
+  margin-top: 2em;
+}
+
+.md-typeset h3 {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.md-typeset h4 {
+  font-size: 15px;
+}
+
+.md-typeset a {
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+
+.md-typeset a:hover {
+  color: var(--rlt-orange-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.md-typeset .headerlink {
+  color: var(--rlt-text-faint);
+}
+
+.md-typeset hr {
+  border-bottom-color: var(--rlt-hairline);
+}
+
+/* Inline code and code blocks. */
+.md-typeset code {
+  border-radius: 6px;
+  border: 1px solid var(--rlt-hairline);
+  padding: 0.1em 0.4em;
+  font-size: 0.85em;
+}
+
+.md-typeset pre > code {
+  border: none;
+  padding: 1em 1.2em;
+}
+
+.md-typeset pre {
+  border: 1px solid var(--rlt-hairline);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.md-typeset kbd {
+  background: var(--rlt-overlay);
+  box-shadow: 0 2px 0 var(--rlt-hairline);
+  color: var(--rlt-text);
+}
+
+/* Tables as website cards. */
+.md-typeset table:not([class]) {
+  background: var(--rlt-raised);
+  border: 1px solid var(--rlt-hairline);
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: none;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--rlt-overlay);
+  color: var(--rlt-text);
+  font-weight: 600;
+}
+
+.md-typeset table:not([class]) td {
+  border-top-color: var(--rlt-hairline);
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
+  background: var(--rlt-hover);
+  box-shadow: none;
+}
+
+/* Admonitions and FAQ details as cards with a colored left edge. */
+.md-typeset .admonition,
+.md-typeset details {
+  background: var(--rlt-raised);
+  border: 1px solid var(--rlt-hairline);
+  border-left-width: 3px;
+  border-radius: 10px;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background: transparent !important;
+  font-weight: 600;
+}
+
+.md-typeset details[open] > summary {
+  border-bottom: 1px solid var(--rlt-hairline);
+}
+
+/* Material colors every border by type; keep the card outline neutral and color only the edge and icon. */
+.md-typeset :is(.admonition, details):is(.note, .info, .abstract, .question, .tip, .success, .example, .warning, .important, .caution, .attention, .danger, .failure, .bug, .error, .quote) {
+  border-color: var(--rlt-hairline);
+}
+
+.md-typeset :is(.admonition, details):is(.note, .info, .abstract, .question) {
+  border-left-color: var(--rlt-text-secondary);
+}
+
+.md-typeset :is(.admonition, details):is(.note, .info, .abstract, .question) > :is(.admonition-title, summary)::before,
+.md-typeset details:is(.note, .info, .abstract, .question) > summary::after {
+  background-color: var(--rlt-text-secondary);
+}
+
+.md-typeset :is(.admonition, details):is(.tip, .success, .example) {
+  border-left-color: var(--rlt-green);
+}
+
+.md-typeset :is(.admonition, details):is(.tip, .success, .example) > :is(.admonition-title, summary)::before,
+.md-typeset details:is(.tip, .success, .example) > summary::after {
+  background-color: var(--rlt-green);
+}
+
+.md-typeset :is(.admonition, details):is(.warning, .important, .caution, .attention) {
+  border-left-color: var(--rlt-orange);
+}
+
+.md-typeset :is(.admonition, details):is(.warning, .important, .caution, .attention) > :is(.admonition-title, summary)::before,
+.md-typeset details:is(.warning, .important, .caution, .attention) > summary::after {
+  background-color: var(--rlt-orange);
+}
+
+.md-typeset :is(.admonition, details):is(.danger, .failure, .bug, .error) {
+  border-left-color: #E5484D;
+}
+
+.md-typeset :is(.admonition, details):is(.danger, .failure, .bug, .error) > :is(.admonition-title, summary)::before,
+.md-typeset details:is(.danger, .failure, .bug, .error) > summary::after {
+  background-color: #E5484D;
+}
+
+/* Buttons from attr_list ({ .md-button }) look like the website buttons. */
+.md-typeset .md-button {
+  border-radius: 10px;
+  border: 1px solid var(--rlt-border-strong);
+  color: var(--rlt-text);
+  font-weight: 600;
+  padding: 0.5em 1.2em;
+}
+
+.md-typeset .md-button:hover {
+  background: var(--rlt-hover);
+  border-color: rgba(244, 245, 247, 0.24);
+  color: var(--rlt-text);
+  text-decoration: none;
+}
+
+.md-typeset .md-button--primary {
+  background: var(--rlt-orange);
+  border-color: var(--rlt-orange);
+  color: var(--rlt-canvas);
+}
+
+.md-typeset .md-button--primary:hover {
+  background: var(--rlt-orange-hover);
+  border-color: var(--rlt-orange-hover);
+  color: var(--rlt-canvas);
+}
+
+/* Images in content get the website card corners. */
+.md-typeset img {
+  border-radius: 6px;
+}
+
+/* ---------- Footer ---------- */
+
+.md-footer {
+  border-top: 1px solid var(--rlt-hairline);
+}
+
+.md-footer-meta {
+  background: var(--rlt-canvas);
+  border-top: 1px solid var(--rlt-hairline);
+}
+
+.md-footer__link:hover {
+  opacity: 1;
+  color: var(--rlt-orange);
+}
+
+.md-social__link svg {
+  fill: var(--rlt-text-secondary);
+}
+
+.md-social__link:hover svg {
+  fill: var(--rlt-text);
+}
+
+/* Back-to-top button. */
+.md-top {
+  background: var(--rlt-overlay);
+  color: var(--rlt-text);
+  border: 1px solid var(--rlt-hairline);
+  box-shadow: none;
+}
+
+.md-top:hover {
+  background: var(--rlt-orange);
+  color: var(--rlt-canvas);
+}
+
+::selection {
+  background: rgba(242, 118, 46, 0.35);
+}
+
+/* "Docs" in the home page title, colored like the header label. */
+.md-typeset .rlt-docs-accent {
+  color: var(--rlt-orange);
+}
